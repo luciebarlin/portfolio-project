@@ -119,3 +119,38 @@ nav {
     
 }
 
+//dropdown menus
+
+.hide-menu {
+    display: none;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    ul {
+        position: relative;
+
+
+        .nav-links {
+            position: absolute;
+            top: $regular-gap;
+            background-color: lighten($oatmeal, 5%);
+            z-index: 2;
+            padding: 10px;
+            max-width: 100px;
+        }
+
+        #project-links {
+            right: 240px;
+        }
+
+        #experience-links {
+            right: 375px;
+
+        }
+    }
+}
