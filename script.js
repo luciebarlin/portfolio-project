@@ -7,7 +7,7 @@ const menuList = document.querySelectorAll(".js-menu-list");
 
 menuBtns.forEach(menuBtnItem => {
     //add the event listener to each clickable menu button
-    menuBtnItem.addEventListener("click", function(event) {
+    menuBtnItem.addEventListener("mouseover", function(event) {
         //returns the data-target value
         //const hideMenuElArr = document.querySelectorAll(".hide-menu");
         

@@ -1,8 +1,8 @@
 $light-pink: #F5DADF;
 $dark-blue: #163057;
 $dark-grey: #434854;
-$regular-gap: 32px;
 $oatmeal: #E8E3D6;
+$regular-gap: 32px;
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -11,6 +11,17 @@ body {
     background-color: lighten($oatmeal, 5%);
 }
 
+h1 {
+    font-size: 3em;
+    font-weight: 600;
+}
+
+main {
+    font-size: 24px;
+    line-height: 2;
+}
+
+//header
 
 nav {
     ul {
@@ -20,19 +31,23 @@ nav {
         list-style: none;
         padding-right: $regular-gap;
 
-        a {
-            text-decoration: none;
-            color: $dark-blue;
-            transition: border-color 0.6s ease;
-            border-bottom: 1px solid transparent;
-
-            &:hover {
-                border-color: $dark-blue;
-            }
-        }
+        
     }
     
 }
+
+a {
+    text-decoration: none;
+    color: $dark-blue;
+    transition: border-color 0.6s ease;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+        border-color: $dark-blue;
+    }
+}
+
+//contact page
 
 .business-card {
     background-color: transparent;
@@ -145,7 +160,7 @@ nav {
         }
 
         #project-links {
-            right: 240px;
+            right: 235px;
         }
 
         #experience-links {
@@ -153,4 +168,12 @@ nav {
 
         }
     }
+}
+
+
+//projects page
+
+.projects-list {
+    list-style: none;
+    padding: 0;
 }
