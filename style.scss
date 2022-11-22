@@ -92,6 +92,17 @@ nav {
         padding: 10px;
     }
 
+    .linkedin-logo {
+        img {
+            height: 40px;
+            width: 40px;
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+        }
+       
+    }
+
     &__back {
         background-color: $light-pink;
         color: $dark-blue;
