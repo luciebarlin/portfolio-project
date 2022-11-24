@@ -29,3 +29,30 @@ menuBtns.forEach(menuBtnItem => {
 
     })
 });
+
+//countdown timer
+
+const countDownDate = new Date("Feb 18, 2023 00:00:00").getTime();
+const birthdayTimer = document.getElementById("birthday-timer");
+
+const updateCountdown = setInterval(function() {
+    if (!birthdayTimer) {
+        return;
+    };
+    
+    let now = new Date().getTime();
+    let distance = countDownDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    birthdayTimer.innerHTML = days + " days " + hours + " hours "
+    + minutes + " minutes " + seconds + " seconds!";
+
+    if (distance < 0) {
+        clearInterval(updateCountdown);
+        birthdayTimer.innerHTML = "Happy birthday!"
+    }
+});
