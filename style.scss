@@ -2,9 +2,14 @@ $light-pink: #F5DADF;
 $dark-blue: #163057;
 $dark-grey: #434854;
 $light-grey: lighten($dark-grey, 30%);
-
 $oatmeal: #E8E3D6;
 $regular-gap: 32px;
+
+@import "scss/header";
+@import "scss/contact";
+@import "scss/dropdown_menus";
+@import "scss/projects_page";
+
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -23,159 +28,10 @@ main {
     line-height: 2;
 }
 
-//header
-
-nav {
-    ul {
-        display: flex;
-        justify-content: flex-end;
-        gap: calc($regular-gap * 2);
-        list-style: none;
-        padding-right: $regular-gap;
-
-        
-    }
-    
-}
-
-a {
-    text-decoration: none;
-    color: $dark-blue;
-    transition: border-color 0.6s ease;
-    border-bottom: 1px solid transparent;
-
-    &:hover {
-        border-color: $dark-blue;
-    }
-}
-
-//contact page
-
-.business-card {
-    background-color: transparent;
-    height: calc(250px + $regular-gap);
-    width: calc(350px + $regular-gap);
-    margin: 0 auto;
-    padding: $regular-gap;
-    perspective: 1000px;
-
-    &__inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
-    }
-
-    &:hover {
-        .business-card__inner {
-            transform: rotateY(180deg);
-        }
-    }
-
-    &__front,
-    &__back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        border-radius: calc($regular-gap / 2);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-    }
-
-    &__front {
-        display: flex;
-        background-color: $light-pink;
-        color: $dark-blue;
-    }
-
-    &__left {
-        text-align: center;
-
-    }
-
-    &__right {
-        padding: 10px 20px;
-    }
-
-    h2 {
-        margin: 0;
-        border-right: 5px solid $dark-blue;
-        padding: 10px;
-    }
-
-    .linkedin-logo {
-        img {
-            height: 40px;
-            width: 40px;
-            position: absolute;
-            bottom: 30px;
-            right: 30px;
-        }
-       
-    }
-
-    &__back {
-        background-color: $light-pink;
-        color: $dark-blue;
-        transform: rotateY(180deg);
 
 
-        .my-face {
-            height: 250px;
-            width: 350px;
-            border-radius: calc($regular-gap / 2);
-
-        }
-    }
-    
-}
-
-//dropdown menus
-
-.hide-menu {
-    display: none;
-}
-
-.flex-column {
-    display: flex;
-    flex-direction: column;
-}
-
-nav {
-    ul {
-        position: relative;
 
 
-        .nav-links {
-            position: absolute;
-            top: $regular-gap;
-            background-color: lighten($oatmeal, 5%);
-            z-index: 2;
-            padding: 10px;
-            max-width: 100px;
-        }
-
-        #project-links {
-            right: 235px;
-        }
-
-        #experience-links {
-            right: 375px;
-
-        }
-    }
-}
 
 
-//projects page
 
-.projects-list {
-    list-style: none;
-    padding: 0;
-}
