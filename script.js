@@ -39,7 +39,7 @@ const updateCountdown = setInterval(function() {
     if (!birthdayTimer) {
         return;
     };
-    
+
     let now = new Date().getTime();
     let distance = countDownDate - now;
 
@@ -56,3 +56,77 @@ const updateCountdown = setInterval(function() {
         birthdayTimer.innerHTML = "Happy birthday!"
     }
 });
+
+//weather api
+
+//how to get today's date in yyyy-mm-dd format
+
+let today = new Date();
+let dd = today.getDate();
+
+let mm = today.getMonth() + 1; 
+const yyyy = today.getFullYear();
+if(dd<10) 
+{
+    dd=`0${dd}`;
+} 
+
+if(mm<10) 
+{
+    mm=`0${mm}`;
+} 
+today = `${yyyy}-${mm}-${dd}`;
+console.log(today);
+
+//save today's date as a variable
+//replace both dates in the url useing template literal and the new varaible
+//it's always going to be today so make both dates today
+
+const fetchedData = document.getElementById("fetched-data");
+const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=precipitation&timezone=Europe%2FBerlin&start_date=${today}&end_date=${today}`;
+const weatherSource = document.getElementById("weather-source");
+const umbrellaPic = document.getElementById("img__umbrella");
+const sunPic = document.getElementById("img__sun");
+
+const weatherCallback = weatherDataObj => {
+    console.log(weatherDataObj);
+    weatherSource.innerHTML += JSON.stringify(weatherDataObj);
+    //weatherSource.innerHTML = weatherDataObj;
+
+    const precipArr = weatherDataObj.hourly.precipitation; 
+    let willRain = false; //default: would otherwise use else in the if clause
+    //console.log(precipArr);
+
+    precipArr.forEach(value => {
+        if (value > 0) {
+            willRain = true;
+        }
+    })
+
+    if (willRain) {
+        fetchedData.innerHTML = "You will need an umbrella!";
+        umbrellaPic.style.display = "flex";
+    } else {
+        fetchedData.innerHTML = "You won't need an umbrella!";
+        sunPic.style.display = "flex";
+    }
+}
+
+fetch(weatherUrl)
+  .then((response) => response.json())
+  .then((data) => weatherCallback(data))
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+
+
+
+
+
+
+
+  //fetchedData.innerHTML = 
+
+// $.ajax({
+//     url: queryString, // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
+//     method: 'GET'

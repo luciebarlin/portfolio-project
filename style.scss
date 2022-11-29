@@ -9,6 +9,7 @@ $regular-gap: 32px;
 @import "scss/contact";
 @import "scss/dropdown_menus";
 @import "scss/projects_page";
+@import "scss/weatherapi";
 
 
 body {
@@ -28,7 +29,9 @@ main {
     line-height: 2;
 }
 
-
+h2 {
+    font-weight: 400;
+}
 
 
 

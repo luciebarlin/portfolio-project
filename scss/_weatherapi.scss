@@ -1,0 +1,25 @@
+
+
+#weather-source {
+    border: 2px solid $dark-blue;
+    overflow-wrap: break-word;
+    font-size: 0.75rem;
+    padding: 10px 15px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+
+#img {
+    &__umbrella,
+    &__sun {
+        display: none;
+        justify-content: center;
+        margin: 0 auto;
+    }
+}
+
+h3 {
+    margin: 0;
+}
+
