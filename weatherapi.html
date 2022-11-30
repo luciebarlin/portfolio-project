@@ -11,13 +11,11 @@
   <body>
 
     <h1>
-      Weather API
+      Will you need an umbrella today?
     </h1>
 
     <main>
-        <h2>
-            Will you need an umbrella today?
-        </h2>
+        
         <div id="fetched-data">
 
         </div>
@@ -25,16 +23,42 @@
         <div id="weather-image" >
             <img id="img__umbrella" src="images/umbrella.png">
             <img id="img__sun" src="images/sun.png">
+
+            <div class="temp-sticker">
+              <div id="temp-data">
+                
+              </div>
+    
+              <div id="gloves-test"> 
+    
+              </div>
+            </div>
         </div>
 
+        
+          
+        <div id="bar-graph">
+          <!-- Make one extra div for each number in array -->
+          <!-- <div class="new-bar">
+
+          </div> -->
+        </div>
         
     </main>
       
     <footer>
         <div id="weather-source"> 
             <h3>
-                Source: <a target="_blank" href="https://open-meteo.com/en">open-meteo.com</a>
+                Source: <a target="_blank" href="https://open-meteo.com/en">open-meteo.com</a> <span class="unbold"><button id="btn__weather-src">expand</button></span>
             </h3>
+
+            <div id="precip-check" class="hidden">
+
+            </div>
+
+            <div id="gloves-check" class="hidden">
+
+            </div>
         </div>
     </footer>
 	<script src="script.js"></script>

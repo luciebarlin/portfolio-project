@@ -78,7 +78,7 @@ if(mm<10)
 today = `${yyyy}-${mm}-${dd}`;
 console.log(today);
 
-//save today's date as a variable
+//save today's date as a variable ${today}
 //replace both dates in the url useing template literal and the new varaible
 //it's always going to be today so make both dates today
 
@@ -87,10 +87,11 @@ const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=52.52&longit
 const weatherSource = document.getElementById("weather-source");
 const umbrellaPic = document.getElementById("img__umbrella");
 const sunPic = document.getElementById("img__sun");
+const precipCheck = document.getElementById("precip-check");
 
 const weatherCallback = weatherDataObj => {
-    console.log(weatherDataObj);
-    weatherSource.innerHTML += JSON.stringify(weatherDataObj);
+    //console.log(weatherDataObj);
+    precipCheck.innerHTML = "Precipitation check: " + JSON.stringify(weatherDataObj);
     //weatherSource.innerHTML = weatherDataObj;
 
     const precipArr = weatherDataObj.hourly.precipitation; 
@@ -120,13 +121,134 @@ fetch(weatherUrl)
   });
 
 
-
-
-
-
-
   //fetchedData.innerHTML = 
 
 // $.ajax({
 //     url: queryString, // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
 //     method: 'GET'
+
+
+// get temperature and add to a box below precipitation picture
+// be sure to bring some gloves too
+// 
+
+const tempUrl = `https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m&timezone=Europe%2FBerlin&start_date=${today}&end_date=${today}`
+const tempData = document.getElementById("temp-data");
+const glovesTest = document.getElementById("gloves-test");
+const glovesCheck = document.getElementById("gloves-check");
+
+
+const tempCallback = tempDataObj => {
+    console.log(tempDataObj);
+    glovesCheck.innerHTML = "Gloves check: " + JSON.stringify(tempDataObj);
+
+    //tempData.innerHTML += JSON.stringify(tempDataObj);
+    //weatherSource.innerHTML = weatherDataObj;
+
+    const tempArr = tempDataObj.hourly.temperature_2m; 
+    //let willRain = false; //default: would otherwise use else in the if clause
+    //console.log(precipArr);
+
+    // tempArr.forEach(hourlyTemp => {
+    //     console.log(hourlyTemp);
+    // })
+
+    console.log(tempArr);
+    //tempData.innerHTML = tempArr;
+   
+    let tempArrSum = 0;
+    for (const index of tempArr) {
+        tempArrSum += index;
+        //console.log(tempArrSum);
+      }
+      
+    //console.log(tempArrSum);
+    
+    averageTemp = ((tempArrSum.toFixed(1)) / 24).toFixed(1);
+    tempData.innerHTML = "Average temperature: " + averageTemp;
+
+    if (averageTemp < 6) {
+        glovesTest.innerHTML = "Be sure to bring some gloves too!";
+    }
+
+    
+    const barGraph = document.getElementById("bar-graph");
+
+
+    const addNewBars = () => {
+        //let barGraphDataArr = [];
+        //console.log(tempArr);
+        tempArr.forEach((temp, index) => {
+            //console.log(temp);
+            const addedBar = document.createElement("div");
+            barGraph.appendChild(addedBar);
+            addedBar.classList.add("new-bar");
+            console.log(temp * 10);
+            addedBar.style.height = temp * 20 + "px";
+            console.log(index);
+            addedBar.innerHTML = index;
+        });
+        
+        
+
+    }
+
+    addNewBars();
+
+}
+
+fetch(tempUrl)
+  .then((response2) => response2.json())
+  .then((data) => tempCallback(data))
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+
+
+//expand weather source details
+
+const weatherSrcBtn = document.getElementById("btn__weather-src");
+
+const toggleInfo = () => {
+    precipCheck.classList.toggle("hidden");
+    glovesCheck.classList.toggle("hidden");
+}
+
+weatherSrcBtn.addEventListener("click", toggleInfo);
+
+//bar graph of temperature data
+
+// const addedBar = document.createElement("div");
+// const barGraph = document.getElementById("bar-graph");
+
+
+// const addNewBars = () => {
+//     console.log(tempArr);
+//     tempArr.forEach(temp => {
+//         barGraph.appendChild(addedBar);
+//         addedBar.classList.add("new-bar");
+//     });
+
+//     const newBars = document.querySelectorAll(".new-bar");
+
+//     newBars.forEach(bar => {
+//         let getBarHeight = tempArr.foreach(temp => {
+//             return (temp * 10) + "px";
+//         });
+//         bar.style.height = getBarHeight;
+//     })
+// }
+
+// addNewBars();
+
+
+//fill the bars with data
+// const newBars = document.querySelectorAll(".new-bar");
+
+// newBars.forEach(bar => {
+//     let getBarHeight = tempArr.foreach(temp => {
+//         return (temp * 10) + "px";
+//     });
+//     bar.style.height = getBarHeight;
+// })
+

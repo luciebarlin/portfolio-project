@@ -1,12 +1,20 @@
-
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 #weather-source {
     border: 2px solid $dark-blue;
     overflow-wrap: break-word;
     font-size: 0.75rem;
     padding: 10px 15px;
-    width: 50%;
+    width: 75%;
     margin: 0 auto;
+
+    .hidden {
+        display: none;
+    }
 }
 
 
@@ -23,3 +31,72 @@ h3 {
     margin: 0;
 }
 
+.unbold {
+    font-weight: 400;
+}
+
+#btn__weather-src {
+    color: $oatmeal;
+    background-color: $dark-blue;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 10px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+#temp-data {
+    font-weight: 600;
+}
+
+#weather-image {
+    position: relative;
+
+    .temp-sticker {
+        color: $oatmeal;
+        background-color: $dark-blue;
+        border-radius: 50%;
+        width: 135px;
+        height: 135px;
+        margin: $regular-gap;
+        padding: calc($regular-gap / 2);
+        font-size: 0.9rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 45px;
+        right: -100px;
+        border: 10px solid $oatmeal;
+    
+        #gloves-test {
+            font-size: smaller;
+        }
+    }
+}
+
+
+
+#bar-graph {
+    border: 2px solid $dark-blue;
+    height: 100px;
+    width: 600px;
+    margin: $regular-gap;
+    display: flex;
+    gap: 3px;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.new-bar {
+    background-color: $dark-blue;
+    width: 16px;
+    padding: 0 2px;
+    color: $oatmeal;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column-reverse;
+    // height: tempArr.foreach(temp => {
+    //     (temp * 10) + "px"})
+       
+}
