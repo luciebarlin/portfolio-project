@@ -45,6 +45,26 @@
     border-radius: 3px 0 0 3px;
 }
 
+//glowing button
+@keyframes glowing {
+    0% {
+      background-color: $dark-blue-translucent;
+      box-shadow: 0 0 3px $dark-blue-translucent;
+    }
+    50% {
+      background-color: $dark-blue;
+      box-shadow: 0 0 10px $dark-blue;
+    }
+    100% {
+      background-color: $dark-blue-translucent;
+      box-shadow: 0 0 3px $dark-blue-translucent;
+    }
+}
+
+.flashing {
+    animation: glowing 1300ms infinite;
+}
+///
 .text, 
 .numbertext {
     color: $oatmeal;

@@ -1,5 +1,11 @@
 //contact page
 
+.contact-header {
+    img {
+        height: 40px;
+    }
+}
+
 .business-card {
     background-color: transparent;
     height: calc(250px + $regular-gap);

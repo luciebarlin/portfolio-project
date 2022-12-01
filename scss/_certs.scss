@@ -1,0 +1,64 @@
+.cert-showcase {
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cert {
+    height: 192px;
+    width: 250px;
+}
+
+.modal-btn {
+    box-shadow: 0 4px 8px 0 rgba(22,48,87,0.2);
+    transition: 0.3s;
+    padding: 0;
+
+    &:hover {
+        box-shadow: 0 8px 16px 0 rgba(22,48,87,0.6);
+        cursor: pointer;
+    }
+}
+
+/* The Modal (background) */
+.open-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: $dark-blue; /* Fallback color */
+    background-color: $dark-blue-translucent; /* Black w/ opacity */
+  }
+
+  /* Modal Content/Box */
+.modal-content {
+    background-color: $oatmeal;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 2px solid $dark-blue;
+    width: 80%; /* Could be more or less, depending on screen size */
+    position: relative;
+}
+
+/* The Close Button */
+.close {
+    color: $dark-blue-translucent;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: $dark-blue;
+    text-decoration: none;
+    cursor: pointer;
+}

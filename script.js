@@ -13,10 +13,15 @@ menuBtns.forEach(menuBtnItem => {
         
         const targetStr = event.target.dataset.target;
         //returns target element from target string
+        if (!targetStr) {
+            return;
+        }
+
         const target = document.querySelector('#' + targetStr);
         //toggles the hide-menu class of the selected element
         // console.log(event.target);
         // console.log(targetStr);
+        console.log(event.target);
         if (target.classList.contains("hide-menu")) {
             menuList.forEach(menuListItem => {
                 menuListItem.classList.add("hide-menu");
@@ -225,34 +230,132 @@ if (weatherSrcBtn) {
 
 // bobby slideshow
 
+const slideshowContainer = document.querySelector(".slideshow-container");
+
+
 let slideIndex = 1;
 
 
 // Next/previous controls
 const plusSlides = n => {
-  showSlides(slideIndex += n);
+    showSlides(slideIndex += n);
 }
 
 // Thumbnail image controls
 const currentSlide = n => {
-  showSlides(slideIndex = n);
+    showSlides(slideIndex = n);
 }
 
 const showSlides = n => {
-  let i;
-  let slides = document.querySelectorAll(".bobby-slides");
-  let dots = document.querySelectorAll(".dot");
+    let i;
+    let slides = document.querySelectorAll(".bobby-slides");
+    let dots = document.querySelectorAll(".dot");
 
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    }
+
+if (slideshowContainer) {
+        showSlides(slideIndex);
 }
 
-showSlides(slideIndex);
+///flashing button
+const nextBtn = document.querySelector(".next");
+
+if (nextBtn) {
+    const flashingBtn = () => {
+        nextBtn.classList.add("flashing");
+    }
+    
+    setTimeout(flashingBtn, 2000);
+    
+    nextBtn.addEventListener("click", function() {
+        nextBtn.classList.remove("flashing");
+    })
+
+}
+
+
+
+
+
+
+
+
+
+
+//modal certs
+
+// Get the modal
+// const openModal = document.getElementById("open-modal--html");
+
+// if (openModal) {
+//     // Get the button that opens the modal
+//     const btn = document.getElementById("modal-btn--html");
+
+//     // Get the <span> element that closes the modal
+//     const span = document.getElementsByClassName("close")[0];
+
+//     // When the user clicks on the button, open the modal
+//     btn.onclick = function() {
+//         openModal.style.display = "block";
+//     }
+
+//     // When the user clicks on <span> (x), close the modal
+//     span.onclick = function() {
+//         openModal.style.display = "none";
+//     }
+
+//     // When the user clicks anywhere outside of the modal, close it
+//     window.onclick = function(event) {
+//     if (event.target == openModal) {
+//         openModal.style.display = "none";
+//     }
+//     }
+
+// }
+
+const openModals = document.querySelectorAll(".open-modal");
+
+if (openModals) {
+    const modalBtns = document.querySelectorAll(".modal-btn");
+    const closeSpans = document.querySelectorAll(".close");
+
+    modalBtns.forEach(btn => {
+        btn.onclick = function(event) {
+
+            const targetModalSelector = event.target.dataset.targetModal;
+            console.log(targetModalSelector);
+            const targetModal = document.getElementById(targetModalSelector);
+            console.log(targetModal);
+            targetModal.style.display = "block";
+        }
+
+    closeSpans.forEach(span => {
+        span.onclick = function() {
+            openModals.forEach(openModal => {
+                openModal.style.display = "none";
+            })
+                   
+        }
+    })
+        
+
+        window.onclick = function(event) {
+            openModals.forEach(openModal => {
+                if (event.target == openModal) {
+                    openModal.style.display = "none";
+                }
+            })
+            
+        }
+    })
+} 
