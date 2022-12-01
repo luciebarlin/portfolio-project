@@ -15,8 +15,8 @@ menuBtns.forEach(menuBtnItem => {
         //returns target element from target string
         const target = document.querySelector('#' + targetStr);
         //toggles the hide-menu class of the selected element
-        console.log(event.target);
-        console.log(targetStr);
+        // console.log(event.target);
+        // console.log(targetStr);
         if (target.classList.contains("hide-menu")) {
             menuList.forEach(menuListItem => {
                 menuListItem.classList.add("hide-menu");
@@ -91,6 +91,9 @@ const precipCheck = document.getElementById("precip-check");
 
 const weatherCallback = weatherDataObj => {
     //console.log(weatherDataObj);
+    if (!precipCheck) {
+        return;
+    };
     precipCheck.innerHTML = "Precipitation check: " + JSON.stringify(weatherDataObj);
     //weatherSource.innerHTML = weatherDataObj;
 
@@ -139,15 +142,17 @@ const glovesCheck = document.getElementById("gloves-check");
 
 
 const tempCallback = tempDataObj => {
+
+    if (!glovesCheck) {
+        return;
+    };
+
     console.log(tempDataObj);
     glovesCheck.innerHTML = "Gloves check: " + JSON.stringify(tempDataObj);
 
     //tempData.innerHTML += JSON.stringify(tempDataObj);
-    //weatherSource.innerHTML = weatherDataObj;
 
     const tempArr = tempDataObj.hourly.temperature_2m; 
-    //let willRain = false; //default: would otherwise use else in the if clause
-    //console.log(precipArr);
 
     // tempArr.forEach(hourlyTemp => {
     //     console.log(hourlyTemp);
@@ -171,7 +176,7 @@ const tempCallback = tempDataObj => {
         glovesTest.innerHTML = "Be sure to bring some gloves too!";
     }
 
-    
+    //bar graph of temperature data
     const barGraph = document.getElementById("bar-graph");
 
 
@@ -183,13 +188,11 @@ const tempCallback = tempDataObj => {
             const addedBar = document.createElement("div");
             barGraph.appendChild(addedBar);
             addedBar.classList.add("new-bar");
-            console.log(temp * 10);
+            //console.log(temp * 10);
             addedBar.style.height = temp * 20 + "px";
-            console.log(index);
+            //console.log(index);
             addedBar.innerHTML = index;
         });
-        
-        
 
     }
 
@@ -214,41 +217,42 @@ const toggleInfo = () => {
     glovesCheck.classList.toggle("hidden");
 }
 
-weatherSrcBtn.addEventListener("click", toggleInfo);
-
-//bar graph of temperature data
-
-// const addedBar = document.createElement("div");
-// const barGraph = document.getElementById("bar-graph");
+if (weatherSrcBtn) {
+    weatherSrcBtn.addEventListener("click", toggleInfo);
+}
 
 
-// const addNewBars = () => {
-//     console.log(tempArr);
-//     tempArr.forEach(temp => {
-//         barGraph.appendChild(addedBar);
-//         addedBar.classList.add("new-bar");
-//     });
 
-//     const newBars = document.querySelectorAll(".new-bar");
+// bobby slideshow
 
-//     newBars.forEach(bar => {
-//         let getBarHeight = tempArr.foreach(temp => {
-//             return (temp * 10) + "px";
-//         });
-//         bar.style.height = getBarHeight;
-//     })
-// }
-
-// addNewBars();
+let slideIndex = 1;
 
 
-//fill the bars with data
-// const newBars = document.querySelectorAll(".new-bar");
+// Next/previous controls
+const plusSlides = n => {
+  showSlides(slideIndex += n);
+}
 
-// newBars.forEach(bar => {
-//     let getBarHeight = tempArr.foreach(temp => {
-//         return (temp * 10) + "px";
-//     });
-//     bar.style.height = getBarHeight;
-// })
+// Thumbnail image controls
+const currentSlide = n => {
+  showSlides(slideIndex = n);
+}
 
+const showSlides = n => {
+  let i;
+  let slides = document.querySelectorAll(".bobby-slides");
+  let dots = document.querySelectorAll(".dot");
+
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+showSlides(slideIndex);

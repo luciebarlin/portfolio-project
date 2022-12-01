@@ -63,17 +63,64 @@
     </header>
 
     <main>
+        <!-- bobby slideshow -->
+        <div class="slideshow-container">
+
+          <div class="bobby-slides fade">
+            <div class="numbertext">1 / 4</div>
+            <img src="images/bobby1.jpg">
+            <div class="text">2019</div>
+          </div>
         
+          <div class="bobby-slides fade">
+            <div class="numbertext">2 / 4</div>
+            <img src="images/bobby2.jpg">
+            <div class="text">2020</div>
+          </div>
+        
+          <div class="bobby-slides fade">
+            <div class="numbertext">3 / 4</div>
+            <img src="images/bobby3.jpg">
+            <div class="text">2021</div>
+          </div>
+
+          <div class="bobby-slides fade">
+            <div class="numbertext">4 / 4</div>
+            <img src="images/bobby4.jpg">
+            <div class="text">2022</div>
+          </div>
+
+           <!-- Next and previous buttons -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        </div>
+
+        <!-- The dots/circles -->
+        <div class="dots">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+
+
+    </main>
+
+    <footer>
+
+      <div id="birthday">
+
         <h2>
-          Time until my birthday
+          Time until my birthday:
         </h2>
 
         <div id="birthday-timer">
 
         </div>
+      </div>
 
-
-    </main>
+    </footer> 
 
 
 

@@ -1,3 +1,9 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -25,6 +31,11 @@ main {
         justify-content: center;
         margin: 0 auto;
     }
+}
+
+h2 {
+    margin: 0;
+    font-size: 20px;
 }
 
 h3 {
@@ -81,7 +92,7 @@ h3 {
     border: 2px solid $dark-blue;
     height: 100px;
     width: 600px;
-    margin: $regular-gap;
+    margin: 8px $regular-gap 0;
     display: flex;
     gap: 3px;
     justify-content: center;
@@ -99,4 +110,8 @@ h3 {
     // height: tempArr.foreach(temp => {
     //     (temp * 10) + "px"})
        
+}
+
+footer {
+    margin-top: auto;
 }
