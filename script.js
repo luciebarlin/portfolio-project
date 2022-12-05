@@ -383,19 +383,6 @@ if (openModals) {
 const mainTodoList = document.getElementById("main-todolist");
 
 if (mainTodoList) {
-
-    // Create a "close" button and append it to each list item
-    // const myNodelist = document.getElementsByTagName("LI");
-    // let i;
-    // for (i = 0; i < myNodelist.length; i++) {
-    // const span = document.createElement("SPAN");
-    // const txt = document.createTextNode("\u00D7");
-    // span.className = "close";
-    // span.appendChild(txt);
-    // myNodelist[i].appendChild(span);
-    // }
-
-    // Create a "close" button and append it to each list item
     
 
     const addCloseBtnToListItems = () => {
@@ -414,11 +401,6 @@ if (mainTodoList) {
     // Click on a close button to hide the current list item
     let closeBtns = document.querySelectorAll(".close");
 
-    // const deleteTask = () => {
-    //     const task = this.parentElement;
-    //     console.log(task);
-    //     task.style.display = "none";
-    // }
 
     closeBtns.forEach(closeBtn => {
         
