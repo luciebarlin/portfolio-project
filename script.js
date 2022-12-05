@@ -359,3 +359,91 @@ if (openModals) {
         }
     })
 } 
+
+
+
+
+///// todo list
+const mainTodoList = document.getElementById("main-todolist");
+
+if (mainTodoList) {
+
+    // Create a "close" button and append it to each list item
+    // const myNodelist = document.getElementsByTagName("LI");
+    // let i;
+    // for (i = 0; i < myNodelist.length; i++) {
+    // const span = document.createElement("SPAN");
+    // const txt = document.createTextNode("\u00D7");
+    // span.className = "close";
+    // span.appendChild(txt);
+    // myNodelist[i].appendChild(span);
+    // }
+
+    // Create a "close" button and append it to each list item
+    const myListItems = document.querySelectorAll("li");
+
+    const addCloseBtnToListItem = () => {
+        myListItems.forEach(item => {
+            const span = document.createElement("SPAN");
+            const txt = document.createTextNode("\u00D7");
+            span.classList.add("close");
+            span.appendChild(txt);
+            item.appendChild(span);
+        })
+    }
+
+    addCloseBtnToListItem();
+    
+    // Click on a close button to hide the current list item
+    const closeBtns = document.querySelectorAll(".close");
+
+    const deleteTask = () => {
+        const task = this.parentElement;
+        console.log(task);
+        task.style.display = "none";
+    }
+
+    closeBtns.forEach(closeBtn => {
+        console.log(closeBtn);
+        closeBtn.onclick = deleteTask();
+    })
+
+    // Add a "checked" symbol when clicking on a list item
+    let list = document.querySelector('ul');
+    list.addEventListener('click', function(event) {
+        if (event.target.tagName === 'LI') {
+            event.target.classList.toggle('checked');
+        }
+    }, false);
+
+    // Create a new list item when clicking on the "Add" button
+    const newElement = () => {
+        const li = document.createElement("li");
+        const inputHole = document.getElementById("todo-input");
+        let inputValue = inputHole.value;
+        const t = document.createTextNode(inputValue);
+        li.appendChild(t);
+        
+
+        if (inputValue === '') {
+            alert("You cannot add an empty task");
+        } else {
+            document.getElementById("ul-todo").appendChild(li);
+        }
+        inputValue = "";
+    
+        addCloseBtnToListItem();
+    
+        closeBtns.forEach(closeBtn => {
+            closeBtn.onclick = deleteTask();
+        })
+    }
+
+    const addBtn = document.querySelector("#add-btn");
+    addBtn.addEventListener("click", newElement);
+}
+
+
+
+
+

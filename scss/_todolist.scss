@@ -1,0 +1,141 @@
+#main-todolist {
+    margin: 0 auto;
+    min-width: 560px;
+}
+
+
+  
+/* Style the header */
+.header-todolist {
+    background-color: $dark-blue;
+    padding: 30px 0;
+    color: $oatmeal;
+    text-align: center;
+    width: 100%;
+
+
+    /* Clear floats after the header */
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+
+/* Style the input */
+#todo-input {
+    margin: 0 22px;
+    border: none;
+    border-radius: 0;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Style the "Add" button */
+.addBtn {
+    padding: 10px;
+    width: fit-content;
+    background: $light-pink;
+    color: $dark-blue;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+    line-height: 1.5;
+
+    &:hover {
+        background-color: darken($light-pink, 10%);
+
+    }
+}
+
+
+/* Remove margins and padding from the list */
+#ul-todo {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    text-align: left;
+
+li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 40px;
+    background: $oatmeal;
+    font-size: 18px;
+    transition: 0.2s;
+    font-weight: 600;
+    
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:hover {
+        background: darken($oatmeal, 20%);
+    }
+}
+}
+
+
+/* When clicked on, add a background color and strike out text */
+#ul-todo li.checked {
+    background: $dark-blue;
+    color: $oatmeal;
+    text-decoration: line-through;
+
+.close {
+    color: $oatmeal;
+    transition: 0.2s;
+
+
+    &:hover {
+        color: darken($light-pink, 10%);
+    }
+}
+
+&:hover {
+    background-color: lighten($dark-blue, 10%);
+}
+
+&::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 17px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+}
+
+
+/* Style the close button */
+.close {
+    position: absolute;
+    right: 0;
+    top: 2px;
+    padding: 0 16px;
+    height: fit-content;
+    transition: 0.2s;
+
+
+    &:hover {
+        background-color: transparent;
+        color: lighten($dark-blue, 30%);
+    }
+}
+  
+ 
+
