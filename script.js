@@ -188,6 +188,20 @@ const tempCallback = tempDataObj => {
     const addNewBars = () => {
         //let barGraphDataArr = [];
         //console.log(tempArr);
+
+        const createdDiv = document.createElement("div");
+        barGraph.before(createdDiv);
+
+        //make each number in the array 1 decimal place
+        const tempArrMap = tempArr.map(x => x.toFixed(1));
+        const tempArrString = tempArrMap.toString();
+        
+        const spacedString = tempArrString.replaceAll(",", " | ");
+        console.log(spacedString);
+        createdDiv.innerHTML = spacedString;
+        createdDiv.classList.add("bargraph-temps");
+
+
         tempArr.forEach((temp, index) => {
             //console.log(temp);
             const addedBar = document.createElement("div");
@@ -197,6 +211,8 @@ const tempCallback = tempDataObj => {
             addedBar.style.height = temp * 20 + "px";
             //console.log(index);
             addedBar.innerHTML = index;
+
+
         });
 
     }
@@ -380,33 +396,38 @@ if (mainTodoList) {
     // }
 
     // Create a "close" button and append it to each list item
-    const myListItems = document.querySelectorAll("li");
+    
 
-    const addCloseBtnToListItem = () => {
+    const addCloseBtnToListItems = () => {
+        const myListItems = document.querySelectorAll("li");
         myListItems.forEach(item => {
             const span = document.createElement("SPAN");
             const txt = document.createTextNode("\u00D7");
             span.classList.add("close");
             span.appendChild(txt);
             item.appendChild(span);
-        })
-    }
+        });
+    };
 
-    addCloseBtnToListItem();
+    addCloseBtnToListItems();
     
     // Click on a close button to hide the current list item
-    const closeBtns = document.querySelectorAll(".close");
+    let closeBtns = document.querySelectorAll(".close");
 
-    const deleteTask = () => {
-        const task = this.parentElement;
-        console.log(task);
-        task.style.display = "none";
-    }
+    // const deleteTask = () => {
+    //     const task = this.parentElement;
+    //     console.log(task);
+    //     task.style.display = "none";
+    // }
 
     closeBtns.forEach(closeBtn => {
-        console.log(closeBtn);
-        closeBtn.onclick = deleteTask();
-    })
+        
+        closeBtn.onclick = function() {
+            let div = this.parentElement;
+            div.style.display = "none";
+        };
+        
+    });
 
     // Add a "checked" symbol when clicking on a list item
     let list = document.querySelector('ul');
@@ -429,15 +450,26 @@ if (mainTodoList) {
             alert("You cannot add an empty task");
         } else {
             document.getElementById("ul-todo").appendChild(li);
+            //console.log("hi");
+            addCloseBtnToListItems();
+
         }
         inputValue = "";
     
-        addCloseBtnToListItem();
-    
+        ///addCloseBtnToListItems();
+        closeBtns = document.querySelectorAll(".close");
+
         closeBtns.forEach(closeBtn => {
-            closeBtn.onclick = deleteTask();
-        })
-    }
+            closeBtn.onclick = function() {
+                
+                let div = this.parentElement;
+                //console.log(div);
+                //console.log(closeBtn);
+                div.style.display = "none";
+            };
+            
+        });
+    };
 
     const addBtn = document.querySelector("#add-btn");
     addBtn.addEventListener("click", newElement);
