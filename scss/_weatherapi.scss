@@ -89,7 +89,7 @@ h3 {
 .bargraph-temps {
     
     color: $dark-blue;
-    // -webkit-text-stroke: 1px $dark-blue;
+    min-width: 785px;
     font-size: 15px;
     font-weight: 400;
 }

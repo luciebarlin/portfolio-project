@@ -460,4 +460,99 @@ if (mainTodoList) {
 
 
 
+/// carousel
+const carousel = document.querySelector(".carousel");
 
+if (carousel) {
+    // Select all slides
+    const carouselSlides = document.querySelectorAll(".carousel-slide");
+
+    // loop through slides and set each slides translateX property to index * 100% 
+    carouselSlides.forEach((slide, indx) => {
+        slide.style.transform = `translateX(${indx * 100}%)`;
+    });
+
+    // current slide counter
+    let curSlide = 0;
+    let maxSlide = carouselSlides.length - 1;
+
+    // select next slide button
+    const nextSlide = document.querySelector(".carousel-next");
+
+    // add event listener and next slide functionality
+    nextSlide.addEventListener("click", function () {
+        // check if current slide is the last and reset current slide
+        if (curSlide === maxSlide) {
+            curSlide = 0;
+        } else {
+            curSlide++;
+        }
+
+        carouselSlides.forEach((slide, indx) => {
+            slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+        });
+    });
+
+    // select prev slide button
+    const prevSlide = document.querySelector(".carousel-prev");
+
+    // add event listener and navigation functionality
+    prevSlide.addEventListener("click", function () {
+    // check if current slide is the first and reset current slide to last
+        if (curSlide === 0) {
+            curSlide = maxSlide;
+        } else {
+            curSlide--;
+        }
+
+        //   move slide by 100%
+        carouselSlides.forEach((slide, indx) => {
+            slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+        });
+    });
+
+    //
+    const showNextSlide = () => {
+        if (curSlide === maxSlide) {
+            curSlide = 0;
+        } else {
+            curSlide++;
+            
+        }
+
+        carouselSlides.forEach((slide, indx) => {
+           //console.log(slide);
+            slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+        });
+        //setTimeout(showNextSlide, 2000);
+    }
+
+    showNextSlide();
+
+
+    
+}
+
+// slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+// slide.style.zIndex -= 1;
+
+
+
+//todo
+
+// card index 0 will be active class, 1 and 2 will be right class
+// active class:
+    //translate x axis 0;
+    //transition: all 0.5s;
+    // z-index: 3;
+//left class:
+    //translate x axis -100%
+    //transition: all 0.5s;
+    //z-index: 2;
+//right class: 
+    //translate x axis 100%
+    //transition: all 0.5s;
+    //z-index: 1;
+
+// 
+    
