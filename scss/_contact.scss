@@ -2,17 +2,35 @@
 
 .contact-header {
     img {
-        height: 40px;
+        height: 48px;
+
+        @media (min-width: 1200px) {
+            height: 40px;
+        }
     }
 }
 
 .business-card {
     background-color: transparent;
-    height: calc(250px + $regular-gap);
-    width: calc(350px + $regular-gap);
+    height: calc(187px + $regular-gap);
+    width: calc(262px + $regular-gap);
     margin: 0 auto;
     padding: $regular-gap;
     perspective: 1000px;
+    
+
+    @media (min-width: 1200px) {
+        height: calc(250px + $regular-gap);
+        width: calc(350px + $regular-gap);
+
+        &:hover {
+            .business-card__inner {
+                transform: rotateY(180deg);
+            }
+        }
+    }
+
+    
 
     &__inner {
         position: relative;
@@ -23,11 +41,7 @@
         transform-style: preserve-3d;
     }
 
-    &:hover {
-        .business-card__inner {
-            transform: rotateY(180deg);
-        }
-    }
+    
 
     &__front,
     &__back {
@@ -40,13 +54,37 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        box-shadow: 5px 5px 10px $dark-blue;
+
+        @media (min-width: 1200px) {
+           box-shadow: 5px 5px 10px $dark-blue;
+        }
 
     }
 
     &__front {
         display: flex;
+        flex-direction: column;
         background-color: $light-pink;
         color: $dark-blue;
+
+        .linkedin-logo-mobile {
+            img {
+                height: 45px;
+                width: 45px;
+                position: absolute;
+                bottom: 15px;
+                right: 15px;
+            }
+
+            @media (min-width: 1200px) {
+                display: none;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            flex-direction: row;
+        }
     }
 
     &__left {
@@ -56,12 +94,25 @@
 
     &__right {
         padding: 10px 20px;
+        font-size: 1em;
+
+        @media (min-width: 1200px) {
+            font-size: 14px;
+        }
     }
 
     h2 {
         margin: 0;
-        border-right: 5px solid $dark-blue;
+        border-bottom: 5px solid $dark-blue;
         padding: 10px;
+        font-size: 2em;
+
+        @media (min-width: 1200px) {
+            border-right: 5px solid $dark-blue;
+            border-bottom: none;
+            font-size: 20px;
+
+        }
     }
 
     .linkedin-logo {
@@ -72,6 +123,7 @@
             bottom: 30px;
             right: 30px;
         }
+
        
     }
 
@@ -86,6 +138,16 @@
             width: 350px;
             border-radius: calc($regular-gap / 2);
 
+        }
+
+        .my-email {
+            color: $oatmeal;
+            font-weight: 600;
+            font-size: 20px;
+            -webkit-text-stroke: 1px #163057;
+            position: absolute;
+            left: 30px;
+            bottom: 30px;
         }
     }
     
