@@ -13,9 +13,76 @@
   </head>
   <body>
 
-    <h1>
-      Will you need an umbrella today?
-    </h1>
+    <header>
+
+      <nav class="nav-bar__inner-desktop">
+
+        <ul>
+          <li>
+            <a href="index.html">About me</a>
+          </li>
+          <li class="dropdown-menu js-menu-btn">
+            <a data-target="experience-links" href="experience.html">Experience</a>
+            <!-- add dropdown menu -->
+
+          </li>
+
+          <!-- Navigation links (hidden by default) -->
+          <div id="experience-links" class="hide-menu js-menu-list nav-links">
+              <a href="certs.html">Codecademy certificates</a>
+              <a target="_blank" href="certs/CV Lucie Barlin 06-2022 (1).pdf">Prior employment</a>
+          </div>
+<!-- working on -->
+          <li class="dropdown-menu js-menu-btn">
+            <a data-target="project-links" href="projects.html">Projects</a>
+            <!-- add dropdown menu -->
+          </li>
+
+          <!-- Navigation links (hidden by default) -->
+          <div id="project-links" class="hide-menu js-menu-list nav-links">
+              <a target="_blank" href="moving_cards.html">Moving Cards</a>
+              <a target="_blank" href="todolist.html">Todo list</a>
+              <a target="_blank" href="eight_ball.html">Magic 8 Ball</a>
+              <a target="_blank" href="weatherapi.html">Umbrella checker</a>
+          </div>
+
+          <li>
+            <a href="skills.html">Skills</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+      </nav>
+
+      <nav class="nav-bar__inner-mobile">
+
+        <ul>
+          <li>
+            <a href="index.html">About me</a>
+          </li>
+          <li>
+            <a href="experience.html">Experience</a>
+          </li>
+          <li>
+            <a href="projects.html">Projects</a>
+          </li>
+          <li>
+            <a href="skills.html">Skills</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+      </nav>
+
+      <h1>
+        Will you need an umbrella today?
+      </h1>
+  </header>
+   
 
     <main>
         
@@ -38,17 +105,18 @@
             </div>
         </div>
 
-        
-        <h2>
-          Temperature fluctuations over the day in celcius
-        </h2> 
-        <div id="bar-graph">
-          <!-- Make one extra div for each number in array -->
-          <!-- <div class="new-bar">
+        <div class="temp-graph-info-desktop">
+          <h2>
+            Temperature fluctuations over the day in celcius
+          </h2> 
+          <div id="bar-graph">
+            <!-- Make one extra div for each number in array -->
+            <!-- <div class="new-bar">
 
-          </div> -->
+            </div> -->
+          </div>
+          <h2>Time in hours</h2> 
         </div>
-        <h2>Time in hours</h2> 
         
     </main>
       

@@ -386,7 +386,7 @@ if (mainTodoList) {
     
 
     const addCloseBtnToListItems = () => {
-        const myListItems = document.querySelectorAll("li");
+        const myListItems = document.querySelectorAll("#ul-todo li");
         myListItems.forEach(item => {
             const span = document.createElement("SPAN");
             const txt = document.createTextNode("\u00D7");
@@ -555,4 +555,115 @@ if (carousel) {
     //z-index: 1;
 
 // 
+///////////////////////
+
+// magic eight ball
+const inputBoxEightball = document.getElementById("input-box-eightball");
+
+if (inputBoxEightball) {
+    // const inputBox = document.getElementById("input-box");
+    const questionLog = document.getElementById("question-log");
+    const answerLog = document.getElementById("answer-log");
+
+    inputBoxEightball.onkeydown = function(e){
+        if(e.keyCode == 13){
+            
+            inputBoxValue = inputBoxEightball.value;
+
+            const capitalizeFirstLetter = string => {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            }
+            
+            const inputBoxValueCap = capitalizeFirstLetter(inputBoxValue); 
+
+            questionLog.innerHTML = `You asked: ${inputBoxValueCap}`;
+        
+            if (inputBoxValue.slice(-1) !== "?") {
+                questionLog.innerHTML += "?";
+            }
+
+        getAnswer();
+        }
+    };
+
+    const answers = [
+        'It is certain.', 
+        'It is decidedly so.', 
+        'Without a doubt.', 
+        'Reply hazy, try again.', 
+        'Ask again later.', 
+        'Don\'t count on it.', 
+        'Outlook not so good.', 
+        'Very doubtful.'
+    ];
+
+    const getAnswer = () => {
+
+        i = Math.floor(Math.random() * 8);
+        answerLog.innerHTML = `Answer: ${answers[i]}`;
+    }
+
+}
+
+///////////////////////
+
+//moving-cards
+
+const cardsProject = document.querySelector(".cards-project");
+
+if (cardsProject) {
+    const movingCards = document.querySelectorAll(".moving-card");
+    const logPhrase = () => {
+        console.log("woah here he comes");
+    };
     
+    window.setTimeout(logPhrase, 1000);
+    
+    
+    
+    
+    
+    const startSliders = () => {
+        //have all cards finished moving? 
+        let workIsDone = false;
+        //console.log(movingCards);
+        //has the card moved or have all cards moved?
+        movingCards.forEach((card) => {
+            if (card.classList.contains("moved") || workIsDone) {
+                //searches for the next card that doesn't have the class moved
+                return;
+            }
+            //console.log(card);
+            card.classList.add("moved");
+            workIsDone = true; // makes loop not do anything each time
+        });
+    
+        //last card has moved
+        if (movingCards[movingCards.length - 1].classList.contains("moved")) {
+            //trigger reverse here
+            window.setTimeout(reverseSliders, intervalTime);
+            window.clearInterval(interval);
+        }
+    
+    };
+    
+    const intervalTime = 2000;
+    const interval = setInterval(startSliders, intervalTime);
+    
+    const reverseSliders = () => {
+        let workIsDone = false;
+    
+        movingCards.forEach((card) => {
+            //searches for the next card that has the class moved
+            if (!card.classList.contains("moved") || workIsDone) {
+                return;
+            }
+            
+            card.classList.remove("moved");
+        });
+    
+    };
+    
+    // const reverseInterval = setInterval(reverseSliders, intervalTime);
+    
+}

@@ -1,0 +1,156 @@
+$cardWidth: 230px;
+$cardWidthMobile: 100px;
+$bodyPadding: 300px;
+$xOffset: 8px;
+$xOffsetMobile: $xOffset + $regular-gap;
+$numberOfCardsInDeck: 4;
+
+$cardOneZIndex: 1;
+$cardTwoZIndex: $numberOfCardsInDeck;
+$cardThreeZIndex: $cardTwoZIndex - 1;
+$cardFourZIndex: $cardThreeZIndex - 1;
+$cardFiveZIndex: $cardFourZIndex - 1;
+
+$cardTwoZIndexMoved: $numberOfCardsInDeck;
+$cardThreeZIndexMoved: $cardTwoZIndexMoved + 1;
+$cardFourZIndexMoved: $cardThreeZIndexMoved + 1;
+$cardFiveZIndexMoved: $cardFourZIndexMoved + 1;
+
+//scss array
+$colors: $light-pink, $light-grey, $oatmeal, $light-grey, $light-pink;
+$zIndexes: $cardOneZIndex, $cardTwoZIndex, $cardThreeZIndex, $cardFourZIndex, $cardFiveZIndex;
+$zIndexesMoved: $cardOneZIndex, $cardTwoZIndexMoved, $cardThreeZIndexMoved, $cardFourZIndexMoved, $cardFiveZIndexMoved;
+@for $i from 1 through length($colors) {
+    .cards-project {
+        :nth-child(#{$i}) {
+            @extend .card;
+            background-color: nth($colors, $i);
+            z-index: nth($zIndexes, $i);
+            left: calc($bodyPadding - 100px) + $xOffset * ($i - 2);
+
+            @media (min-width: 1200px) {
+                left: calc(100% - ($cardWidth + $bodyPadding - ($xOffset * $i)));
+            }
+
+            &.moved {
+                z-index: nth($zIndexesMoved, $i);
+                ////////////////////TODO
+                left: $xOffsetMobile + ($xOffset * ($i - 2));
+
+                @media (min-width: 1200px) {
+                    //z-index: nth($zIndexesMoved, $i);
+                    left: calc($bodyPadding - 100px) + $xOffset * ($i - 1);
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+html,
+.cards-project {
+    width: 100%;
+
+}
+
+.cards-project {
+    // font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    // color: $dark-blue;
+    // background-color: lighten($oatmeal, 5%);
+
+    @media (min-width: 1200px) {
+        font-size: 28px;
+    }
+
+    :nth-child(1) {
+        left: $regular-gap;
+
+        @media (min-width: 1200px) {
+            left: calc($bodyPadding - 100px);
+        }
+    }
+
+    // :nth-child(1) {
+    //     @extend .card;
+    //     background-color: aqua;
+    //     z-index: $cardOneZIndex;
+    // }
+
+    // :nth-child(2) {
+    //     @extend .card;
+    //     background-color: plum;
+    //     z-index: $cardTwoZIndex;
+    //     left: calc(100% - ($cardWidth + $bodyPadding - ($xOffset * 2)));
+
+    //     &.moved {
+    //         z-index: $cardTwoZIndexMoved;
+    //     }
+    // }
+
+    // :nth-child(3) {
+    //     @extend .card;
+    //     background-color: #FBCEB1;
+    //     z-index: $cardThreeZIndex;
+    //     left: calc(100% - ($cardWidth + $bodyPadding - ($xOffset * 3)));
+
+    //     &.moved {
+    //         z-index: $cardThreeZIndexMoved;
+    //     }
+    // }
+
+    // :nth-child(4) {
+    //     @extend .card;
+    //     background-color: #bfe3b4;
+    //     z-index: $cardFourZIndex;
+    //     left: calc(100% - ($cardWidth + $bodyPadding - ($xOffset * 4)));
+
+    //     &.moved {
+    //         z-index: $cardFourZIndexMoved;
+    //     }
+    // }
+
+    // :nth-child(5) {
+    //     @extend .card;
+    //     background-color: #ffffa7;
+    //     z-index: $cardFiveZIndex;
+    //     left: calc(100% - ($cardWidth + $bodyPadding - ($xOffset * 5)));
+
+    //     &.moved {
+    //         z-index: $cardFiveZIndexMoved;
+    //     }
+    // }
+
+
+    .card {
+        border: 1px solid $dark-blue;
+        border-radius: 10px;
+        line-height: 1.5;
+        width: $cardWidthMobile;
+        padding: 20px;
+        position: absolute;
+        top: 30px;
+        text-align: center;
+        transition: left ease-in 2s;
+
+        @media (min-width: 1200px) {
+            line-height: 2;
+            width: $cardWidth;
+            padding: 50px;
+
+            
+        }
+    }
+
+    .moved {
+        left: 30px;
+    }
+
+}

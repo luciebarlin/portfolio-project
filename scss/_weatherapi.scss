@@ -30,6 +30,7 @@ main {
         display: none;
         justify-content: center;
         margin: 0 auto;
+        width: 100%;
     }
 }
 
@@ -66,23 +67,48 @@ h3 {
         color: $oatmeal;
         background-color: $dark-blue;
         border-radius: 50%;
-        width: 135px;
-        height: 135px;
+        width: 90px;
+        height: 90px;
         margin: $regular-gap;
         padding: calc($regular-gap / 2);
-        font-size: 0.9rem;
+        font-size: 0.7rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         position: absolute;
-        bottom: 45px;
-        right: -100px;
-        border: 10px solid $oatmeal;
+        bottom: -15px;
+        right: -25px;
+        border: 3px solid $oatmeal;
+
+        
+        @media (min-width: 1200px) {
+            width: 135px;
+            height: 135px;
+            font-size: 0.9rem;
+            bottom: 45px;
+            right: -100px;
+            border: 10px solid $oatmeal;
+        }
     
         #gloves-test {
             font-size: smaller;
+            display: none;
+
+            @media (min-width: 1200px) {
+                display: block;
+            }
         }
+    }
+}
+
+.temp-graph-info-desktop {
+    display: none;
+
+    @media (min-width: 1200px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 

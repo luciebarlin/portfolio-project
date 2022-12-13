@@ -1,6 +1,10 @@
 #main-todolist {
     margin: 0 auto;
-    min-width: 560px;
+    width: 390px;
+
+    @media (min-width: 1200px) {
+        width: 560px;
+    }
 }
 
 
@@ -13,6 +17,7 @@
     text-align: center;
     width: 100%;
 
+    
 
     /* Clear floats after the header */
     &:after {
@@ -28,11 +33,15 @@
     margin: 0 22px;
     border: none;
     border-radius: 0;
-    width: 75%;
+    width: 65%;
     padding: 10px;
     float: left;
     font-size: 16px;
     line-height: 1.5;
+
+    @media (min-width: 1200px) {
+        width: 75%;
+    }
 }
 
 /* Style the "Add" button */
@@ -67,9 +76,9 @@
 li {
     cursor: pointer;
     position: relative;
-    padding: 12px 40px;
+    padding: 12px 35px;
     background: $oatmeal;
-    font-size: 18px;
+    font-size: 16px;
     transition: 0.2s;
     font-weight: 600;
     
@@ -78,6 +87,11 @@ li {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
+    @media (min-width: 1200px) {
+        font-size: 18px;
+        padding: 12px 40px;
+    }
 
     &:hover {
         background: darken($oatmeal, 20%);
