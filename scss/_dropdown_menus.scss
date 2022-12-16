@@ -1,8 +1,6 @@
 //dropdown menus
 
-.hide-menu {
-    display: none;
-}
+
 
 .flex-column {
     display: flex;
@@ -21,6 +19,12 @@ nav {
             z-index: 2;
             padding: 10px;
             max-width: 100px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hide-menu {
+            display: none;
         }
 
         #project-links {

@@ -1,12 +1,17 @@
 .carousel {
     width: 100%;
-    max-width: 1000px;
-    height: 1350px;
+    max-width: 393px;
+    height: 525px;
     position: relative;
     overflow: hidden;
     justify-content: center;
     display: flex;
     margin-bottom: calc($regular-gap * 2);
+
+    @media (min-width: 1200px) {
+        height: 1350px;
+        max-width: 1000px;
+    }
 }
 
 
@@ -27,7 +32,7 @@
 .carousel-btn {
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 45%;
     width: auto;
     margin-top: -22px;
     padding: 16px;
@@ -57,18 +62,11 @@
     left: 0;
     border-radius: 0 3px 3px 0;
 
-    @media (min-width: 1200px) {
-        top: 45%;
-    }
 }
 
 .carousel-next {
     right: 0;
     border-radius: 3px 0 0 3px;
-
-    @media (min-width: 1200px) {
-        top: 45%;
-    }
 
 }
 

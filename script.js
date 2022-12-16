@@ -21,7 +21,7 @@ menuBtns.forEach(menuBtnItem => {
         //toggles the hide-menu class of the selected element
         // console.log(event.target);
         // console.log(targetStr);
-        console.log(event.target);
+        //console.log(event.target);
         if (target.classList.contains("hide-menu")) {
             menuList.forEach(menuListItem => {
                 menuListItem.classList.add("hide-menu");
@@ -420,20 +420,31 @@ if (mainTodoList) {
     }, false);
 
     // Create a new list item when clicking on the "Add" button
-    const newElement = () => {
+    const createNewElement = () => {
         const li = document.createElement("li");
         const inputHole = document.getElementById("todo-input");
         let inputValue = inputHole.value;
-        const t = document.createTextNode(inputValue);
-        li.appendChild(t);
+        const newTaskElement = document.createTextNode(inputValue);
+        li.appendChild(newTaskElement);
+        console.log(newTaskElement);
         
+        let tasksArr = [];
+        //tasksArr.push(newTask);
+        
+        // conver the array to string then store it.
+        //localStorage.setItem('test', JSON.stringify(['test123', 'value']));
+        //localStorage.setItem('tasksArr', JSON.stringify(tasksArr));
 
         if (inputValue === '') {
             alert("You cannot add an empty task");
         } else {
             document.getElementById("ul-todo").appendChild(li);
             //console.log("hi");
+            console.log(typeof inputValue, tasksArr);
             addCloseBtnToListItems();
+            tasksArr.push(inputValue);
+            console.log(tasksArr);
+            localStorage.setItem('tasksArr', JSON.stringify(tasksArr));
 
         }
         inputValue = "";
@@ -454,7 +465,7 @@ if (mainTodoList) {
     };
 
     const addBtn = document.querySelector("#add-btn");
-    addBtn.addEventListener("click", newElement);
+    addBtn.addEventListener("click", createNewElement);
 }
 
 
