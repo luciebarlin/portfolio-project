@@ -678,3 +678,9 @@ if (cardsProject) {
     // const reverseInterval = setInterval(reverseSliders, intervalTime);
     
 }
+
+
+/////////////////
+
+//hangman
+
