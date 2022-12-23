@@ -78,12 +78,12 @@
 
       </nav>
 
-        <h1 class="hangman__header">
+        <h1 id="hangman__header">
             Hangman
         </h1>
-        <h2 class="hangman__lower-header">
+        <!-- <h2 id="hangman__lower-header">
           5 letter word
-        </h2>
+        </h2> -->
     </header>
 
     <body>
@@ -93,20 +93,49 @@
 
             <div id="input-area">
                 <input id="input-box-hangman" type="text" placeholder="press submit to guess a letter">
-                <span class="submit-btn">
+                <span id="submit-btn">
                     Submit
                 </span>
+            </div>
+
+            <div id="guess-confirmation">
+              
+            </div>
+
+            <div id="restart-btn">
+              Play again?
             </div>
                 
             <div id="letters-area">
                 <div id="answer-box">
+                  <div id="letter-row">
+                    <!-- <span class="underscore">_</span>
+                    <span class="underscore">_</span>
+                    <span class="underscore">_</span>
+                    <span class="underscore">_</span>
+                    <span class="underscore">_</span> -->
+                  </div>
                 </div>
 
-                <div id="guessed-letter-log">
-                    Letter graveyard
+                <div id="guessed-letter-log-incorrect">
+                    <h2>
+                      Letter graveyard <span id="lives-remaining"></span>
+                    </h2>
+                    <div id="letter-graveyard">
+
+                    </div>
+                    <div id="lives-counter">
+
+                    </div>
                 </div>
             </div>
                 
+            <div class="modal__winner">
+              <img src="images/winner.jpg" alt="bold text saying 'you win!' over a colourful fireworks background">
+            </div>
+            <div class="modal__loser">
+              <img src="images/loser.jpg" alt="bold text saying 'you died' over a grey foggy gravestone background">
+            </div>
             
         </main>
 

@@ -684,3 +684,182 @@ if (cardsProject) {
 
 //hangman
 
+const hangmanGame = document.getElementById("hangman");
+
+if (hangman) {
+    const guessHole = document.querySelector("#input-box-hangman");
+    const submitBtn = document.querySelector("#submit-btn");
+    const guessedLetterLogIncorrect = document.querySelector("#guessed-letter-log-incorrect");
+    const guessConfirmation = document.querySelector("#guess-confirmation");
+    const letterRow = document.querySelector("#letter-row");
+    const skull = "💀";
+    const livesCounter = document.querySelector("#lives-counter");
+    const letterGraveyard = document.querySelector("#letter-graveyard");
+    const livesRemainingEl = document.querySelector("#lives-remaining");
+    let livesRemaining = 9;
+    const winnerModal = document.querySelector(".modal__winner");
+    const loserModal = document.querySelector(".modal__loser");
+    const restartBtn = document.querySelector("#restart-btn");
+
+
+    //underscores for mystery answer
+    let answerArr = [];
+
+    // array for incorrect letters
+    let incorrectLetterArr = [];
+
+    //set lives left on page load
+    const setLivesRemainingCounter = number => {
+        let livesRemainingCounter = number;
+        livesRemainingEl.innerHTML = livesRemainingCounter;
+    }
+    setLivesRemainingCounter(livesRemaining);
+
+    //array for skulls to appear (lives)
+    const addSkullsToLivesCounter = () => {
+        let skullArr = [];
+        // lives left
+        
+        let livesRemainingCounter = livesRemaining - 1;
+        livesRemainingEl.innerHTML = livesRemainingCounter;
+
+        incorrectLetterArr.forEach(wrongLetter => {
+            skullArr.push(skull);
+            livesCounter.innerHTML = skullArr.join("");
+            livesRemainingEl.innerHTML = livesRemainingCounter--;
+        })
+
+        //lose the game
+        if (skullArr.length >= 9) {
+            setTimeout(showLoserPopup, 200);
+        }
+    }
+
+    //answer choices
+    const possibleAnswersArr = [
+        "Which", "Their", "There", 
+        "Would", "Other", "These", 
+        "About", "First", "Could", 
+        "After", "Those", "Where", 
+        "Being", "Under", "Years", 
+        "Great", "State", "World", 
+        "Three", "While"];
+
+    //make the answers uppercase
+    const possibleAnswersArrCaps = possibleAnswersArr.map(word => {
+        return word.toUpperCase();
+    });
+
+    //choose a word from the possible answers
+    const randomWord = Math.floor(Math.random() * possibleAnswersArrCaps.length);
+    const hangmanAnswer = possibleAnswersArrCaps[randomWord];
+
+    console.log(hangmanAnswer);
+
+    //put in the underscores for the mystery answer
+    Array.from(hangmanAnswer).forEach(letter => {
+        answerArr.push("_");
+        letterRow.innerHTML = answerArr.join("");
+    });
+
+    //check for double letters, if so replace both indexes
+    const checkIfAnswerHasDoubleLetters = (hangmanAnswer, guessedLetterCaps) => {
+        const checker = hangmanAnswer.indexOf(guessedLetterCaps);
+        const secondindexOfLetterInAnswer = hangmanAnswer.indexOf(guessedLetterCaps, checker + 1);
+
+        if (secondindexOfLetterInAnswer > 0) {
+            answerArr[secondindexOfLetterInAnswer] = guessedLetterCaps;
+        };
+    }
+
+    //put the correctly guessed letter in the right place of the mystery answer
+    const replaceUnderscoreWithLetter = (indexOfLetterInAnswer, guessedLetterCaps) => {
+        answerArr[indexOfLetterInAnswer] = guessedLetterCaps;
+        letterRow.innerHTML = answerArr.join("");
+    };
+
+    // function for showing loser popup and disabling submit btn
+    const showLoserPopup = () => {
+        submitBtn.style.display = "none";
+        loserModal.style.display = "block";
+        guessedLetterLogIncorrect.style.display = "none";
+    }
+
+    // function for showing winner popup and disabling submit btn
+    const showWinnerPopup = () => {
+        submitBtn.style.display = "none";
+        winnerModal.style.display = "block";
+        guessedLetterLogIncorrect.style.display = "none";
+        return;
+    }
+
+    const checkLetter = () => {
+        const guessedLetter = guessHole.value;
+        const guessedLetterCaps = guessedLetter.toUpperCase();
+
+        if (guessedLetterCaps.length > 1) {
+            guessConfirmation.innerHTML = `Guess just one letter please`;
+            guessHole.value = "";
+        } else if (guessedLetterCaps.length === 0) {
+            return;
+        } else {
+            guessConfirmation.innerHTML = `You guessed: ${guessedLetterCaps}`;
+            guessHole.value = "";
+        };
+
+        if (!hangmanAnswer.includes(guessedLetterCaps)) {
+
+            incorrectLetterArr.push(guessedLetterCaps);
+            letterGraveyard.innerHTML = incorrectLetterArr.join("");
+
+            addSkullsToLivesCounter();
+
+        } else {
+            Array.from(hangmanAnswer).forEach(letter => {
+                let indexOfLetterInAnswer = hangmanAnswer.indexOf(guessedLetterCaps);
+
+                replaceUnderscoreWithLetter(indexOfLetterInAnswer, guessedLetterCaps);
+                checkIfAnswerHasDoubleLetters(hangmanAnswer, guessedLetterCaps);
+
+            });
+
+            if (letterRow.innerHTML === hangmanAnswer) {
+                setTimeout(showWinnerPopup, 200);
+            };
+
+        }
+
+        guessHole.focus();
+
+    }
+
+    submitBtn.addEventListener("click", checkLetter);
+    guessHole.addEventListener("keydown", function (event) {
+        if (event.code === "Enter") {
+            checkLetter(event);
+        }
+    })
+
+    // function to reload page
+    const reloadPage = () => {
+        document.location.reload();
+    }
+
+    // reload page on click of play again button
+    restartBtn.addEventListener("click", reloadPage);
+
+    window.onclick = function() {
+        if (winnerModal.style.display === "block" || loserModal.style.display === "block") {
+            winnerModal.style.display = "none";
+            loserModal.style.display = "none";
+            guessConfirmation.innerHTML = "";
+            guessedLetterLogIncorrect.style.display = "flex";
+            restartBtn.style.display = "flex";
+        }
+
+    }
+    
+
+}
+
+

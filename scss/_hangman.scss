@@ -1,6 +1,10 @@
-.hangman {
+
+
+#hangman {
+    position: relative;
+
     &__header {
-        margin-bottom: 0;
+        margin-bottom: 16px;
     }
 
     &__lower-header {
@@ -16,14 +20,19 @@
 
 #input-box-hangman {
     height: 32px;
-    width: 300px;
+    width: 210px;
     border: 2px solid $dark-blue;
     font-size: 16px;
     padding: 0 2px;
+
+    @media (min-width: 1200px) {
+        width: 300px;
+
+    }
 }
 
-.submit-btn {
-    padding: 2px 10px;
+#submit-btn {
+    padding: 2px 8px;
     height: 32px;
     width: fit-content;
     background: $light-pink;
@@ -37,29 +46,109 @@
     align-content: center;
     flex-wrap: wrap;
 
+    @media (min-width: 1200px) {
+        padding: 2px 10px;
+    }
+
     &:hover {
         background-color: darken($light-pink, 10%);
 
     }
 }
 
+#guess-confirmation {
+    height: 48px;
+}
+
+#restart-btn {
+    padding: 2px 8px;
+    height: 32px;
+    width: fit-content;
+    background: $light-pink;
+    color: $dark-blue;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    line-height: 1.5;
+    display: none;
+    align-content: center;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 15%;
+
+    @media (min-width: 1200px) {
+        padding: 2px 10px;
+    }
+
+    &:hover {
+        background-color: darken($light-pink, 10%);
+
+    }
+}
 
 #letters-area {
     display: flex;
-    margin-top: $regular-gap;
-    gap: $regular-gap;
+    margin-top: calc($regular-gap / 2);
+    gap: calc($regular-gap / 2);
+    flex-direction: column;
+
+    @media (min-width: 1200px) {
+        flex-direction: row;
+        margin-top: $regular-gap;
+        gap: $regular-gap;
+    }
 }
 
 #answer-box {
     background-color: $light-pink;
     height: 64px;
     width: 300px;
+
+    #letter-row {
+        padding-top: 10px;
+    }
 }
 
-#guessed-letter-log {
+#guessed-letter-log-incorrect {
     background-color: $light-grey;
-    height: 200px;
+    height: 150px;
     width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 10px;
+
+    @media (min-width: 1200px) {
+        height: 200px;
+    }
+
+    #lives-counter {
+        height: 32px;
+    }
+
+    
 }
 
+.modal {
 
+    &__winner,
+    &__loser {
+        display: none;
+        position: absolute;
+        top: -75%;
+        margin: 20px auto;
+
+        &:hover {
+            cursor: pointer;
+        }
+        
+        img {
+            height: auto;
+            width: 100%;
+        }
+    }
+
+    
+  
+}
