@@ -112,7 +112,7 @@
 
 #guessed-letter-log-incorrect {
     background-color: $light-grey;
-    height: 150px;
+    height: 160px;
     width: 300px;
     display: flex;
     flex-direction: column;
@@ -121,6 +121,11 @@
 
     @media (min-width: 1200px) {
         height: 200px;
+    }
+
+    #show-answer {
+        height: 40px;
+        font-size: 20px;
     }
 
     #lives-counter {

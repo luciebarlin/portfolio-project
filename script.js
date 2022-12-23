@@ -700,6 +700,7 @@ if (hangman) {
     const winnerModal = document.querySelector(".modal__winner");
     const loserModal = document.querySelector(".modal__loser");
     const restartBtn = document.querySelector("#restart-btn");
+    const showAnswer = document.querySelector("#show-answer");
 
 
     //underscores for mystery answer
@@ -736,14 +737,20 @@ if (hangman) {
     }
 
     //answer choices
-    const possibleAnswersArr = [
-        "Which", "Their", "There", 
-        "Would", "Other", "These", 
-        "About", "First", "Could", 
-        "After", "Those", "Where", 
-        "Being", "Under", "Years", 
-        "Great", "State", "World", 
-        "Three", "While"];
+    const possibleAnswersArr = 
+    // ["Which", "Their", "There", 
+    //     "Would", "Other", "These", 
+    //     "About", "First", "Could", 
+    //     "After", "Those", "Where", 
+    //     "Being", "Under", "Years", 
+    //     "Great", "State", "World", 
+    //     "Three", "While"];
+    ["Little", "System", "Number", "States", 
+        "Social", "Value", "Study", "Table", 
+        "Known", "Court", "Between", "Through", 
+        "However", "General", "Present", "Children", 
+        "Possible", "National", "Business", "Interest"
+    ];
 
     //make the answers uppercase
     const possibleAnswersArrCaps = possibleAnswersArr.map(word => {
@@ -772,6 +779,20 @@ if (hangman) {
         };
     }
 
+    //check if answer has namy of the same letter 
+    const checkIfAnswerHasMultipleSameLetters = (hangmanAnswer, guessedLetterCaps) => {
+        let indices = [];
+        const array = Array.from(hangmanAnswer);
+        const element = guessedLetterCaps;
+        let multiLetterIdx = array.indexOf(element);
+        while (multiLetterIdx !== -1) {
+            indices.push(multiLetterIdx);
+            multiLetterIdx = array.indexOf(element, multiLetterIdx + 1);
+            answerArr[multiLetterIdx] = guessedLetterCaps;
+        }
+
+    }
+
     //put the correctly guessed letter in the right place of the mystery answer
     const replaceUnderscoreWithLetter = (indexOfLetterInAnswer, guessedLetterCaps) => {
         answerArr[indexOfLetterInAnswer] = guessedLetterCaps;
@@ -783,6 +804,7 @@ if (hangman) {
         submitBtn.style.display = "none";
         loserModal.style.display = "block";
         guessedLetterLogIncorrect.style.display = "none";
+        showAnswer.innerHTML = `Answer was: ${hangmanAnswer}`;
     }
 
     // function for showing winner popup and disabling submit btn
@@ -819,7 +841,8 @@ if (hangman) {
                 let indexOfLetterInAnswer = hangmanAnswer.indexOf(guessedLetterCaps);
 
                 replaceUnderscoreWithLetter(indexOfLetterInAnswer, guessedLetterCaps);
-                checkIfAnswerHasDoubleLetters(hangmanAnswer, guessedLetterCaps);
+                //checkIfAnswerHasDoubleLetters(hangmanAnswer, guessedLetterCaps);
+                checkIfAnswerHasMultipleSameLetters(hangmanAnswer, guessedLetterCaps);
 
             });
 
@@ -855,11 +878,11 @@ if (hangman) {
             guessConfirmation.innerHTML = "";
             guessedLetterLogIncorrect.style.display = "flex";
             restartBtn.style.display = "flex";
+            
         }
 
     }
     
-
 }
 
 
