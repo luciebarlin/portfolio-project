@@ -184,6 +184,8 @@ const tempCallback = tempDataObj => {
     //bar graph of temperature data
     const barGraph = document.getElementById("bar-graph");
 
+    //change the height of the bar graph according to average temp
+    barGraph.style.height = (averageTemp * 15) + "px";
 
     const addNewBars = () => {
         //let barGraphDataArr = [];
@@ -208,7 +210,7 @@ const tempCallback = tempDataObj => {
             barGraph.appendChild(addedBar);
             addedBar.classList.add("new-bar");
             //console.log(temp * 10);
-            addedBar.style.height = temp * 20 + "px";
+            addedBar.style.height = temp * 10 + "px";
             //console.log(index);
             addedBar.innerHTML = index;
 
@@ -310,34 +312,7 @@ if (nextBtn) {
 
 //modal certs
 
-// Get the modal
-// const openModal = document.getElementById("open-modal--html");
 
-// if (openModal) {
-//     // Get the button that opens the modal
-//     const btn = document.getElementById("modal-btn--html");
-
-//     // Get the <span> element that closes the modal
-//     const span = document.getElementsByClassName("close")[0];
-
-//     // When the user clicks on the button, open the modal
-//     btn.onclick = function() {
-//         openModal.style.display = "block";
-//     }
-
-//     // When the user clicks on <span> (x), close the modal
-//     span.onclick = function() {
-//         openModal.style.display = "none";
-//     }
-
-//     // When the user clicks anywhere outside of the modal, close it
-//     window.onclick = function(event) {
-//     if (event.target == openModal) {
-//         openModal.style.display = "none";
-//     }
-//     }
-
-// }
 
 const openModals = document.querySelectorAll(".open-modal");
 
@@ -684,9 +659,9 @@ if (cardsProject) {
 
 //hangman
 
-const hangmanGame = document.getElementById("hangman");
+const hangmanGame = document.querySelector("#hangman");
 
-if (hangman) {
+if (hangmanGame) {
     const guessHole = document.querySelector("#input-box-hangman");
     const submitBtn = document.querySelector("#submit-btn");
     const guessedLetterLogIncorrect = document.querySelector("#guessed-letter-log-incorrect");
@@ -883,6 +858,6 @@ if (hangman) {
 
     }
     
-}
+};
 
 
