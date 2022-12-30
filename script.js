@@ -861,3 +861,51 @@ if (hangmanGame) {
 };
 
 
+//////////////////////////
+
+//brief sidebar
+
+const sidebarWidget = document.querySelector("#sidebar-widget");
+const overviewHeading= document.querySelector(".overview-heading");
+const pageOverview = document.querySelector(".page-overview");
+const tooltipText = document.querySelector(".tooltiptext");
+
+if (sidebarWidget) {
+    const widgetCloseBtn = document.querySelector("#widget-close");
+
+    const closeOverview = () => {
+        widgetCloseBtn.classList.toggle("rotated");
+        // widgetCloseBtn.style.transform = "translateX(-540px)";
+        overviewHeading.classList.toggle("hidden");
+        pageOverview.classList.toggle("hidden");
+        sidebarWidget.classList.toggle("sidebar-widget-closed");
+        // sidebarWidget.style.transform = "translateX(90%)";
+        // sidebarWidget.style.transform = "translateY(-90%)";
+        // sidebarWidget.style.transform = "scale(0)";
+    };
+
+    const showTooltip = () => {
+        if (!widgetCloseBtn.classList.contains("rotated")) {
+            tooltipText.classList.add("opaque");
+            tooltipText.innerHTML = "Hide brief";
+            tooltipText.classList.remove("higher");
+        } else {
+            tooltipText.classList.add("opaque");
+            tooltipText.innerHTML = "Show brief";
+            tooltipText.classList.add("higher");
+        }
+        
+    }
+
+    const hideTooltip = () => {
+        tooltipText.classList.remove("opaque");
+    }
+    
+    
+
+    widgetCloseBtn.addEventListener("click", closeOverview);
+    widgetCloseBtn.addEventListener("mouseover", showTooltip);
+    widgetCloseBtn.addEventListener("click", showTooltip);
+    widgetCloseBtn.addEventListener("mouseout", hideTooltip);
+
+}

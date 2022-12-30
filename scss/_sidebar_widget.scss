@@ -1,0 +1,221 @@
+$header-height: 193px;
+
+body {
+    position: relative;
+}
+
+.sidebar-widget-container {
+    overflow: hidden;
+    position: absolute;
+    top: calc($header-height - $regular-gap);
+    right: 10px;
+
+    @media (min-width: 1200px) {
+        top: $header-height;
+        right: 100px;
+    }
+}
+
+.sidebar-widget {
+    height: 300px;
+    width: 300px;
+    border: 2px solid $dark-blue;
+    color: $dark-blue;
+    background-color: $oatmeal;
+    transition: all 0.7s ease;
+    transform-origin: top right;
+
+    @media (min-width: 1200px) {
+        height: 600px;
+        width: 600px;
+    }
+
+    .overview-heading-box {
+        background-color: $dark-blue;
+        color: $oatmeal;
+        padding: 0 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+        //position: relative;
+        height: 55px;
+
+        .overview-heading {
+            font-weight: 600;
+            margin: 0 20%;
+
+            @media (min-width: 1200px) {
+                margin: 0 35%;
+            }
+        }
+    }
+
+    // .widget-close {
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     color: $oatmeal;
+    //     // background-color: $dark-blue;
+    //     font-weight: 600;
+    //     font-size: 24px;
+    //     transition: all 0.6s ease;
+    //     position: absolute;
+    //     top: 3px;
+    //     left: calc(100% - 50px);
+    //     height: 50px;
+    //     width: 50px;
+    //     z-index: 2;
+    
+    //     &:hover {
+    //         cursor: pointer;
+    //     }
+    
+        
+        
+    // }
+
+    // .rotated {
+    //     transform: rotate(135deg);
+    // }
+
+    .translated {
+        transform: translateX(200px);
+    }
+    
+
+    ul {
+        text-align: left;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+}
+
+.widget-close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $oatmeal;
+    background-color: transparent;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 28px;
+    transition: all 0.6s ease;
+    position: absolute;
+    top: calc($header-height - 37px);
+    left: calc(100% - 46px);
+    height: 38px;
+    width: 38px;
+    padding: 3px;
+    z-index: 2;
+
+    
+    
+    &:hover {
+        cursor: pointer;
+    }
+
+    @media (min-width: 1200px) {
+        top: calc($header-height - 10px);
+        left: calc(100% - 145px);
+        height: 50px;
+        width: 50px;
+    }
+    
+}
+
+.tooltiptext {
+    opacity: 0;
+    width: 75px;
+    background-color: $dark-blue;
+    color: $oatmeal;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    top: calc($header-height - 100px);
+    right: 10px;
+    transition: all 0.6s ease;
+
+    @media (min-width: 1200px) {
+        width: 120px;
+        top: calc($header-height - 42px);
+        right: 57px;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 83%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: $dark-blue transparent transparent transparent;
+
+        @media (min-width: 1200px) {
+            left: 50%;
+        }
+    }
+
+}
+
+.opaque {
+    opacity: 1;
+}
+
+.higher {
+    top: calc($header-height - 105px);
+
+    @media (min-width: 1200px) {
+        top: calc($header-height - 52px);
+    }
+}
+
+.rotated {
+    transform: rotate(135deg);
+    background-color: $dark-blue;
+}
+
+.sidebar-widget-closed {
+    transform: scale(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// <div id="sidebar-widget" class="sidebar-widget">
+//     <div class="overview-heading-box">
+//     <h2 class="overview-heading">
+//         Page overview 
+//     </h2>
+//     <div id="widget-close">×</div>
+//     </div>
+    
+
+//     <div class="page-overview">
+//     <ul>
+//         <li class="brief">
+//         Brief
+//         </li>
+//         <li class="concepts">
+//         Concepts used
+//         </li>
+//         <li class="problems">
+//         Problems encountered
+//         </li>
+//     </ul>
+//     </div>
+// </div>
