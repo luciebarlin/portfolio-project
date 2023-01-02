@@ -33,7 +33,7 @@ $zIndexesMoved: $cardOneZIndex, $cardTwoZIndexMoved, $cardThreeZIndexMoved, $car
             }
 
             &.moved {
-                z-index: nth($zIndexesMoved, $i);
+                // z-index: nth($zIndexesMoved, $i);
                 ////////////////////TODO
                 left: $xOffsetMobile + ($xOffset * ($i - 2));
 
@@ -41,6 +41,10 @@ $zIndexesMoved: $cardOneZIndex, $cardTwoZIndexMoved, $cardThreeZIndexMoved, $car
                     //z-index: nth($zIndexesMoved, $i);
                     left: calc($bodyPadding - 100px) + $xOffset * ($i - 1);
                 }
+            }
+
+            &.moved-z {
+                z-index: nth($zIndexesMoved, $i);
             }
         }
     }
@@ -78,55 +82,7 @@ html,
         }
     }
 
-    // :nth-child(1) {
-    //     @extend .card;
-    //     background-color: aqua;
-    //     z-index: $cardOneZIndex;
-    // }
 
-    // :nth-child(2) {
-    //     @extend .card;
-    //     background-color: plum;
-    //     z-index: $cardTwoZIndex;
-    //     left: calc(100% - ($cardWidth + $bodyPadding - ($xOffset * 2)));
-
-    //     &.moved {
-    //         z-index: $cardTwoZIndexMoved;
-    //     }
-    // }
-
-    // :nth-child(3) {
-    //     @extend .card;
-    //     background-color: #FBCEB1;
-    //     z-index: $cardThreeZIndex;
-    //     left: calc(100% - ($cardWidth + $bodyPadding - ($xOffset * 3)));
-
-    //     &.moved {
-    //         z-index: $cardThreeZIndexMoved;
-    //     }
-    // }
-
-    // :nth-child(4) {
-    //     @extend .card;
-    //     background-color: #bfe3b4;
-    //     z-index: $cardFourZIndex;
-    //     left: calc(100% - ($cardWidth + $bodyPadding - ($xOffset * 4)));
-
-    //     &.moved {
-    //         z-index: $cardFourZIndexMoved;
-    //     }
-    // }
-
-    // :nth-child(5) {
-    //     @extend .card;
-    //     background-color: #ffffa7;
-    //     z-index: $cardFiveZIndex;
-    //     left: calc(100% - ($cardWidth + $bodyPadding - ($xOffset * 5)));
-
-    //     &.moved {
-    //         z-index: $cardFiveZIndexMoved;
-    //     }
-    // }
 
 
     .card {

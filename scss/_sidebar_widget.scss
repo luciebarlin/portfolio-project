@@ -9,6 +9,10 @@ body {
     position: absolute;
     top: calc($header-height - $regular-gap);
     right: 10px;
+    z-index: 7;
+    transition: all 0.7s ease;
+    transform-origin: top right;
+
 
     @media (min-width: 1200px) {
         top: $header-height;
@@ -110,7 +114,7 @@ body {
     height: 38px;
     width: 38px;
     padding: 3px;
-    z-index: 2;
+    z-index: 8;
 
     
     
@@ -196,26 +200,33 @@ body {
 
 
 
-// <div id="sidebar-widget" class="sidebar-widget">
-//     <div class="overview-heading-box">
-//     <h2 class="overview-heading">
-//         Page overview 
-//     </h2>
-//     <div id="widget-close">×</div>
-//     </div>
-    
+// <div class="tooltiptext"> 
 
-//     <div class="page-overview">
-//     <ul>
-//         <li class="brief">
-//         Brief
-//         </li>
-//         <li class="concepts">
-//         Concepts used
-//         </li>
-//         <li class="problems">
-//         Problems encountered
-//         </li>
-//     </ul>
+// </div>
+//     <div id="widget-close" class="widget-close">
+//       × 
+//     </div>
+
+// <div id="sidebar-widget-container" class="sidebar-widget-container">
+//     <div id="sidebar-widget" class="sidebar-widget">
+//         <div class="overview-heading-box">
+//             <h2 class="overview-heading">
+//             Page overview 
+//             </h2>
+//         </div>
+        
+//         <div class="page-overview">
+//             <ul>
+//                 <li class="brief">
+//                     Brief
+//                 </li>
+//                 <li class="concepts">
+//                     Concepts used
+//                 </li>
+//                 <li class="problems">
+//                     Problems encountered
+//                 </li>
+//             </ul>
+//         </div>
 //     </div>
 // </div>

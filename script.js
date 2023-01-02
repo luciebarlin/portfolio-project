@@ -387,7 +387,7 @@ if (mainTodoList) {
     });
 
     // Add a "checked" symbol when clicking on a list item
-    let list = document.querySelector('ul');
+    let list = document.querySelector('#ul-todo');
     list.addEventListener('click', function(event) {
         if (event.target.tagName === 'LI') {
             event.target.classList.toggle('checked');
@@ -620,7 +620,7 @@ if (cardsProject) {
                 return;
             }
             //console.log(card);
-            card.classList.add("moved");
+            card.classList.add("moved", "moved-z");
             workIsDone = true; // makes loop not do anything each time
         });
     
@@ -634,6 +634,10 @@ if (cardsProject) {
     };
     
     const intervalTime = 2000;
+
+    // const widgetCloseBtn = document.querySelector("#widget-close");
+    // widgetCloseBtn.addEventListener("click", startSliders);
+
     const interval = setInterval(startSliders, intervalTime);
     
     const reverseSliders = () => {
@@ -866,6 +870,7 @@ if (hangmanGame) {
 //brief sidebar
 
 const sidebarWidget = document.querySelector("#sidebar-widget");
+const sidebarWidgetContainer = document.querySelector("#sidebar-widget-container");
 const overviewHeading= document.querySelector(".overview-heading");
 const pageOverview = document.querySelector(".page-overview");
 const tooltipText = document.querySelector(".tooltiptext");
@@ -875,13 +880,11 @@ if (sidebarWidget) {
 
     const closeOverview = () => {
         widgetCloseBtn.classList.toggle("rotated");
-        // widgetCloseBtn.style.transform = "translateX(-540px)";
         overviewHeading.classList.toggle("hidden");
         pageOverview.classList.toggle("hidden");
         sidebarWidget.classList.toggle("sidebar-widget-closed");
-        // sidebarWidget.style.transform = "translateX(90%)";
-        // sidebarWidget.style.transform = "translateY(-90%)";
-        // sidebarWidget.style.transform = "scale(0)";
+        sidebarWidgetContainer.classList.toggle("sidebar-widget-closed");
+       
     };
 
     const showTooltip = () => {
@@ -907,5 +910,10 @@ if (sidebarWidget) {
     widgetCloseBtn.addEventListener("mouseover", showTooltip);
     widgetCloseBtn.addEventListener("click", showTooltip);
     widgetCloseBtn.addEventListener("mouseout", hideTooltip);
+
+    if (cardsProject) {
+        window.addEventListener("load", closeOverview);
+        
+    }
 
 }
