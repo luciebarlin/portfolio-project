@@ -29,7 +29,15 @@ $zIndexesMoved: $cardOneZIndex, $cardTwoZIndexMoved, $cardThreeZIndexMoved, $car
             left: calc($bodyPadding - 100px) + $xOffset * ($i - 2);
 
             @media (min-width: 1200px) {
-                left: calc(100% - ($cardWidth + $bodyPadding - ($xOffset * $i)));
+                // left: calc(100% - ($cardWidth + $bodyPadding + ($xOffset * $i)));
+                left: calc(
+                    100% - (
+                        $cardWidth + $bodyPadding + (
+                            $xOffset * $i
+                        )
+                    )
+                );
+
             }
 
             &.moved {

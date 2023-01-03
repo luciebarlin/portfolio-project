@@ -1,7 +1,31 @@
 //header
 
-nav {
-    ul {
+
+.nav-bar {
+
+    &__inner-desktop {
+        display: none;
+
+        @media (min-width: 1200px) {
+            display: flex;
+            justify-content: flex-end;
+            z-index: 9;
+            height: $nav-bar-height;
+        }
+    }
+
+    &__inner-mobile {
+        display: flex;
+        justify-content: center;
+    
+        @media (min-width: 1200px) {
+            display: none;
+        }
+    }
+    
+
+    &__items {
+        //border: 1px solid red;
         display: flex;
         justify-content: center;
         list-style: none;
@@ -15,39 +39,59 @@ nav {
             padding-right: $regular-gap;
             font-size: 16px;
         }
+
+        .nav-bar__item {
+            //border: 1px solid black;
+            width: 125px;
+            z-index: 9;
+            overflow-y: visible;
+            
+        }
+
+        .nav-links {
+            //border: 1px solid green;
+            background-color: lighten($oatmeal, 5%);
+            padding: 10px;
+            width: 150px;
+            display: none;
+            flex-direction: column;
+            box-shadow: 0px 10px 10px rgb(0 0 0 / 20%);
+
+            // .weightGrow:hover {
+            //     text-shadow:
+            //     -1px -1px 0 $dark-blue,
+            //     1px -1px 0 $dark-blue,
+            //     -1px 1px 2px $dark-blue;
+            //     1px 1px 0 $dark-blue;
+            //     -webkit-transition: all .5s;
+            //     -moz-transition: all .5s;
+            //     -o-transition: all .5s;
+            //     transition: all .5s;
+            // }
+
+            
+        }
+
     }
     
 }
 
-.nav-bar__inner-desktop {
-    display: none;
-
-    @media (min-width: 1200px) {
-        display: flex;
-        justify-content: flex-end;
-    }
-}
-
-.nav-bar__inner-mobile {
+.dropdown-menu {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 
-    @media (min-width: 1200px) {
-        display: none;
-    }
-}
+    &:hover {
 
-a {
-    text-decoration: none;
-    color: $dark-blue;
+        .nav-links {
+            display: flex;
+            flex-direction: column;
 
-    @media (min-width: 1200px) {
-        transition: border-color 0.6s ease;
-        border-bottom: 1px solid transparent;
-    
-        &:hover {
-            border-color: $dark-blue;
+            
         }
     }
 }
+
+
+
     
