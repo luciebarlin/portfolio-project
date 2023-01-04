@@ -878,24 +878,42 @@ const tooltipText = document.querySelector(".tooltiptext");
 if (sidebarWidget) {
     const widgetCloseBtn = document.querySelector("#widget-close");
 
+
+    const translateSidebarWidget = () => {
+        if (widgetCloseBtn.classList.contains("rotated")) {
+            
+            if (window.innerWidth >= 1200) {
+                sidebarWidget.style.transform = "translateX(94%)";
+            } else if (window.innerWidth < 1200) {
+                sidebarWidget.style.transform = "translateX(91%)";
+            };
+            // sidebarWidget.style.transform = "translateX(94%)";
+            sidebarWidgetContainer.style.pointerEvents = "none";
+        } else {
+            sidebarWidget.style.transform = "translateX(0)";
+            sidebarWidgetContainer.style.pointerEvents = "auto";
+        }
+    }
+
     const closeOverview = () => {
         widgetCloseBtn.classList.toggle("rotated");
-        overviewHeading.classList.toggle("hidden");
-        pageOverview.classList.toggle("hidden");
-        sidebarWidget.classList.toggle("sidebar-widget-closed");
-        sidebarWidgetContainer.classList.toggle("sidebar-widget-closed");
-       
+        // overviewHeading.classList.toggle("hidden");
+        // pageOverview.classList.toggle("hidden");
+        // sidebarWidget.classList.toggle("sidebar-widget-closed");
+        // sidebarWidgetContainer.classList.toggle("sidebar-widget-closed");
+        //sidebarWidget.classList.toggle("translated");
+        translateSidebarWidget();
     };
 
     const showTooltip = () => {
         if (!widgetCloseBtn.classList.contains("rotated")) {
             tooltipText.classList.add("opaque");
             tooltipText.innerHTML = "Hide brief";
-            tooltipText.classList.remove("higher");
+            //tooltipText.classList.remove("higher");
         } else {
             tooltipText.classList.add("opaque");
             tooltipText.innerHTML = "Show brief";
-            tooltipText.classList.add("higher");
+            //tooltipText.classList.add("higher");
         }
         
     }
@@ -917,3 +935,18 @@ if (sidebarWidget) {
     }
 
 }
+
+
+
+///////////////
+
+const pageBody = document.querySelector("BODY");
+const navBarItemArr = document.querySelectorAll(".nav-bar__item");
+
+navBarItemArr.forEach(navBarItem => {
+    if (navBarItem.classList.contains(pageBody.dataset.pageName)) {
+        // console.log(navBarItem.classList);
+        navBarItem.firstElementChild.classList.add("active-page");
+    }
+});
+
