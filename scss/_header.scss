@@ -42,10 +42,13 @@
 
         .nav-bar__item {
             //border: 1px solid black;
-            width: 125px;
-            z-index: 9;
-            overflow-y: visible;
+            width: fit-content;
             
+            @media (min-width: 1200px) {
+                width: 125px;
+                z-index: 9;
+                overflow-y: visible;
+            }
         }
 
         .nav-links {
