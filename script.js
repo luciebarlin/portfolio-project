@@ -939,6 +939,7 @@ if (sidebarWidget) {
 
 
 ///////////////
+//  add bold class on nav bar item dependent on which page you are on (active page)
 
 const pageBody = document.querySelector("BODY");
 const navBarItemArr = document.querySelectorAll(".nav-bar__item");
@@ -950,3 +951,112 @@ navBarItemArr.forEach(navBarItem => {
     }
 });
 
+///////////////////
+
+const animations = document.querySelector(".animations");
+
+if (animations) {
+    //circles
+    const circlesArea = document.querySelector(".circles-area"); 
+    const randomNumber = Math.floor(Math.random() * 6) + 1;
+
+    console.log(randomNumber);
+
+    const createCircleRows = randomNumber => {
+        for (let row = 0; row < randomNumber; row++) {
+            const newRow = document.createElement("div");
+            circlesArea.appendChild(newRow);
+            newRow.classList.add(
+                //"pink-border", 
+                "columns");
+           
+            const createCircleDiv = randomNumber => {
+                for (let i = 0; i < randomNumber; i++) {
+                   const newCircle = document.createElement("div");
+                   newRow.appendChild(newCircle);
+                   newCircle.classList.add("animate-circle", "circle");
+                }
+            }
+        
+            createCircleDiv(randomNumber);
+        }
+    }
+    
+    //createCircleRows(randomNumber);
+
+    /////////// rectangles
+
+    const rectanglesArea = document.querySelector(".rectangles-area");
+    let bigRandomNumber = Math.floor(Math.random() * 6) * 10;
+
+    console.log(bigRandomNumber);
+    if (bigRandomNumber === 0) {
+        bigRandomNumber += 10;
+    };
+    console.log(bigRandomNumber);
+    
+    const createOneRectDiv = () => {
+           const newRect = document.createElement("div");
+           rectanglesArea.appendChild(newRect);
+           newRect.classList.add("rectangle");
+    }
+
+    const createMultiRectDivs = bigRandomNumber => {
+        for (let j = 0; j < bigRandomNumber; j++) {
+            createOneRectDiv();
+        }
+    }
+
+    createMultiRectDivs(bigRandomNumber);
+
+    const createdRectangles = document.querySelectorAll(".rectangle");
+
+    const showRects = () => {
+        let visible = false;
+        // const createdRectangles = document.querySelectorAll(".rectangle");
+
+        createdRectangles.forEach(rect => {
+            if (rect.classList.contains("opaque") || visible) {
+                return;
+            }
+            rect.classList.add("opaque");
+            visible = true;
+        })
+
+        const checkVisibilityAllRects = createdRectangles => {
+            const rectArr = Array.from(createdRectangles);
+            const visibility = rectArr.every(rect => {
+                //console.log(rect.classList);
+                return rect.classList.contains("opaque");
+            })
+            //console.log(rectArr);
+            console.log(visibility);
+
+            if (visibility) {
+                clearInterval(myInterval);
+                setTimeout(createCircleRows(randomNumber), 2000);
+            }
+        }
+        
+        checkVisibilityAllRects(createdRectangles);
+        
+    }
+
+    const myInterval = setInterval(showRects,1000);
+   
+
+    // const rectArr = Array.from(createdRectangles);
+
+    // const checkVisibility = rectArr.every(rect => {
+    //     rect.classList.contains("opaque");
+    // })
+
+    // console.log(checkVisibility);
+
+    //change the rectangles to be first animation
+    //if all rectangles are visible, start the circle animation
+
+ 
+    
+    //createCircleRows(randomNumber);
+}
