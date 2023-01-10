@@ -23,6 +23,8 @@ $nav-bar-height: 58px;
 @import "scss/sidebar_widget";
 @import "scss/animation_project";
 @import "scss/new_carousel";
+@import "scss/curved_div";
+@import "scss/sprinkles";
 
 
 
@@ -46,10 +48,30 @@ body {
 h1 {
     font-size: 3em;
     font-weight: 600;
+    z-index: 1;
+    // changed to show the z index
+    position: relative;
 
     @media (min-width: 1200px) {
         font-size: 3em;
     }
+}
+
+// [data-page-name="index"] {
+//     h1 {
+//         color: #E8E3D6;
+//         -webkit-text-stroke-width: 1.5px;
+//         -webkit-text-stroke-color: #163057;
+//     }
+	
+// }
+
+[data-page-name="index"] {
+    header {
+        background-color: $light-pink;
+        
+    }
+	
 }
 
 main {

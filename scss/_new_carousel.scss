@@ -1,9 +1,11 @@
 .carouselWrapper {
     width: 393px;
     position: relative;
+    margin-top: 200px;
 
     @media (min-width: 1200px) {
-        width: 1000px;
+        width: 1200px;
+        
     }
 }
 
@@ -35,7 +37,7 @@
             width: 100%;
 
             @media (min-width: 1200px) {
-                height: 1334px;
+                height: 1600px;
 
             }
         }

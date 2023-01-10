@@ -1,0 +1,21 @@
+.curved {
+    background-color: $light-pink;
+    color: $dark-blue;
+    text-align: center;
+    width: 100vw;
+    padding-top: 100px;
+
+    h2 {
+        font-size: 3rem;
+        margin-top: 0;
+    }
+
+    .my-bio {
+        font-size: 2rem;
+        margin: 0 3rem;
+    }
+
+    svg {
+        display: block;
+    }
+}
