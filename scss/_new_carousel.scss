@@ -1,0 +1,43 @@
+.carouselWrapper {
+    width: 393px;
+    position: relative;
+
+    @media (min-width: 1200px) {
+        width: 1000px;
+    }
+}
+
+.carouselContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    scrollbar-width: 0;
+    scrollbar-color: transparent transparent;
+
+    &::-webkit-scrollbar {
+        display: none;
+      }
+}
+
+.carouselContainer {
+    .carouselItem {
+        flex-grow: 0;
+        flex-shrink: 0;
+        max-width: 100%;
+        // we are telling browser to align each item centrally to 
+        // screen as it scrolls into viewport
+        scroll-snap-align: center;
+
+        img {
+            height: 525px;
+            width: 100%;
+
+            @media (min-width: 1200px) {
+                height: 1334px;
+
+            }
+        }
+    }
+}

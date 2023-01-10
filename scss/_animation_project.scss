@@ -1,11 +1,57 @@
-/////circles
-
-$rectangle-width: 150px;
+  //// rectangles
+   
+$rectangle-width-desktop: 150px;
+$rectangle-height-desktop: calc($rectangle-width-desktop / 2);
+$rectangle-width-mobile: 70px;
+$rectangle-height-mobile: calc($rectangle-width-mobile / 2);
 $rectangle-border: 4px;
+
+// $tri-border-left-right: 50px solid transparent;
+// $tri-border-top-bottom: 86.60254px solid transparent;
+// $tri-colors:  #E0BBE4, #957DAD, #D291BC, #FEC8D8, #FFDFD3;
+  
+  .rectangles-area {
+    display: flex;
+    margin-top: 10%;
+    max-width: calc(($rectangle-width-mobile + $rectangle-border) * 5);
+    flex-wrap: wrap-reverse;
+    flex-direction: row-reverse;
+
+    @media (min-width: 1200px) {
+        max-width: calc(($rectangle-width-desktop + $rectangle-border) * 5);
+
+    }
+}
+  
+.rectangle {
+    height: $rectangle-height-mobile;
+    width: $rectangle-width-mobile;
+    border: 2px solid lighten($dark-grey, 10%);
+    background-color: lighten(#B35642, 10%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+
+    @media (min-width: 1200px) {
+        height: $rectangle-height-desktop;
+        width: $rectangle-width-desktop;
+    }
+}
+
+.opaque {
+    opacity: 1;
+}
+
+
+/////circles
 
 .circles-area {
     display: flex;
-    margin-top: 15%;
+    margin-top: 220%;
+
+    @media (min-width: 1200px) {
+        margin-top: 15%;
+
+    }
 }
 
 .circle {
@@ -15,7 +61,20 @@ $rectangle-border: 4px;
     border: 1px solid $dark-blue;
 }
 
-@keyframes increase-diameter {
+@keyframes increase-diameter-mobile {
+    0% {
+        transform: scale(1.0);
+    
+    }
+    50% {
+        transform: scale(3.0);
+    }
+    100% {
+        transform: scale(0.5);
+    }
+  }
+
+@keyframes increase-diameter-desktop {
     0% {
         transform: scale(1.0);
     
@@ -29,7 +88,11 @@ $rectangle-border: 4px;
   }
   
   .animate-circle {
-    animation: increase-diameter 5s infinite alternate;
+    animation: increase-diameter-mobile 5s infinite alternate;
+
+    @media (min-width: 1200px) {
+        animation: increase-diameter-desktop 5s infinite alternate;
+    }
   }
 
   .pink-border {
@@ -41,25 +104,44 @@ $rectangle-border: 4px;
     flex-direction: column;
   }
 
-  //// rectangles
-   
- .rectangles-area {
-    display: flex;
-    margin-top: 10%;
-    max-width: calc(($rectangle-width + $rectangle-border) * 5);
-    flex-wrap: wrap-reverse;
-    flex-direction: row-reverse;
-}
-  
-.rectangle {
-    height: 75px;
-    width: 150px;
-    border: 2px solid lighten($dark-grey, 10%);
-    background-color: lighten(#B35642, 10%);
-    opacity: 0;
-    transition: opacity 0.6s ease;
+  ///////////triangles 
+
+  $tri-border-left-right: 50px solid transparent;
+  $tri-border-top-bottom: 86.60254px solid transparent;
+  // (border-left-width 50px + border-right-width 50px) * 0.8660254 = 86.60254px  
+  //     border-bottom-width = EquilateralTriangle height
+  $tri-colors:  #E0BBE4, #957DAD, #D291BC, #FEC8D8, #FFDFD3, 
+                #E0BBE4, #957DAD, #D291BC, #FEC8D8, #FFDFD3;
+
+  .triangles-area {
+    margin-top: 25%;
+    position: relative;
+    margin-bottom: 25%;
+
+    .triangle-up {
+        width: 0;
+        height: 0;
+        border-right: 50px solid  transparent; 
+        border-left: 50px solid  transparent; 
+        border-bottom: 86.60254px solid nth($tri-colors, 1);  
+        position: absolute;
+
+    }
+
+    .triangle-down {
+        width: 0; 
+        height: 0; 
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-top: 86.60254px solid nth($tri-colors, 2);
+        position: absolute;
+        top: 0;
+        left: 50px;
+      }
+
+    .border-change {
+        border-bottom-color: nth($tri-colors, 3);
+
+    }
 }
 
-.opaque {
-    opacity: 1;
-}

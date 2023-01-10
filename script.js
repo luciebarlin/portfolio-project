@@ -302,14 +302,6 @@ if (nextBtn) {
 }
 
 
-
-
-
-
-
-
-
-
 //modal certs
 
 
@@ -987,7 +979,7 @@ if (animations) {
     /////////// rectangles
 
     const rectanglesArea = document.querySelector(".rectangles-area");
-    let bigRandomNumber = Math.floor(Math.random() * 6) * 10;
+    let bigRandomNumber = Math.floor(Math.random() * 4) * 10;
 
     console.log(bigRandomNumber);
     if (bigRandomNumber === 0) {
@@ -1043,20 +1035,75 @@ if (animations) {
     }
 
     const myInterval = setInterval(showRects,1000);
-   
 
-    // const rectArr = Array.from(createdRectangles);
+    //////// triangles
 
-    // const checkVisibility = rectArr.every(rect => {
-    //     rect.classList.contains("opaque");
-    // })
+    const trianglesArea = document.querySelector(".triangles-area");
+    // const triangleUp = document.querySelector(".triangle-up");
+    const currentTriangle = document.querySelector(".current-tri");
 
-    // console.log(checkVisibility);
+    const addTriUp = () => {
+        const triangleUpArr = document.querySelectorAll(".triangle-up");
+        triangleUpArr.forEach(tri => {
+            console.log("hi2");
+            const newTriUp = document.createElement("div");
+            trianglesArea.appendChild(newTriUp);
+            newTriUp.classList.add("triangle-up");
+            newTriUp.style.left = "100px";
+            newTriUp.classList.add("border-change", "current-tri");
+        })
 
-    //change the rectangles to be first animation
-    //if all rectangles are visible, start the circle animation
+        console.log("hi");
+        currentTriangle.addEventListener("click", addTriangleDown);
+            
+    }
 
- 
+    const addTriangleDown = () => {
+        const newTriDown = document.createElement("div");
+        trianglesArea.appendChild(newTriDown);
+        newTriDown.classList.add("triangle-down");
+        newTriDown.addEventListener("click", addTriUp);
+
+    }
+
+    const removeActiveTri = () => {
+        currentTriangle.classList.remove("current-tri");
+        currentTriangle.removeEventListener("click", addTriangleDown);
+    }
     
-    //createCircleRows(randomNumber);
+
+    currentTriangle.addEventListener("click", addTriangleDown);
+    currentTriangle.addEventListener("click", removeActiveTri);
+
+}
+
+//////////////////
+
+// new carousel
+const newCarousel = document.querySelector(".new-carousel");
+
+if (newCarousel) {
+    let index = 0;
+    const speed = 5;
+    const numberOfSlides = 3;
+    const carouselContainer = document.querySelector(".carouselContainer");
+    const carouselItemWidth = carouselContainer.scrollWidth / numberOfSlides;
+
+    setInterval(() => {
+        carouselContainer.scrollBy(carouselItemWidth, 0);
+        timeoutId = setTimeout(() => {
+            index = index % numberOfSlides;
+            let childToMove = carouselContainer.querySelectorAll(`.carouselItem`)[
+                index
+            ];
+            // The line below move the item to end of carousel by 
+            // manipulating its flex order
+            childToMove.style.order =
+            childToMove.style.order && childToMove.style.order === 0
+                ? 1
+                : +childToMove.style.order + 1;
+            index++;
+            clearTimeout(timeoutId);
+        }, 1000);
+    }, speed * 1000);
 }
