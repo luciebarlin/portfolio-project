@@ -1,8 +1,408 @@
+$dark-chocolate:  #490206;
+
 .sprinkles {
-    border: 1px solid darkmagenta;
+    //border: 1px solid darkmagenta;
     width: 100vw;
+    height: 600px;
+    margin-top: -$curved-div-height;
+    background-color: transparent;
+    display: flex;
+    //justify-content: space-around;
+    position: relative;
 
     .sprinkle {
-        border: 1px dotted darkmagenta;
+        //border: 1px solid darkgreen;
+        background-color: #490206;
+        height: 32px;
+        width: 12px;
+        border-radius: 6px;
+        box-shadow: 0.5vh 0.5vh 0 rgba(0, 0, 0, .25);
+        box-shadow: 0.4vh 0.4vh 3px rgb(0 0 0 / 25%);
+        position: absolute;
+        display: none;
+
+        animation: bounce-in-effect 0.5s forwards;
+
+        //first block of 5
+        //150px gap between
+        &:nth-child(1) {
+            top: 40px;
+            left: 50px;
+            transform: rotate(60deg);
+            display: block;
+
+        }
+
+        &:nth-child(2) {
+            top: 290px;
+            left: 110px;
+            transform: rotate(10deg);
+            display: block;
+            
+        }
+
+        &:nth-child(3) {
+            top: 90px;
+            left: 200px;
+            transform: rotate(-60deg);
+            display: block;
+            
+
+        }
+
+        &:nth-child(4) {
+            top: 340px;
+            left: 260px;
+            transform: rotate(-30deg);
+            display: block;
+            
+            
+        }
+
+        &:nth-child(5) {
+            top: 40px;
+            left: 350px;
+            transform: rotate(45deg);
+            display: block;
+
+        }
+
+        //second block of 5
+        &:nth-child(6) {
+            top: 290px;
+            left: 410px;
+            transform: rotate(20deg);
+            @media (min-width: 450px) {
+                display: block;
+            }
+            
+
+        }
+
+        &:nth-child(7) {
+            top: 90px;
+            left: 500px;
+            transform: rotate(90deg);
+            @media (min-width: 540px) {
+                display: block;
+            }
+            
+
+        }
+
+        &:nth-child(8) {
+            top: 340px;
+            left: 560px;
+            transform: rotate(120deg);
+            @media (min-width: 600px) {
+                display: block;
+            }
+            
+        }
+
+        &:nth-child(9) {
+            top: 40px;
+            left: 650px;
+            transform: rotate(-45deg);
+            @media (min-width: 690px) {
+                display: block;
+            }
+
+        }
+
+        &:nth-child(10) {
+            top: 290px;
+            left: 710px;
+            transform: rotate(-10deg);
+            @media (min-width: 750px) {
+                display: block;
+            }
+
+        }
+
+        //third block of 5
+        &:nth-child(11) {
+            top: 40px;
+            left: 800px;
+            transform: rotate(50deg);
+            @media (min-width: 840px) {
+                display: block;
+            }
+
+        }
+
+        &:nth-child(12) {
+            top: 340px;
+            left: 860px;
+            transform: rotate(45deg);
+            @media (min-width: 900px) {
+                display: block;
+            }
+            
+
+        }
+
+        &:nth-child(13) {
+            top: 90px;
+            left: 950px;
+            transform: rotate(-20deg);
+            @media (min-width: 990px) {
+                display: block;
+            }
+            
+
+        }
+
+        &:nth-child(14) {
+            top: 290px;
+            left: 1010px;
+            transform: rotate(10deg);
+            @media (min-width: 1050px) {
+                display: block;
+            }
+
+        }
+
+        &:nth-child(15) {
+            top: 40px;
+            left: 1110px;
+            transform: rotate(60deg);
+            @media (min-width: 1150px) {
+                display: block;
+            }
+            
+            
+        }
+
+        //fourth block of 5
+        &:nth-child(16) {
+            top: 290px;
+            left: 1160px;
+            transform: rotate(45deg);
+            @media (min-width: 1200px) {
+                display: block;
+            }
+            
+
+        }
+
+        &:nth-child(17) {
+            top: 90px;
+            left: 1260px;
+            transform: rotate(50deg);
+            @media (min-width: 1300px) {
+                display: block;
+            }
+            
+
+        }
+
+        &:nth-child(18) {
+            top: 340px;
+            left: 1310px;
+            transform: rotate(10deg);
+            @media (min-width: 1350px) {
+                display: block;
+            }
+
+        }
+
+        &:nth-child(19) {
+            top: 40px;
+            left: 1410px;
+            transform: rotate(-20deg);
+            @media (min-width: 1450px) {
+                display: block;
+            }
+
+        }
+
+        &:nth-child(20) {
+            top: 290px;
+            left: 1460px;
+            transform: rotate(50deg);
+            @media (min-width: 1500px) {
+                display: block;
+            }
+            
+            
+            
+        }
+
+        //fifth block of 5
+        &:nth-child(21) {
+            top: 90px;
+            left: 1560px;
+            transform: rotate(60deg);
+            @media (min-width: 1600px) {
+                display: block;
+            }
+
+        }
+
+        &:nth-child(22) {
+            top: 340px;
+            left: 1610px;
+            transform: rotate(-20deg);
+            @media (min-width: 1650px) {
+                display: block;
+            }
+
+        }
+
+        &:nth-child(23) {
+            top: 40px;
+            left: 1710px;
+            transform: rotate(45deg);
+            @media (min-width: 1750px) {
+                display: block;
+            }
+            
+        }
+
+        &:nth-child(24) {
+            top: 290px;
+            left: 1760px;
+            transform: rotate(60deg);
+            @media (min-width: 1800px) {
+                display: block;
+            }
+            
+        }
+
+        &:nth-child(25) {
+            top: 90px;
+            left: 1860px;
+            transform: rotate(10deg);
+            @media (min-width: 1900px) {
+                display: block;
+            }
+            
+        }
+
+        //sixth block of 5
+        &:nth-child(26) {
+            top: 340px;
+            left: 1910px;
+            transform: rotate(80deg);
+            @media (min-width: 1950px) {
+                display: block;
+            }
+
+        }
+
+        &:nth-child(27) {
+            top: 40px;
+            left: 2010px;
+            transform: rotate(-20deg);
+            @media (min-width: 2050px) {
+                display: block;
+            }
+
+        }
+
+        &:nth-child(28) {
+            top: 290px;
+            left: 2060px;
+            transform: rotate(45deg);
+            @media (min-width: 2100px) {
+                display: block;
+            }
+            
+        }
+
+        &:nth-child(29) {
+            top: 90px;
+            left: 2160px;
+            transform: rotate(60deg);
+            @media (min-width: 2200px) {
+                display: block;
+            }
+            
+        }
+
+        &:nth-child(30) {
+            top: 340px;
+            left: 2210px;
+            transform: rotate(10deg);
+            @media (min-width: 2250px) {
+                display: block;
+            }
+            
+        }
+
+        //seventh block of 5
+        &:nth-child(31) {
+            top: 40px;
+            left: 2310px;
+            transform: rotate(80deg);
+            @media (min-width: 2350px) {
+                display: block;
+            }
+
+        }
+
+        &:nth-child(32) {
+            top: 290px;
+            left: 2360px;
+            transform: rotate(-20deg);
+            @media (min-width: 2400px) {
+                display: block;
+            }
+
+        }
+
+        &:nth-child(33) {
+            top: 90px;
+            left: 2460px;
+            transform: rotate(45deg);
+            @media (min-width: 2500px) {
+                display: block;
+            }
+            
+        }
+
+        &:nth-child(34) {
+            top: 340px;
+            left: 2510px;
+            transform: rotate(60deg);
+            @media (min-width: 2550px) {
+                display: block;
+            }
+            
+        }
+
+        &:nth-child(35) {
+            top: 40px;
+            left: 2610px;
+            transform: rotate(10deg);
+            @media (min-width: 2650px) {
+                display: block;
+            }
+            
+        }
+
     }
+
+    @keyframes bounce-in-effect {
+        0% {
+          opacity: 0;
+          height: 0;
+          width: 0;
+        }
+        20% {
+          opacity: 1;
+        }
+        80% {
+            height: calc(32px * 1.125);
+            width: calc(12px * 1.125);
+        }
+        100% {
+            height: 32px;
+            width: 12px;
+        }
+      }
+    
+   
+    
 }
