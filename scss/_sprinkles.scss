@@ -402,7 +402,24 @@ $dark-chocolate:  #490206;
             width: 12px;
         }
       }
+}
+
+.down-arrow {
+    position: absolute;
+    bottom: 0;
+    left: 47%;
+
+    img {
+        height: 64px;
+    }
+
+    a {
+        border-bottom: none;
+
+        &:hover {
+            border-bottom: none;
     
-   
+        }
+    }
     
 }
