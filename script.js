@@ -1107,3 +1107,64 @@ if (newCarousel) {
         }, 1000);
     }, speed * 1000);
 }
+
+/////////////////////
+// cake quiz
+
+const cakeQuiz = document.getElementById("cake-quiz");
+
+if (cakeQuiz) {
+
+    const radioBtns = document.querySelectorAll(".radio-btn");
+    const questionArr = document.querySelectorAll(".question");
+    const questionNum = document.querySelector("#question-number");
+    const questionNumDec = document.querySelector(".question-number-declaration");
+    let questionIndex = 0;
+    let cakeAnswerArr = [];
+
+    const getAnswerValue = event => {
+        let answerValue = event.currentTarget.value;
+        cakeAnswerArr.push(answerValue);
+        console.log(cakeAnswerArr);
+    }
+
+ 
+
+    const showWinningCake = () => {
+        console.log(cakeAnswerArr);
+
+        const theAs = {}; 
+
+    }
+    
+
+    const goToNextQuestion = () => {
+        questionIndex++;
+        let nextQ = questionArr[questionIndex];
+        //console.log(nextQ);
+
+        questionArr.forEach(question => {
+            //console.log(questionIndex);
+            question.classList.add("hidden");
+            
+        })
+        
+        //console.log(questionIndex);
+
+        if (questionIndex < 5) {
+            nextQ.classList.remove("hidden");
+        } else {
+            questionNumDec.innerHTML = "";
+            showWinningCake();
+        }
+        getAnswerValue(event);
+        questionNum.innerHTML = `${questionIndex + 1}`;
+    }
+    
+
+    radioBtns.forEach(btn => {
+        btn.addEventListener("click", goToNextQuestion);
+        
+    })
+    
+}

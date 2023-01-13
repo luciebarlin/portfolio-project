@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lucie's Portfolio Project</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,900;1,400;1,600;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body data-page-name="projects">
+
+    <header>
+
+      <nav class="nav-bar__inner-desktop">
+
+        <ul class="nav-bar__items">
+          <li class="nav-bar__item index">
+            <a href="index.html">About me</a>
+          </li>
+          <li class="nav-bar__item dropdown-menu experience">
+            <a href="experience.html">
+              Experience
+            </a>
+            <div class="nav-links">
+              <a href="certs.html">Certificates</a>
+              <a target="_blank" href="certs/CV Lucie Barlin 06-2022 (1).pdf">Prior employment</a>
+            </div>
+          </li>
+    
+          <li class="nav-bar__item dropdown-menu projects">
+            <a href="projects.html">Projects</a>
+            <div class="nav-links">
+              <a target="_blank" href="weatherapi.html">Umbrella checker</a>
+              <a target="_blank" href="hangman.html">Hangman</a>
+              <a target="_blank" href="moving_cards.html">Moving cards</a>
+              <a target="_blank" href="todolist.html">Todo list</a>
+              <a target="_blank" href="eight_ball.html">Magic 8 Ball</a>
+            </div>
+          </li>
+    
+          <li class="nav-bar__item skills">
+            <a href="skills.html">Skills</a>
+          </li>
+          <li class="nav-bar__item contact">
+            <a href="contact.html">Contact</a>
+          </li>
+        </ul>
+    
+      </nav>
+
+
+      <nav class="nav-bar__inner-mobile">
+
+        <ul class="nav-bar__items">
+          <li class="nav-bar__item index">
+            <a href="index.html">About me</a>
+          </li>
+          <li class="nav-bar__item experience">
+            <a href="experience.html">Experience</a>
+          </li>
+          <li class="nav-bar__item projects">
+            <a href="projects.html">Projects</a>
+          </li>
+          <li class="nav-bar__item skills">
+            <a href="skills.html">Skills</a>
+          </li>
+          <li class="nav-bar__item contact">
+            <a href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+      </nav>
+
+        <h1>
+            What flavour of cake are you?
+        </h1>
+    </header>
+
+    <main id="cake-quiz">
+
+        <div>
+            Take the quiz to find out which flavour of cake matches your personality!
+        </div>
+
+        <div class="quiz-questions">
+            <div class="question-number-declaration">
+                Question <span id="question-number">1</span> of 5
+            </div>
+        
+            <form class="question question--one fade">
+                <fieldset>
+                    <legend>Which occupation would you enjoy most?
+                    </legend>
+                <div class="choices">
+                    <div>
+                        <input class="radio-btn" type="radio" id="choice1-1" name="occupation" value="A" />
+                        <label for="choice1-1">Nurse</label>
+                    </div>
+                    <div>
+                        <input class="radio-btn" type="radio" id="choice2-1" name="occupation" value="B" />
+                        <label for="choice2-1">Teacher</label>
+                    </div>
+                    <div>
+                        <input class="radio-btn" type="radio" id="choice3-1" name="occupation" value="C" />
+                        <label for="choice3-1">Painter</label>
+                    </div>
+                    <div>
+                        <input class="radio-btn" type="radio" id="choice4-1" name="occupation" value="D" />
+                        <label for="choice4-1">Fitness instructor</label>
+                    </div>
+
+                </div>
+                </fieldset>
+            </form>
+
+            <form class="question question--two fade hidden">
+                <fieldset>
+                    <legend>What is your favourite hobby?
+                    </legend>
+                <div class="choices">
+                    <div>
+                        <input class="radio-btn" type="radio" id="choice1-2" name="hobby" value="A" />
+                        <label for="choice1-2">Watching sitcoms</label>
+                    </div>
+                    <div>
+                        <input class="radio-btn" type="radio" id="choice2-2" name="hobby" value="B" />
+                        <label for="choice2-2">Meeting friends for drinks</label>
+                    </div>
+                    <div>
+                        <input class="radio-btn" type="radio" id="choice3-2" name="hobby" value="C" />
+                        <label for="choice3-2">Decorating your house</label>
+                    </div>
+                    <div>
+                        <input class="radio-btn" type="radio" id="choice4-2" name="hobby" value="D" />
+                        <label for="choice4-2">Hiking</label>
+                    </div>
+    
+                </div>
+                </fieldset>
+            </form>
+
+            <form class="question question--three fade hidden">
+                <fieldset>
+                    <legend>Do you prefer coffee or tea?
+                    </legend>
+                <div class="choices">
+                    <div>
+                        <input class="radio-btn" type="radio" id="choice1-3" name="drink" value="A" />
+                        <label for="choice1-3">Tea</label>
+                    </div>
+                    <div>
+                        <input class="radio-btn" type="radio" id="choice2-3" name="drink" value="B" />
+                        <label for="choice2-3">Coffee</label>
+                    </div>
+                    <div>
+                        <input class="radio-btn" type="radio" id="choice3-3" name="drink" value="C" />
+                        <label for="choice3-3">I like them equally</label>
+                    </div>
+                    <div>
+                        <input class="radio-btn" type="radio" id="choice4-3" name="drink" value="D" />
+                        <label for="choice4-3">I like water the most</label>
+                    </div>
+
+                </div>
+                </fieldset>
+            </form>
+
+            <form class="question question--four fade hidden">
+                <fieldset>
+                    <legend>Which flower do you like most?
+                    </legend>
+                <div class="choices">
+                    <div>
+                        <input class="radio-btn" type="radio" id="choice1-4" name="flower" value="A" />
+                        <label for="choice1-4">Rose</label>
+                    </div>
+                    <div>
+                        <input class="radio-btn" type="radio" id="choice2-4" name="flower" value="B" />
+                        <label for="choice2-4">Violet </label>
+                    </div>
+                    <div>
+                        <input class="radio-btn" type="radio" id="choice3-4" name="flower" value="C" />
+                        <label for="choice3-4">Sunflower</label>
+                    </div>
+                    <div>
+                        <input class="radio-btn" type="radio" id="choice4-4" name="flower" value="D" />
+                        <label for="choice4-4">Heather </label>
+                    </div>
+ 
+                </div>
+                </fieldset>
+            </form>
+
+            <form class="question question--five fade hidden">
+                <fieldset>
+                    <legend>What would your friends say is your best quality?
+                    </legend>
+                <div class="choices">
+                    <div>
+                        <input class="radio-btn" type="radio" id="choice1-5" name="quality" value="A" />
+                        <label for="choice1-5">I'm generous.</label>
+                    </div>
+                    <div>
+                        <input class="radio-btn" type="radio" id="choice2-5" name="quality" value="B" />
+                        <label for="choice2-5">I'm honest.</label>
+                    </div>
+                    <div>
+                        <input class="radio-btn" type="radio" id="choice3-5" name="quality" value="C" />
+                        <label for="choice3-5">I'm thoughtful.</label>
+                    </div>
+                    <div>
+                        <input class="radio-btn" type="radio" id="choice4-5" name="quality" value="D" />
+                        <label for="choice4-5">I'm hard working.</label>
+                    </div>
+   
+                </div>
+                </fieldset>
+            </form>
+
+        </div>
+
+        <div class="quiz-results">
+            <div class="cake--vanilla hidden">
+                <div class="cake-desription">
+                    You are: vanilla sprinkle cake! You are caring and always reliable. 
+                    You love to help others and enjoy relaxing.
+                </div>
+                <img src="images/vanilla-cake.png">
+            </div>
+            <div class="cake--chocolate hidden">
+                <div class="cake-desription">
+                    You are: chocolate mud cake! You are a social butterfly and loyal to your friends and family.
+                    You like genuine conversations and staying up late.
+                </div>
+                <img src="images/choco-cake.png">
+            </div>
+            <div class="cake--lemon hidden">
+                <div class="cake-desription">
+                    You are: lemon poppyseed cake! You have a sunny disposition and are very creative. 
+                    You always try to bring best out of every situation or person you meet.
+                </div>
+                <img src="images/lemon-cake.png">
+            </div>
+            <div class="cake--carrot hidden">
+                <div class="cake-desription">
+                    You are: carrot cake! You are driven and outgoing.
+                    You love to explore new places and always give 100%.
+                </div>
+                <img src="images/carrot-cake.png">
+            </div>
+        </div>
+
+
+    </main>
+
+
+
+    <script src="script.js"></script>
+  </body>
+</html>
