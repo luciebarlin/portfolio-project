@@ -1130,32 +1130,20 @@ if (cakeQuiz) {
     let cakeAnswerArr = [[], [], [], []];
     const cakeTypeArr = [vanillaCake, chocoCake, lemonCake, carrotCake];
     
-    let arrA = [];
-    let arrB = [];
-    let arrC = [];
-    let arrD = [];
+    let answerValueArr = ["A", "B", "C", "D"];
 
 
     const getAnswerValue = event => {
         let answerValue = event.currentTarget.value;
-        let answerValueArr = ["A", "B", "C", "D"];
-        
-        if (answerValue === "A") {
-            // arrA.push(answerValue);
-            cakeAnswerArr[0].push(answerValue);
-        } else if (answerValue === "B") {
-            cakeAnswerArr[1].push(answerValue);
-        } else if (answerValue === "C") {
-            cakeAnswerArr[2].push(answerValue);
-        } else if (answerValue === "D") {
-            cakeAnswerArr[3].push(answerValue);
+
+        for (inx = 0; inx < answerValueArr.length; inx++) {
+            if (answerValue === answerValueArr[inx]) {
+                cakeAnswerArr[inx].push(answerValue);
+            }
         }
     }
 
- 
-
     const showWinningCake = () => {
-        console.log(cakeAnswerArr);
 
         questionArr = Array.from(questionArr);
         let check = questionArr.every(quest => 
@@ -1163,55 +1151,46 @@ if (cakeQuiz) {
 
         if (check) {
             console.log("check complete");
+            console.log(cakeAnswerArr);
+            const answeredMostlyA = cakeAnswerArr[0].length >= 2 && cakeAnswerArr[1].length < 3 && cakeAnswerArr[2].length < 3 && cakeAnswerArr[3].length < 3;
+            const answeredMostlyB = cakeAnswerArr[1].length >= 2 && cakeAnswerArr[0].length < 3 && cakeAnswerArr[2].length < 3 && cakeAnswerArr[3].length < 3;
+            const answeredMostlyC = cakeAnswerArr[2].length >= 2 && cakeAnswerArr[0].length < 3 && cakeAnswerArr[1].length < 3 && cakeAnswerArr[3].length < 3;
+            const answeredMostlyD = cakeAnswerArr[3].length >= 2 && cakeAnswerArr[0].length < 3 && cakeAnswerArr[1].length < 3 && cakeAnswerArr[2].length < 3;
 
-            if (cakeAnswerArr[0].length >= 2 && cakeAnswerArr[1].length < 3 && cakeAnswerArr[2].length < 3 && cakeAnswerArr[3].length < 3) {
-                console.log("mostly A");
-                cakeTypeArr[0].classList.remove("hidden");
-            } else if (cakeAnswerArr[1].length >= 2 && arrA.length < 3 && cakeAnswerArr[2].length < 3 && cakeAnswerArr[3].length < 3) {
-                console.log("mostly B");
-                cakeTypeArr[1].classList.remove("hidden");
-            } else if (cakeAnswerArr[2].length >= 2 && arrA.length < 3 && cakeAnswerArr[1].length < 3 && cakeAnswerArr[3].length < 3) {
-                console.log("mostly C");
-                cakeTypeArr[2].classList.remove("hidden");
-            } else if (cakeAnswerArr[3].length >= 2 && arrA.length < 3 && cakeAnswerArr[1].length < 3 && cakeAnswerArr[2].length < 3) {
-                console.log("mostly D");
-                cakeTypeArr[3].classList.remove("hidden");
+            const modeAnswers = [answeredMostlyA, answeredMostlyB, answeredMostlyC, answeredMostlyD];
+
+            for (inx2 = 0; inx2 < modeAnswers.length; inx2++) {
+                if (modeAnswers[inx2]) {
+                    console.log(`mostly: ${answerValueArr[inx2]}`);
+                    cakeTypeArr[inx2].classList.remove("hidden");
+                }
             }
     
             quizIntro.classList.add("hidden");
         }
-        
     }
     
-
     const goToNextQuestion = () => {
         questionIndex++;
         let nextQ = questionArr[questionIndex];
-        //console.log(nextQ);
 
         questionArr.forEach(question => {
-            //console.log(questionIndex);
             question.classList.add("hidden");
             
         })
         
-        //console.log(questionIndex);
 
         if (questionIndex < 5) {
             nextQ.classList.remove("hidden");
         } else {
             questionNumDec.innerHTML = "";
-            // showWinningCake();
         }
         getAnswerValue(event);
         questionNum.innerHTML = `${questionIndex + 1}`;
         showWinningCake();
     }
-    
 
     radioBtns.forEach(btn => {
-        btn.addEventListener("click", goToNextQuestion);
-        
-    })
-    
+        btn.addEventListener("click", goToNextQuestion); 
+    }) 
 }
