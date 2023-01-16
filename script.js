@@ -1163,6 +1163,7 @@ if (cakeQuiz) {
                 if (modeAnswers[inx2]) {
                     console.log(`mostly: ${answerValueArr[inx2]}`);
                     cakeTypeArr[inx2].classList.remove("hidden");
+                    break;
                 }
             }
     
