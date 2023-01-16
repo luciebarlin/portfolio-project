@@ -1116,16 +1116,40 @@ const cakeQuiz = document.getElementById("cake-quiz");
 if (cakeQuiz) {
 
     const radioBtns = document.querySelectorAll(".radio-btn");
-    const questionArr = document.querySelectorAll(".question");
+    let questionArr = document.querySelectorAll(".question");
     const questionNum = document.querySelector("#question-number");
     const questionNumDec = document.querySelector(".question-number-declaration");
+    const quizIntro = document.querySelector(".quiz-intro");
+
+    const vanillaCake = document.querySelector(".cake--vanilla");
+    const chocoCake = document.querySelector(".cake--chocolate");
+    const lemonCake = document.querySelector(".cake--lemon");
+    const carrotCake = document.querySelector(".cake--carrot");
+
     let questionIndex = 0;
-    let cakeAnswerArr = [];
+    let cakeAnswerArr = [[], [], [], []];
+    const cakeTypeArr = [vanillaCake, chocoCake, lemonCake, carrotCake];
+    
+    let arrA = [];
+    let arrB = [];
+    let arrC = [];
+    let arrD = [];
+
 
     const getAnswerValue = event => {
         let answerValue = event.currentTarget.value;
-        cakeAnswerArr.push(answerValue);
-        console.log(cakeAnswerArr);
+        let answerValueArr = ["A", "B", "C", "D"];
+        
+        if (answerValue === "A") {
+            // arrA.push(answerValue);
+            cakeAnswerArr[0].push(answerValue);
+        } else if (answerValue === "B") {
+            cakeAnswerArr[1].push(answerValue);
+        } else if (answerValue === "C") {
+            cakeAnswerArr[2].push(answerValue);
+        } else if (answerValue === "D") {
+            cakeAnswerArr[3].push(answerValue);
+        }
     }
 
  
@@ -1133,8 +1157,30 @@ if (cakeQuiz) {
     const showWinningCake = () => {
         console.log(cakeAnswerArr);
 
-        const theAs = {}; 
+        questionArr = Array.from(questionArr);
+        let check = questionArr.every(quest => 
+            quest.classList.contains("hidden"));
 
+        if (check) {
+            console.log("check complete");
+
+            if (cakeAnswerArr[0].length >= 2 && cakeAnswerArr[1].length < 3 && cakeAnswerArr[2].length < 3 && cakeAnswerArr[3].length < 3) {
+                console.log("mostly A");
+                cakeTypeArr[0].classList.remove("hidden");
+            } else if (cakeAnswerArr[1].length >= 2 && arrA.length < 3 && cakeAnswerArr[2].length < 3 && cakeAnswerArr[3].length < 3) {
+                console.log("mostly B");
+                cakeTypeArr[1].classList.remove("hidden");
+            } else if (cakeAnswerArr[2].length >= 2 && arrA.length < 3 && cakeAnswerArr[1].length < 3 && cakeAnswerArr[3].length < 3) {
+                console.log("mostly C");
+                cakeTypeArr[2].classList.remove("hidden");
+            } else if (cakeAnswerArr[3].length >= 2 && arrA.length < 3 && cakeAnswerArr[1].length < 3 && cakeAnswerArr[2].length < 3) {
+                console.log("mostly D");
+                cakeTypeArr[3].classList.remove("hidden");
+            }
+    
+            quizIntro.classList.add("hidden");
+        }
+        
     }
     
 
@@ -1155,10 +1201,11 @@ if (cakeQuiz) {
             nextQ.classList.remove("hidden");
         } else {
             questionNumDec.innerHTML = "";
-            showWinningCake();
+            // showWinningCake();
         }
         getAnswerValue(event);
         questionNum.innerHTML = `${questionIndex + 1}`;
+        showWinningCake();
     }
     
 
