@@ -1,4 +1,6 @@
 $dark-chocolate:  #490206;
+// $base-upper: 40px;
+// $base-lower: calc($base-upper + 250px);
 
 .sprinkles {
     //border: 1px solid darkmagenta;
@@ -25,6 +27,20 @@ $dark-chocolate:  #490206;
 
         //first block of 5
         //150px gap between
+
+        $base-upper: 40px;
+        $base-lower: 290px;
+        $addition-lower: 60px;
+        $addition-upper: 90px;
+
+        &:nth-child(odd) {
+
+        }
+
+        &:nth-child(even) {
+            
+        }
+
         &:nth-child(1) {
             top: 40px;
             left: 50px;
