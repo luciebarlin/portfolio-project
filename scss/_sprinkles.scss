@@ -27,19 +27,25 @@ $dark-chocolate:  #490206;
 
         //first block of 5
         //150px gap between
+        // $rotations: 60deg, 10deg, 45deg, 20deg, 90deg, 120deg, 50deg;
+        // $top-offset: 40px, 290px, 90px, 340px;
+        // $base-left: 50px;
+        // $addition-lower: 60px;
+        // $addition-upper: 90px;
 
-        $base-upper: 40px;
-        $base-lower: 290px;
-        $addition-lower: 60px;
-        $addition-upper: 90px;
+        // &:nth-child(odd) {
+        //     top: nth($top-offset, $i);
+        //     left: $base-left;
+        //     transform: rotate(nth($rotations, $i));
+        //     display: block;
+        // }
 
-        &:nth-child(odd) {
-
-        }
-
-        &:nth-child(even) {
-            
-        }
+        // &:nth-child(even) {
+        //     top: $base-lower;
+        //     left: calc($base-left + ($addition-lower * ($i - 1)));
+        //     transform: rotate(nth($rotations, $i));
+        //     display: block;
+        // }
 
         &:nth-child(1) {
             top: 40px;
