@@ -186,6 +186,9 @@ const tempCallback = tempDataObj => {
 
     //change the height of the bar graph according to average temp
     barGraph.style.height = (averageTemp * 15) + "px";
+    if (averageTemp * 15 < 34) {
+        barGraph.style.height = 34 + "px";
+    }
 
     const addNewBars = () => {
         //let barGraphDataArr = [];
@@ -211,6 +214,9 @@ const tempCallback = tempDataObj => {
             addedBar.classList.add("new-bar");
             //console.log(temp * 10);
             addedBar.style.height = temp * 10 + "px";
+            if (temp < 0) {
+                addedBar.style.height = 0;
+            }
             //console.log(index);
             addedBar.innerHTML = index;
 
