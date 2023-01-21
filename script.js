@@ -1201,3 +1201,39 @@ if (cakeQuiz) {
         btn.addEventListener("click", goToNextQuestion); 
     }) 
 }
+
+/////////////////
+
+// fade in greeting 
+
+const greeting = document.querySelector(".greeting");
+
+if (greeting) {
+    
+    const currentTime = new Date();
+    const hours = currentTime.getHours(); // => 9
+    const minutes = currentTime.getMinutes(); // =>  30
+    const seconds = currentTime.getSeconds(); // => 51
+    console.log("Current time: " + hours + ":" +  minutes + ":" + seconds);
+
+    const morning = hours > 2 && hours < 12;
+    const afternoon = hours > 11 && hours < 18;
+    const evening = hours > 17 && hours < 3;
+
+    const showCorrectGreeting = () => {
+        greeting.classList.add("fade-in");
+
+        if (morning) {
+            greeting.innerHTML = "Good morning!";
+        } else if (afternoon) {
+            greeting.innerHTML = "Good afternoon!";
+        } else if (evening) {
+            greeting.innerHTML = "Good evening!";
+        } else {
+            greeting.innerHTML = "Hi!";
+        }
+        
+    }
+
+    showCorrectGreeting();
+}

@@ -11,6 +11,7 @@ $dark-chocolate:  #490206;
     display: flex;
     //justify-content: space-around;
     position: relative;
+    pointer-events: none;
 
     .sprinkle {
         //border: 1px solid darkgreen;
@@ -23,7 +24,7 @@ $dark-chocolate:  #490206;
         position: absolute;
         display: none;
 
-        animation: bounce-in-effect 0.5s forwards;
+        animation: bounce-in-sprinkle 0.5s forwards;
 
         //first block of 5
         //150px gap between
@@ -406,7 +407,7 @@ $dark-chocolate:  #490206;
 
     }
 
-    @keyframes bounce-in-effect {
+    @keyframes bounce-in-sprinkle {
         0% {
           opacity: 0;
           height: 0;
