@@ -1210,6 +1210,7 @@ const greeting = document.querySelector(".greeting");
 
 if (greeting) {
     
+    const variableGreeting = document.querySelector(".variable-greeting");
     const currentTime = new Date();
     const hours = currentTime.getHours(); // => 9
     const minutes = currentTime.getMinutes(); // =>  30
@@ -1219,19 +1220,31 @@ if (greeting) {
     const morning = hours > 2 && hours < 12;
     const afternoon = hours > 11 && hours < 18;
     const evening = hours > 17 && hours < 3;
+    const timesOfDayArr = [morning, afternoon, evening];
+    const timeStringsArr = ["morning", "afternoon", "evening"];
 
     const showCorrectGreeting = () => {
         greeting.classList.add("fade-in");
 
-        if (morning) {
-            greeting.innerHTML = "Good morning!";
-        } else if (afternoon) {
-            greeting.innerHTML = "Good afternoon!";
-        } else if (evening) {
-            greeting.innerHTML = "Good evening!";
-        } else {
-            greeting.innerHTML = "Hi!";
+        for (t = 0; t < timesOfDayArr.length; t++) {
+            if (timesOfDayArr[t]) {
+                console.log(timesOfDayArr);
+                variableGreeting.innerHTML = timeStringsArr[t];
+                break;
+            } else {
+                greeting.innerHTML = "Hi!";
+            }
         }
+
+        // if (morning) {
+        //     variableGreeting.innerHTML = " morning";
+        // } else if (afternoon) {
+        //     variableGreeting.innerHTML = " afternoon";
+        // } else if (evening) {
+        //     variableGreeting.innerHTML = " evening";
+        // } else {
+        //     greeting.innerHTML = "Hi!";
+        // }
         
     }
 
