@@ -5,7 +5,11 @@ $dark-grey: #434854;
 $light-grey: lighten($dark-grey, 30%);
 $oatmeal: #E8E3D6;
 $regular-gap: 32px;
+$spacer-1: 16px;
+$spacer-2: 32px;
+$spacer-3: 64px;
 $nav-bar-height: 58px;
+$box-shadow: 0px 10px 10px rgb(0 0 0 / 20%);
 
 @import "scss/header";
 @import "scss/contact";
@@ -26,6 +30,7 @@ $nav-bar-height: 58px;
 @import "scss/curved_div";
 @import "scss/sprinkles";
 @import "scss/cake_quiz";
+@import "scss/about_section";
 
 
 
@@ -117,5 +122,7 @@ a {
     font-weight: 900;
 }
 
-
+.bolder {
+    font-weight: 600;
+}
 

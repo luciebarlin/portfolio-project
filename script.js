@@ -1219,22 +1219,21 @@ if (greeting) {
 
     const morning = hours > 2 && hours < 12;
     const afternoon = hours > 11 && hours < 18;
-    const evening = hours > 17 && hours < 3;
+    const evening = hours > 17 || hours < 3;
     const timesOfDayArr = [morning, afternoon, evening];
     const timeStringsArr = ["morning", "afternoon", "evening"];
 
     const showCorrectGreeting = () => {
         greeting.classList.add("fade-in");
+        // variableGreeting.innerHTML = "...";
 
         for (t = 0; t < timesOfDayArr.length; t++) {
             if (timesOfDayArr[t]) {
                 console.log(timesOfDayArr);
                 variableGreeting.innerHTML = timeStringsArr[t];
                 break;
-            } else {
-                greeting.innerHTML = "Hi!";
-            }
-        }
+            } 
+        } 
 
         // if (morning) {
         //     variableGreeting.innerHTML = " morning";
@@ -1249,4 +1248,22 @@ if (greeting) {
     }
 
     showCorrectGreeting();
+}
+
+/////////////
+
+// expand buttonn on about me page
+const expandArrow = document.querySelector(".expand-arrow");
+const aboutBox = document.querySelector(".about-box");
+
+
+if (expandArrow) {
+
+    const expandAboutMe = () => {
+        aboutBox.classList.add("expanded");
+        //aboutBox.style.maxHeight = "900px";
+        expandArrow.classList.add("hidden");
+    }
+    
+    expandArrow.addEventListener("click", expandAboutMe);
 }
