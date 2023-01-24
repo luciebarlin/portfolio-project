@@ -23,6 +23,13 @@ main {
     }
 }
 
+#fetched-data {
+    font-size: 22px;
+
+    @media (min-width: 1200px) {
+        font-size: 24px;
+    }
+}
 
 #img {
     &__umbrella,

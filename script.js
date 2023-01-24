@@ -186,6 +186,9 @@ const tempCallback = tempDataObj => {
 
     //change the height of the bar graph according to average temp
     barGraph.style.height = (averageTemp * 15) + "px";
+    if (averageTemp * 15 < 34) {
+        barGraph.style.height = 34 + "px";
+    }
 
     const addNewBars = () => {
         //let barGraphDataArr = [];
@@ -211,6 +214,9 @@ const tempCallback = tempDataObj => {
             addedBar.classList.add("new-bar");
             //console.log(temp * 10);
             addedBar.style.height = temp * 10 + "px";
+            if (temp < 0) {
+                addedBar.style.height = 0;
+            }
             //console.log(index);
             addedBar.innerHTML = index;
 
@@ -1163,6 +1169,7 @@ if (cakeQuiz) {
                 if (modeAnswers[inx2]) {
                     console.log(`mostly: ${answerValueArr[inx2]}`);
                     cakeTypeArr[inx2].classList.remove("hidden");
+                    break;
                 }
             }
     
@@ -1193,4 +1200,70 @@ if (cakeQuiz) {
     radioBtns.forEach(btn => {
         btn.addEventListener("click", goToNextQuestion); 
     }) 
+}
+
+/////////////////
+
+// fade in greeting 
+
+const greeting = document.querySelector(".greeting");
+
+if (greeting) {
+    
+    const variableGreeting = document.querySelector(".variable-greeting");
+    const currentTime = new Date();
+    const hours = currentTime.getHours(); // => 9
+    const minutes = currentTime.getMinutes(); // =>  30
+    const seconds = currentTime.getSeconds(); // => 51
+    console.log("Current time: " + hours + ":" +  minutes + ":" + seconds);
+
+    const morning = hours > 2 && hours < 12;
+    const afternoon = hours > 11 && hours < 18;
+    const evening = hours > 17 || hours < 3;
+    const timesOfDayArr = [morning, afternoon, evening];
+    const timeStringsArr = ["morning", "afternoon", "evening"];
+
+    const showCorrectGreeting = () => {
+        greeting.classList.add("fade-in");
+        // variableGreeting.innerHTML = "...";
+
+        for (t = 0; t < timesOfDayArr.length; t++) {
+            if (timesOfDayArr[t]) {
+                console.log(timesOfDayArr);
+                variableGreeting.innerHTML = timeStringsArr[t];
+                break;
+            } 
+        } 
+
+        // if (morning) {
+        //     variableGreeting.innerHTML = " morning";
+        // } else if (afternoon) {
+        //     variableGreeting.innerHTML = " afternoon";
+        // } else if (evening) {
+        //     variableGreeting.innerHTML = " evening";
+        // } else {
+        //     greeting.innerHTML = "Hi!";
+        // }
+        
+    }
+
+    showCorrectGreeting();
+}
+
+/////////////
+
+// expand buttonn on about me page
+const expandArrow = document.querySelector(".expand-arrow");
+const aboutBox = document.querySelector(".about-box");
+
+
+if (expandArrow) {
+
+    const expandAboutMe = () => {
+        aboutBox.classList.add("expanded");
+        //aboutBox.style.maxHeight = "900px";
+        expandArrow.classList.add("hidden");
+    }
+    
+    expandArrow.addEventListener("click", expandAboutMe);
 }

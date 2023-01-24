@@ -6,27 +6,63 @@ $curved-div-height: calc(832px + 100px);
     text-align: center;
     width: calc(1200px * 2.5);
     padding-top: 100px;
+    line-height: 1.5;
 
     @media (min-width: 1200px) {
     }
 
     h2 {
-        font-size: 2rem;
+        font-size: 2.5rem;
         margin-top: 0;
+        height: 70px;
 
         @media (min-width: 1200px) {
             font-size: 3rem;
 
         }
     }
+        
+    
+    .my-name {
+        font-size: 30px;
+        font-weight: 600;
 
+        @media (min-width: 1200px) {
+            font-size: 32px;
+        }
+    }
     .my-bio {
-        font-size: 24px;
-        margin: 0 45%;
+        font-size: 18px;
+        margin: 0 40%;
         line-height: 1.5;
+
+        @media (min-width: 1200px) {
+            margin: 0 40%;
+            font-size: 24px;
+        }
     }
 
     svg {
         display: block;
     }
 }
+
+.fade-in {
+    animation: fade-in-greeting 1.5s forwards;
+}
+
+
+@keyframes fade-in-greeting {
+    0% {
+      opacity: 0;
+      
+    }
+
+    50% {
+        opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+    
+  }
