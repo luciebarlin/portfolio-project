@@ -33,13 +33,13 @@
           <li class="nav-bar__item dropdown-menu projects">
             <a href="projects.html">Projects</a>
             <div class="nav-links">
-              <a target="_blank" href="weatherapi.html">Umbrella checker</a>
-              <a target="_blank" href="cake_quiz.html">Cake quiz</a>
-              <a target="_blank" href="hangman.html">Hangman</a>
-              <a target="_blank" href="moving_cards.html">Moving cards</a>
-              <a target="_blank" href="todolist.html">Todo list</a>
-              <a target="_blank" href="slideshows.html">Slideshows</a>
-              <a target="_blank" href="eight_ball.html">Magic 8 Ball</a>
+              <a  href="weatherapi.html">Umbrella checker</a>
+              <a  href="cake_quiz.html">Cake quiz</a>
+              <a  href="hangman.html">Hangman</a>
+              <a  href="moving_cards.html">Moving cards</a>
+              <a  href="todolist.html">Todo list</a>
+              <a  href="slideshows.html">Slideshows</a>
+              <a  href="eight_ball.html">Magic 8 Ball</a>
             </div>
           </li>
     
@@ -109,17 +109,47 @@
             </div>
             
             <div class="page-overview">
-                <ul>
-                    <li class="brief">
-                        Brief
+              <ul>
+                <li class="brief">
+                  <span class="bolder">Brief</span> 
+                  <ul>
+                    <li>
+                      Make a small, scalable deck of cards that move in sequence using CSS and JS. 
                     </li>
-                    <li class="concepts">
-                        Concepts used
+                    <li>
+                      Bonus: make the cards move back to start when they have all moved left
                     </li>
-                    <li class="problems">
-                        Problems encountered
+                    <li>
+                      Extra bonus: keep the final z-index of the cards 
                     </li>
-                </ul>
+                  </ul>
+                </li>
+                <li class="concepts">
+                    <span class="bolder">Concepts used</span> 
+                  <ul>
+                    <li>
+                      SCSS array, for loop is SCSS, nth-child, practice defining and using variables
+                    </li>
+                    <li>
+                      Practice setTimeout function 
+                    </li>
+                  </ul>
+                </li>
+                <li class="problems">
+                    <span class="bolder">Problems encountered</span> 
+                  <ul>
+                    <li>
+                      It was difficult at first to understand and apply the SCSS loop
+                    </li>
+                    <li>
+                      I had to include some JS to slide away the page overview on load, otherwise the user would miss the first cards sliding
+                    </li>
+                    <li>
+                      There were many calculations involved to achieve the correct x-offsets of the cards. This was difficult to visualise and a lot of trial and error occurred.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
             </div>
         </div>
     </div>
