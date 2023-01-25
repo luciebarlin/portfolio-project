@@ -12,7 +12,7 @@ body {
     z-index: 7;
     transition: all 0.7s ease;
     transform-origin: top right;
-    //pointer-events: none;
+    pointer-events: auto;
 
 
     @media (min-width: 1200px) {
@@ -22,15 +22,16 @@ body {
 }
 
 .sidebar-widget {
-    height: 300px;
+    height: calc(300px - $spacer-2);
     width: 300px;
     border: 2px solid $dark-blue;
     color: $dark-blue;
     background-color: $oatmeal;
     transition: all 0.7s ease;
-    //transform-origin: top right;
+    transform: translateX(0);
     translate: none;
     overflow: auto;
+    opacity: 1;
 
     @media (min-width: 1200px) {
         width: 600px;
@@ -45,7 +46,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 28px;
+        font-size: 1.75rem;
         //position: relative;
         height: 55px;
 
@@ -98,7 +99,7 @@ body {
     background-color: transparent;
     border-radius: 50%;
     font-weight: 600;
-    font-size: 28px;
+    font-size: 1.75rem;
     transition: all 0.6s ease;
     position: absolute;
     top: calc($header-height - 37px);
@@ -124,46 +125,63 @@ body {
 }
 
 .tooltiptext {
-    opacity: 0;
-    width: 75px;
-    background-color: $dark-blue;
-    color: $oatmeal;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    position: absolute;
-    top: calc($header-height - 100px);
-    right: 10px;
-    transition: all 0.6s ease;
-    z-index: 2;
-    font-size: 1rem;
-    line-height: 1.5;
+    display: none; 
 
     @media (min-width: 1200px) {
+        display: block;
+        opacity: 0;
+        background-color: $dark-blue;
+        color: $oatmeal;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 6px;
+        position: absolute;
+        transition: all 0.6s ease;
+        z-index: 2;
+        font-size: 1rem;
+        line-height: 1.5;
         width: 120px;
         top: calc($header-height - 42px);
         right: 57px;
-    }
 
+        
+    }
+    //mobile styles
+    // width: 75px;
+    // top: calc($header-height - 100px);
+    // right: 10px;
+    
     &::after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 83%;
-        margin-left: -5px;
-        border-width: 5px;
-        border-style: solid;
-        border-color: $dark-blue transparent transparent transparent;
+        display: none;
 
         @media (min-width: 1200px) {
+            display: block;
+            content: "";
+            position: absolute;
+            top: 100%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: $dark-blue transparent transparent transparent;
+            //left: 83%; //mobile
             left: 50%;
         }
+        
     }
+
+    
 
 }
 
 .opaque {
     opacity: 1;
+}
+
+.translucent {
+    @media (min-width: 1200px) and (max-width: 1490px) {
+        opacity: 0.6;
+    }
+    
 }
 
 .higher {
@@ -177,6 +195,18 @@ body {
 .rotated {
     transform: rotate(135deg);
     //background-color: $dark-blue;
+}
+
+.translated {
+    transform: translateX(91%);
+
+    @media (min-width: 1200px) {
+        transform: translateX(94%);
+    }
+}
+
+.no-pointer-events {
+    pointer-events: none;
 }
 
 .sidebar-widget-closed {

@@ -1,6 +1,6 @@
 #main-todolist {
     margin: 0 auto;
-    width: 390px;
+    width: 300px;
 
     @media (min-width: 1200px) {
         width: 560px;
@@ -33,10 +33,10 @@
     margin: 0 22px;
     border: none;
     border-radius: 0;
-    width: 65%;
+    width: 160px;
     padding: 10px;
     float: left;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.5;
 
     @media (min-width: 1200px) {
@@ -52,7 +52,7 @@
     color: $dark-blue;
     float: left;
     text-align: center;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
     transition: 0.3s;
     border-radius: 0;
@@ -78,7 +78,7 @@ li {
     position: relative;
     padding: 12px 35px;
     background: $oatmeal;
-    font-size: 16px;
+    font-size: 1rem;
     transition: 0.2s;
     font-weight: 600;
     
@@ -89,7 +89,7 @@ li {
     user-select: none;
 
     @media (min-width: 1200px) {
-        font-size: 18px;
+        font-size: 1.125rem;
         padding: 12px 40px;
     }
 

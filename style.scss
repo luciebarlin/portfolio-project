@@ -54,25 +54,18 @@ body {
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 2.75rem;
     font-weight: 600;
     z-index: 1;
     // changed to show the z index
     position: relative;
+    margin: 30px 12px 16px;
 
     @media (min-width: 1200px) {
-        font-size: 3em;
+        font-size: 3rem;
     }
 }
 
-// [data-page-name="index"] {
-//     h1 {
-//         color: #E8E3D6;
-//         -webkit-text-stroke-width: 1.5px;
-//         -webkit-text-stroke-color: #163057;
-//     }
-	
-// }
 
 [data-page-name="index"] {
     header {
@@ -83,7 +76,7 @@ h1 {
 }
 
 main {
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 2;
 }
 

@@ -22,7 +22,7 @@
     height: 32px;
     width: 210px;
     border: 2px solid $dark-blue;
-    font-size: 16px;
+    font-size: 1rem;
     padding: 0 2px;
 
     @media (min-width: 1200px) {
@@ -38,7 +38,7 @@
     background: $light-pink;
     color: $dark-blue;
     text-align: center;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
     transition: 0.3s;
     line-height: 1.5;
@@ -67,7 +67,7 @@
     background: $light-pink;
     color: $dark-blue;
     text-align: center;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
     transition: 0.3s;
     line-height: 1.5;
@@ -125,7 +125,7 @@
 
     #show-answer {
         height: 40px;
-        font-size: 20px;
+        font-size: 1.25rem;
     }
 
     #lives-counter {
@@ -143,6 +143,7 @@
         position: absolute;
         top: -75%;
         margin: 20px auto;
+        z-index: 9;
 
         &:hover {
             cursor: pointer;

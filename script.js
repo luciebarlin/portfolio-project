@@ -879,27 +879,27 @@ if (sidebarWidget) {
 
     const translateSidebarWidget = () => {
         if (widgetCloseBtn.classList.contains("rotated")) {
+
+            sidebarWidget.classList.add("translated");
+            sidebarWidgetContainer.classList.add("no-pointer-events");
+
+            if (newCarousel) {
+                sidebarWidget.classList.add("translucent");
+            }
             
-            if (window.innerWidth >= 1200) {
-                sidebarWidget.style.transform = "translateX(94%)";
-            } else if (window.innerWidth < 1200) {
-                sidebarWidget.style.transform = "translateX(91%)";
-            };
-            // sidebarWidget.style.transform = "translateX(94%)";
-            sidebarWidgetContainer.style.pointerEvents = "none";
+
         } else {
-            sidebarWidget.style.transform = "translateX(0)";
-            sidebarWidgetContainer.style.pointerEvents = "auto";
+            sidebarWidget.classList.remove("translated");
+            sidebarWidgetContainer.classList.remove("no-pointer-events");
+
+            if (newCarousel) {
+                sidebarWidget.classList.remove("translucent");
+            }
         }
     }
 
     const closeOverview = () => {
         widgetCloseBtn.classList.toggle("rotated");
-        // overviewHeading.classList.toggle("hidden");
-        // pageOverview.classList.toggle("hidden");
-        // sidebarWidget.classList.toggle("sidebar-widget-closed");
-        // sidebarWidgetContainer.classList.toggle("sidebar-widget-closed");
-        //sidebarWidget.classList.toggle("translated");
         translateSidebarWidget();
     };
 

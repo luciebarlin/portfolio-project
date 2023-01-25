@@ -24,10 +24,10 @@ main {
 }
 
 #fetched-data {
-    font-size: 22px;
+    font-size: 1.375rem;
 
     @media (min-width: 1200px) {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
 }
 
@@ -43,7 +43,7 @@ main {
 
 h2 {
     margin: 0;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 h3 {
@@ -99,7 +99,7 @@ h3 {
         }
     
         #gloves-test {
-            font-size: smaller;
+            font-size: 0.75rem;
             display: none;
 
             @media (min-width: 1200px) {
@@ -123,7 +123,7 @@ h3 {
     
     color: $dark-blue;
     min-width: 785px;
-    font-size: 15px;
+    font-size: 0.9375rem;
     font-weight: 400;
 }
 
@@ -144,7 +144,7 @@ h3 {
     padding: 0 2px;
     color: $oatmeal;
     -webkit-text-stroke: 1px $dark-blue;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 900;
     display: flex;
     flex-direction: column-reverse;

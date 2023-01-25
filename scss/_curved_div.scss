@@ -24,21 +24,21 @@ $curved-div-height: calc(832px + 100px);
         
     
     .my-name {
-        font-size: 30px;
+        font-size: 1.875rem;
         font-weight: 600;
 
         @media (min-width: 1200px) {
-            font-size: 32px;
+            font-size: 2rem;
         }
     }
     .my-bio {
-        font-size: 18px;
+        font-size: 1.125rem;
         margin: 0 40%;
         line-height: 1.5;
 
         @media (min-width: 1200px) {
             margin: 0 40%;
-            font-size: 24px;
+            font-size: 1.5rem;
         }
     }
 

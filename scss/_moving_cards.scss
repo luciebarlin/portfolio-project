@@ -71,7 +71,7 @@ html,
 .cards-project {
     // font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 0.875rem;
     padding: 0;
     margin: 0;
     position: relative;
@@ -79,7 +79,7 @@ html,
     // background-color: lighten($oatmeal, 5%);
 
     @media (min-width: 1200px) {
-        font-size: 28px;
+        font-size: 1.75rem;
     }
 
     :nth-child(1) {
