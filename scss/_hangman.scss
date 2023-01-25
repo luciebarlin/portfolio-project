@@ -4,11 +4,11 @@
     position: relative;
 
     &__header {
-        margin-bottom: 16px;
+        margin-bottom: $spacer-1;
     }
 
     &__lower-header {
-        margin: 0 0 $regular-gap;
+        margin: 0 0 $spacer-2;
     }
 }
 
@@ -21,19 +21,19 @@
 #input-box-hangman {
     height: 32px;
     width: 210px;
-    border: 2px solid $dark-blue;
+    border: $border-2;
     font-size: 1rem;
     padding: 0 2px;
 
     @media (min-width: 1200px) {
-        width: 300px;
+        width: $input-box-width;
 
     }
 }
 
 #submit-btn {
-    padding: 2px 8px;
-    height: 32px;
+    padding: 2px $spacer-half;
+    height: $btn-size;
     width: fit-content;
     background: $light-pink;
     color: $dark-blue;
@@ -57,12 +57,13 @@
 }
 
 #guess-confirmation {
-    height: 48px;
+    height: $spacer-2;
+    font-size: 1rem;
 }
 
 #restart-btn {
     padding: 2px 8px;
-    height: 32px;
+    height: $btn-size;
     width: fit-content;
     background: $light-pink;
     color: $dark-blue;
@@ -75,7 +76,7 @@
     align-content: center;
     flex-wrap: wrap;
     position: absolute;
-    top: 15%;
+    top: 13%;
 
     @media (min-width: 1200px) {
         padding: 2px 10px;
@@ -89,13 +90,13 @@
 
 #letters-area {
     display: flex;
-    margin-top: calc($regular-gap / 2);
-    gap: calc($regular-gap / 2);
+    margin-top: $spacer-1;
+    gap: $spacer-1;
     flex-direction: column;
 
     @media (min-width: 1200px) {
         flex-direction: row;
-        margin-top: $regular-gap;
+        margin-top: $spacer-2;
         gap: $regular-gap;
     }
 }

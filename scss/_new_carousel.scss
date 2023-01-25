@@ -1,9 +1,9 @@
 .carouselWrapper {
-    width: 393px;
+    width: $mobile-width-container;
     position: relative;
 
     @media (min-width: 1200px) {
-        width: 1200px - 1px; //picture is a bit smaller than width
+        width: calc($desktop-width-container - 1px); //picture is a bit smaller than width
         
     }
 }
@@ -32,7 +32,7 @@
         scroll-snap-align: center;
 
         img {
-            height: 525px;
+            height: calc($mobile-width-container * 1.334);
             width: 100%;
 
             @media (min-width: 1200px) {

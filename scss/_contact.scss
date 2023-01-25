@@ -1,33 +1,24 @@
 //contact page
 
-.contact-header {
-    img {
-        height: 48px;
-
-        @media (min-width: 1200px) {
-            height: 40px;
-        }
-    }
-}
 
 .business-card {
     background-color: $light-pink;
     color: $dark-blue;
-    height: calc(187px + $regular-gap);
-    width: calc(262px + $regular-gap);
+    height: calc(187px + $spacer-2);
+    width: calc(262px + $spacer-2);
     margin: 0 auto;
-    padding: $regular-gap;  
-    border-radius: calc($regular-gap / 2);
+    padding: $spacer-2;  
+    border-radius: $spacer-1;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    box-shadow: 5px 5px 10px $dark-blue;  
+    box-shadow: $box-shadow-blue;  
     flex-direction: column;
 
     @media (min-width: 1200px) {
-        height: calc(250px + $regular-gap);
-        width: calc(350px + $regular-gap);
+        height: calc(250px + $spacer-2);
+        width: calc(350px + $spacer-2);
     }
 
     &__upper {
@@ -47,23 +38,26 @@
     }
 
     &__right {
-        padding: 10px 20px;
+        padding: $padding-1 $padding-2; 
         font-size: 1rem;
 
         @media (min-width: 1200px) {
             font-size: 1.125rem;
-            padding: 10px 0 10px 20px;
+            padding: 0 0 0 $padding-2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
     }
 
     h2 {
         margin: 0;
-        border-bottom: 5px solid $dark-blue;
-        padding: 10px;
+        border-bottom: $border-thick;
+        padding: $padding-1;
         font-size: 1.5rem;
 
         @media (min-width: 1200px) {
-            border-right: 5px solid $dark-blue;
+            border-right: $border-thick;
             border-bottom: none;
             padding: 0;
         }
@@ -75,16 +69,11 @@
         align-items: center;
         justify-content: center;
         font-weight: 600;
-        gap: 10px;
+        gap: $spacer-1;
 
         img {
-            height: 36px;
-            width: 36px;
-
-            @media (min-width: 1200px) {
-                height: 40px;
-                width: 40px;
-            }
+            height: 40px;
+            width: 40px;
         }
     }
 

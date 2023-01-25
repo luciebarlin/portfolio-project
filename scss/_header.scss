@@ -30,13 +30,13 @@
         justify-content: center;
         list-style: none;
         font-size: 1rem;
-        gap: 12px;
+        gap: $spacer-half;
         padding: 0;
 
         @media (min-width: 1200px) {
             justify-content: flex-end;
-            gap: calc($regular-gap * 2);
-            padding-right: $regular-gap;
+            gap: $spacer-3;
+            padding-right: $spacer-2;
             font-size: 1rem;
         }
 
@@ -54,24 +54,11 @@
         .nav-links {
             //border: 1px solid green;
             background-color: lighten($oatmeal, 5%);
-            padding: 10px;
+            padding: $padding-1;
             width: 150px;
             display: none;
             flex-direction: column;
-            box-shadow: 0px 10px 10px rgb(0 0 0 / 20%);
-
-            // .weightGrow:hover {
-            //     text-shadow:
-            //     -1px -1px 0 $dark-blue,
-            //     1px -1px 0 $dark-blue,
-            //     -1px 1px 2px $dark-blue;
-            //     1px 1px 0 $dark-blue;
-            //     -webkit-transition: all .5s;
-            //     -moz-transition: all .5s;
-            //     -o-transition: all .5s;
-            //     transition: all .5s;
-            // }
-
+            box-shadow: $box-shadow;
             
         }
 

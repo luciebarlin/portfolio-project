@@ -1,4 +1,5 @@
 $header-height: 193px;
+$close-btn-size: 38px;
 
 body {
     position: relative;
@@ -7,7 +8,7 @@ body {
 .sidebar-widget-container {
     overflow: hidden;
     position: absolute;
-    top: calc($header-height - $regular-gap);
+    top: calc($header-height - $spacer-2);
     right: 10px;
     z-index: 7;
     transition: all 0.7s ease;
@@ -23,8 +24,8 @@ body {
 
 .sidebar-widget {
     height: calc(300px - $spacer-2);
-    width: 300px;
-    border: 2px solid $dark-blue;
+    width: $main-img-width;
+    border: $border-2;
     color: $dark-blue;
     background-color: $oatmeal;
     transition: all 0.7s ease;
@@ -42,7 +43,7 @@ body {
     .overview-heading-box {
         background-color: $dark-blue;
         color: $oatmeal;
-        padding: 0 10px;
+        padding: 0 $padding-1;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -63,14 +64,8 @@ body {
     .page-overview {
         padding: 0 $spacer-1;
         font-size: 1rem;
-        line-height: 1.5
+        line-height: 1.5;
     }
-
-    // .translated {
-    //     //transform: translateX(200px);
-    //     translate: 100%;
-    // }
-    
 
     ul {
         text-align: left;
@@ -102,10 +97,10 @@ body {
     font-size: 1.75rem;
     transition: all 0.6s ease;
     position: absolute;
-    top: calc($header-height - 37px);
+    top: calc($header-height - $close-btn-size);
     left: calc(100% - 46px);
-    height: 38px;
-    width: 38px;
+    height: $close-btn-size;
+    width: $close-btn-size;
     padding: 3px;
     z-index: 8;
 
@@ -208,14 +203,6 @@ body {
 .no-pointer-events {
     pointer-events: none;
 }
-
-.sidebar-widget-closed {
-    transform: scale(0);
-}
-
-
-
-
 
 
 

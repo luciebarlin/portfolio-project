@@ -1,11 +1,12 @@
-$curved-div-height: calc(832px + 100px);
+$curved-div-offset: 100px;
+$curved-div-height: calc(832px + $curved-div-offset);
 
 .curved {
     background-color: $light-pink;
     color: $dark-blue;
     text-align: center;
     width: calc(1200px * 2.5);
-    padding-top: 100px;
+    padding-top: $curved-div-offset;
     line-height: 1.5;
 
     @media (min-width: 1200px) {

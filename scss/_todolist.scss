@@ -1,9 +1,9 @@
 #main-todolist {
     margin: 0 auto;
-    width: 300px;
+    width: $mobile-width-container;
 
     @media (min-width: 1200px) {
-        width: 560px;
+        width: calc($desktop-width-container / 2);
     }
 }
 
