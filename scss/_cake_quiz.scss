@@ -31,12 +31,26 @@ legend {
     align-items: flex-start;
     font-size: 1.375rem;
 
+    
+    input,
+    label {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    
+
     @media (min-width: 1200px) {
         font-size: 1.5rem;
     }
-    
+
     label {
-        margin-right: 16px;;
+        margin-right: $spacer-1;
+
+        &::selection {
+            color: $dark-blue;
+            background-color: transparent;
+        }
     }
 }
 

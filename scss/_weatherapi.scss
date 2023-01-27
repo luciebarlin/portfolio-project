@@ -154,5 +154,6 @@ h3 {
 }
 
 footer {
-    margin-top: calc($regular-gap * 2);
+    margin-top: $spacer-3;
+    margin-bottom: $spacer-2;
 }
