@@ -26,7 +26,7 @@
 
 .modal-btn {
     box-shadow: 0 4px 8px 0 rgba(22,48,87,0.2);
-    transition: 0.3s;
+    transition: $transition-fast;
     padding: 0;
 
     &:hover {

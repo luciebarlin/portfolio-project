@@ -35,7 +35,7 @@ $expand-btn-width: 30px;
         box-shadow: $box-shadow;
         max-height: calc($main-img-width - ($spacer-1 * 2));
         overflow: hidden;
-        transition: max-height 0.4s ease;
+        transition: max-height $transition-fast;
         position: relative;
         text-align: left;
         
@@ -59,7 +59,7 @@ $expand-btn-width: 30px;
             box-shadow: $box-shadow;
             border-radius: $spacer-1;
             padding: 0 5px;
-            transition: all 0.6s ease;
+            transition: $transition-basic;
 
             &:hover {
                 background-color: lighten($dark-blue, 10%);

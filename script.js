@@ -517,28 +517,7 @@ if (carousel) {
     
 }
 
-// slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
-// slide.style.zIndex -= 1;
-
-
-
-//todo
-
-// card index 0 will be active class, 1 and 2 will be right class
-// active class:
-    //translate x axis 0;
-    //transition: all 0.5s;
-    // z-index: 3;
-//left class:
-    //translate x axis -100%
-    //transition: all 0.5s;
-    //z-index: 2;
-//right class: 
-    //translate x axis 100%
-    //transition: all 0.5s;
-    //z-index: 1;
-
-// 
+ 
 ///////////////////////
 
 // magic eight ball

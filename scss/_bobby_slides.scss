@@ -29,7 +29,7 @@
     color: $oatmeal;
     font-weight: bold;
     font-size: 1.125rem;
-    transition: 0.6s ease;
+    transition: $transition-basic;
     border-radius: 0 3px 3px 0;
     user-select: none;
     line-height: 1;
@@ -112,7 +112,7 @@
     border-radius: 50%;
     display: inline-block;
     
-    transition: background-color 0.6s ease;
+    transition: $transition-basic;
 
     @media (min-width: 1200px) {
         height: $spacer-1;

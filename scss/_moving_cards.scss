@@ -102,7 +102,7 @@ html,
         position: absolute;
         top: 30px;
         text-align: center;
-        transition: left ease-in 2s;
+        transition: left 2s ease-in;
 
         @media (min-width: 1200px) {
             line-height: 2;

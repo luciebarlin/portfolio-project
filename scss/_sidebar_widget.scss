@@ -1,5 +1,6 @@
 $header-height: 193px;
 $close-btn-size: 38px;
+$upsidedown-triangle: $dark-blue transparent transparent transparent;
 
 body {
     position: relative;
@@ -11,7 +12,7 @@ body {
     top: calc($header-height - $spacer-2);
     right: 10px;
     z-index: 7;
-    transition: all 0.7s ease;
+    transition: $transition-basic;
     transform-origin: top right;
     pointer-events: auto;
 
@@ -23,19 +24,19 @@ body {
 }
 
 .sidebar-widget {
-    height: calc(300px - $spacer-2);
-    width: $main-img-width;
+    height: calc($mobile-width-container - $spacer-2);
+    width: $mobile-width-container;
     border: $border-2;
     color: $dark-blue;
     background-color: $oatmeal;
-    transition: all 0.7s ease;
+    transition: $transition-basic;
     transform: translateX(0);
     translate: none;
     overflow: auto;
     opacity: 1;
 
     @media (min-width: 1200px) {
-        width: 600px;
+        width: calc($desktop-width-container / 2);
         height: fit-content;
 
     }
@@ -49,7 +50,7 @@ body {
         align-items: center;
         font-size: 1.75rem;
         //position: relative;
-        height: 55px;
+        height: calc(($mobile-width-container - $spacer-2) / 5);
 
         .overview-heading {
             font-weight: 600;
@@ -95,7 +96,7 @@ body {
     border-radius: 50%;
     font-weight: 600;
     font-size: 1.75rem;
-    transition: all 0.6s ease;
+    transition: $transition-basic;
     position: absolute;
     top: calc($header-height - $close-btn-size);
     left: calc(100% - 46px);
@@ -131,7 +132,7 @@ body {
         padding: 5px 0;
         border-radius: 6px;
         position: absolute;
-        transition: all 0.6s ease;
+        transition: $transition-basic;
         z-index: 2;
         font-size: 1rem;
         line-height: 1.5;
@@ -157,14 +158,12 @@ body {
             margin-left: -5px;
             border-width: 5px;
             border-style: solid;
-            border-color: $dark-blue transparent transparent transparent;
+            border-color: $upsidedown-triangle;
             //left: 83%; //mobile
             left: 50%;
         }
         
     }
-
-    
 
 }
 
