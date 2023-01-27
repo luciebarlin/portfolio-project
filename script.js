@@ -1210,12 +1210,10 @@ const greeting = document.querySelector(".greeting");
 
 if (greeting) {
     
-    const variableGreeting = document.querySelector(".variable-greeting");
     const currentTime = new Date();
-    const hours = currentTime.getHours(); // => 9
-    const minutes = currentTime.getMinutes(); // =>  30
-    const seconds = currentTime.getSeconds(); // => 51
-    console.log("Current time: " + hours + ":" +  minutes + ":" + seconds);
+    const hours = currentTime.getHours(); 
+    const minutes = currentTime.getMinutes(); 
+    console.log("Current time: " + hours + ":" +  minutes);
 
     const morning = hours > 2 && hours < 12;
     const afternoon = hours > 11 && hours < 18;
@@ -1225,26 +1223,15 @@ if (greeting) {
 
     const showCorrectGreeting = () => {
         greeting.classList.add("fade-in");
-        // variableGreeting.innerHTML = "...";
+        
 
         for (t = 0; t < timesOfDayArr.length; t++) {
             if (timesOfDayArr[t]) {
-                console.log(timesOfDayArr);
-                variableGreeting.innerHTML = timeStringsArr[t];
+                greeting.innerHTML = "Good " + timeStringsArr[t] + "!";
                 break;
             } 
         } 
 
-        // if (morning) {
-        //     variableGreeting.innerHTML = " morning";
-        // } else if (afternoon) {
-        //     variableGreeting.innerHTML = " afternoon";
-        // } else if (evening) {
-        //     variableGreeting.innerHTML = " evening";
-        // } else {
-        //     greeting.innerHTML = "Hi!";
-        // }
-        
     }
 
     showCorrectGreeting();
