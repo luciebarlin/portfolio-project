@@ -43,9 +43,9 @@ $expand-btn-width: 50px;
             width: calc($main-img-width * 1.5);
         }
 
-        p {
-            margin-block-start: 0;
-        }
+        // p {
+        //     margin-block-start: 0;
+        // }
 
         &.expanded {
            // min-height: calc($main-img-width * 3);
