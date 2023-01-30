@@ -1,6 +1,5 @@
-$expand-btn-width: 30px;
-
-
+$expand-btn-height: 30px;
+$expand-btn-width: 50px;
 
 .about-section {
     display: flex;
@@ -53,16 +52,16 @@ $expand-btn-width: 30px;
             max-height: calc($main-img-width * 3);
         }
 
-        img {
-            width: $expand-btn-width;
+        button {
             position: absolute;
-            bottom: calc($expand-btn-width / 2);
+            bottom: $spacer-1;
             left: 50%;
-            margin-left: -(calc($expand-btn-width / 2));
+            margin-left: -(calc(($expand-btn-width + $spacer-half * 2) / 2));
             background-color: $dark-blue;
             box-shadow: $box-shadow;
-            border-radius: $spacer-1;
-            padding: 0 5px;
+            height: $expand-btn-height;
+            padding: 2px $spacer-half;
+            color: $pale-blue;
             transition: $transition-basic;
 
             &:hover {
@@ -70,6 +69,7 @@ $expand-btn-width: 30px;
                 scale: 1.1;
             }
         }
+
     }
 }
 
