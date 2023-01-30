@@ -29,7 +29,7 @@ $expand-btn-width: 30px;
         font-size: 1rem;
         line-height: 1.5;
         width: $main-img-width;
-        background-color: $oatmeal;
+        background-color: darken($pale-blue, 5%);
         border-radius: $spacer-1;
         padding: $spacer-1 $spacer-2;
         box-shadow: $box-shadow;
@@ -42,6 +42,10 @@ $expand-btn-width: 30px;
 
         @media (min-width: 1200px) {
             width: calc($main-img-width * 1.5);
+        }
+
+        p {
+            margin-block-start: 0;
         }
 
         &.expanded {
@@ -63,7 +67,6 @@ $expand-btn-width: 30px;
 
             &:hover {
                 background-color: lighten($dark-blue, 10%);
-                cursor: pointer;
                 scale: 1.1;
             }
         }

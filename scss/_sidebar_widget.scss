@@ -28,7 +28,7 @@ body {
     width: $mobile-width-container;
     border: $border-2;
     color: $dark-blue;
-    background-color: $oatmeal;
+    background-color: darken($pale-blue, 5%);
     transition: $transition-basic;
     transform: translateX(0);
     translate: none;
@@ -43,7 +43,7 @@ body {
 
     .overview-heading-box {
         background-color: $dark-blue;
-        color: $oatmeal;
+        color: $pale-blue;
         padding: 0 $padding-1;
         display: flex;
         justify-content: center;
@@ -91,7 +91,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: $oatmeal;
+    color: $pale-blue;
     background-color: transparent;
     border-radius: 50%;
     font-weight: 600;
@@ -127,7 +127,7 @@ body {
         display: block;
         opacity: 0;
         background-color: $dark-blue;
-        color: $oatmeal;
+        color: $pale-blue;
         text-align: center;
         padding: 5px 0;
         border-radius: 6px;

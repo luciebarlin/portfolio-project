@@ -2,7 +2,7 @@
 
 
 .business-card {
-    background-color: $light-pink;
+    background-color: lighten($light-pink, 3%);
     color: $dark-blue;
     height: calc(187px + $spacer-2);
     width: calc(262px + $spacer-2);
