@@ -28,7 +28,7 @@ body {
     width: $mobile-width-container;
     border: $border-2;
     color: $dark-blue;
-    background-color: $oatmeal;
+    background-color: darken($pale-blue, 5%);
     transition: $transition-basic;
     transform: translateX(0);
     translate: none;
@@ -43,7 +43,7 @@ body {
 
     .overview-heading-box {
         background-color: $dark-blue;
-        color: $oatmeal;
+        color: $pale-blue;
         padding: 0 $padding-1;
         display: flex;
         justify-content: center;
@@ -91,7 +91,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: $oatmeal;
+    color: $pale-blue;
     background-color: transparent;
     border-radius: 50%;
     font-weight: 600;
@@ -127,7 +127,7 @@ body {
         display: block;
         opacity: 0;
         background-color: $dark-blue;
-        color: $oatmeal;
+        color: $pale-blue;
         text-align: center;
         padding: 5px 0;
         border-radius: 6px;
@@ -213,31 +213,55 @@ body {
 
 // <div class="tooltiptext"> 
 
-// </div>
-//     <div id="widget-close" class="widget-close">
-//       × 
 //     </div>
+//     <button id="widget-close" class="widget-close">
+//       × 
+//     </button>
 
-// <div id="sidebar-widget-container" class="sidebar-widget-container">
-//     <div id="sidebar-widget" class="sidebar-widget">
+//     <div id="sidebar-widget-container" class="sidebar-widget-container">
+//       <div id="sidebar-widget" class="sidebar-widget">
 //         <div class="overview-heading-box">
-//             <h2 class="overview-heading">
+//           <h2 class="overview-heading">
 //             Page overview 
-//             </h2>
+//           </h2>
 //         </div>
         
 //         <div class="page-overview">
-//             <ul>
-//                 <li class="brief">
-//                     Brief
+//           <ul>
+//             <li class="brief">
+//               <span class="bolder">Brief</span> 
+//               <ul>
+//                 <li>
+//                   Make an interactive todo list that saves tasks, marks tasks as complete, and removes tasks with an exit button
 //                 </li>
-//                 <li class="concepts">
-//                     Concepts used
+//                 <li>
+//                   Bonus: use localStorage to save the tasks on refresh of the page
 //                 </li>
-//                 <li class="problems">
-//                     Problems encountered
+//               </ul>
+//             </li>
+//             <li class="concepts">
+//                 <span class="bolder">Concepts used</span> 
+//               <ul>
+//                 <li>
+//                   Event listeners: add button for tasks, close button to delete tasks, mark task as complete on click                
 //                 </li>
-//             </ul>
+//                 <li>
+//                   Changing my original idea for styling to make the list more accessible- utilising WebAIM often 
+//                 </li>
+//               </ul>
+//             </li>
+//             <li class="problems">
+//                 <span class="bolder">Problems encountered</span> 
+//               <ul>
+//                 <li>
+//                   Local storage was a new concept for me, it was quite difficult to understand how to use it
+//                 </li>
+//                 <li>
+//                   At first some of the styles were not applied to new tasks, however that was easily fixed
+//                 </li>
+//               </ul>
+//             </li>
+//           </ul>
 //         </div>
+//       </div>
 //     </div>
-// </div>

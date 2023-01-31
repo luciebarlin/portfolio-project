@@ -54,13 +54,10 @@ h3 {
     font-weight: 400;
 }
 
-#btn__weather-src {
-    color: $oatmeal;
+.btn__weather-src {
+    color: $pale-blue;
     background-color: $dark-blue;
-    font-family: 'Poppins', sans-serif;
-    border-radius: 10px;
     margin: 0 10px;
-    cursor: pointer;
 }
 
 #temp-data {
@@ -71,7 +68,7 @@ h3 {
     position: relative;
 
     .temp-sticker {
-        color: $oatmeal;
+        color: $pale-blue;
         background-color: $dark-blue;
         border-radius: 50%;
         width: 90px;
@@ -86,7 +83,7 @@ h3 {
         position: absolute;
         bottom: -15px;
         right: -25px;
-        border: 3px solid $oatmeal;
+        border: 3px solid darken($pale-blue, 5%);
 
         
         @media (min-width: 1200px) {
@@ -95,7 +92,7 @@ h3 {
             font-size: 0.9rem;
             bottom: 45px;
             right: -100px;
-            border: 10px solid $oatmeal;
+            border: 10px solid darken($pale-blue, 5%);
         }
     
         #gloves-test {
@@ -142,7 +139,7 @@ h3 {
     background-color: $dark-blue;
     width: 25px;
     padding: 0 2px;
-    color: $oatmeal;
+    color: darken($pale-blue, 5%);
     -webkit-text-stroke: 1px $dark-blue;
     font-size: 1rem;
     font-weight: 900;

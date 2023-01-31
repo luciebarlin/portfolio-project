@@ -185,8 +185,8 @@ const tempCallback = tempDataObj => {
     const barGraph = document.getElementById("bar-graph");
 
     //change the height of the bar graph according to average temp
-    barGraph.style.height = (averageTemp * 15) + "px";
-    if (averageTemp * 15 < 34) {
+    barGraph.style.height = (averageTemp * 20) + "px";
+    if (averageTemp * 20 < 34) {
         barGraph.style.height = 34 + "px";
     }
 
@@ -1219,17 +1219,17 @@ if (greeting) {
 /////////////
 
 // expand buttonn on about me page
-const expandArrow = document.querySelector(".expand-arrow");
+const expandBtn = document.querySelector(".expand-btn");
 const aboutBox = document.querySelector(".about-box");
 
 
-if (expandArrow) {
+if (expandBtn) {
 
     const expandAboutMe = () => {
         aboutBox.classList.add("expanded");
         //aboutBox.style.maxHeight = "900px";
-        expandArrow.classList.add("hidden");
+        expandBtn.classList.add("hidden");
     }
     
-    expandArrow.addEventListener("click", expandAboutMe);
+    expandBtn.addEventListener("click", expandAboutMe);
 }

@@ -2,7 +2,7 @@ $curved-div-offset: 100px;
 $curved-div-height: calc(832px + $curved-div-offset);
 
 .curved {
-    background-color: $light-pink;
+    background-color: lighten($light-pink, 3%);
     color: $dark-blue;
     text-align: center;
     width: calc(1200px * 2.5);

@@ -88,8 +88,15 @@
     <main id="main-todolist">
         <div id="header-todolist" class="header-todolist">
             <h2>Lucie's Todo List</h2>
-            <input type="text" id="todo-input" placeholder="Add a task">
-            <span id="add-btn" class="addBtn">Add</span>
+            <div class="input-area">
+              <input type="text" id="todo-input" placeholder="add a task">
+              <button id="add-btn" class="addBtn">
+                <span>
+                  Add
+                </span>
+              </button>
+            </div>
+            
           </div>
           
           <ul id="ul-todo">
@@ -107,9 +114,9 @@
     <div class="tooltiptext"> 
 
     </div>
-    <div id="widget-close" class="widget-close">
+    <button id="widget-close" class="widget-close">
       × 
-    </div>
+    </button>
 
     <div id="sidebar-widget-container" class="sidebar-widget-container">
       <div id="sidebar-widget" class="sidebar-widget">

@@ -16,7 +16,7 @@ $dark-chocolate:  #490206;
     .sprinkle {
         //border: 1px solid darkgreen;
         background-color: #490206;
-        height: 32px;
+        height: $spacer-2;
         width: 12px;
         border-radius: 6px;
         box-shadow: 0.5vh 0.5vh 0 rgba(0, 0, 0, .25);
@@ -417,11 +417,11 @@ $dark-chocolate:  #490206;
           opacity: 1;
         }
         80% {
-            height: calc(32px * 1.125);
+            height: calc($spacer-2 * 1.125);
             width: calc(12px * 1.125);
         }
         100% {
-            height: 32px;
+            height: $spacer-2;
             width: 12px;
         }
       }
