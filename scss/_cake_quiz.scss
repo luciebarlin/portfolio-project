@@ -81,18 +81,18 @@ legend {
         font-size: 1.125rem;
         font-weight: 900;
         color: $oatmeal;
-        -webkit-text-stroke: 2px $dark-blue;
+        -webkit-text-stroke: 1px $dark-blue;
         position: absolute;
         bottom: $spacer-1;
         left: calc(50% - ($main-img-width / 2) + $spacer-half);
-
+    
         @media (min-width: 1200px) {
             left: calc(50% - ($main-img-width * 1.5 / 2) + $spacer-half);
         }
-
+    
         a {
             color: $oatmeal;
-            -webkit-text-stroke: 2px $dark-blue; 
+            -webkit-text-stroke: 1px $dark-blue; 
         }
     }
 }
