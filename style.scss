@@ -81,6 +81,7 @@ h1 {
     // changed to show the z index
     position: relative;
     margin: 30px 12px $spacer-1;
+    line-height: 1.25;
 
     @media (min-width: 1200px) {
         font-size: 3rem;

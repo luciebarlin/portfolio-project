@@ -1135,8 +1135,7 @@ if (cakeQuiz) {
             quest.classList.contains("hidden"));
 
         if (check) {
-            console.log("check complete");
-            console.log(cakeAnswerArr);
+            
             const answeredMostlyA = cakeAnswerArr[0].length >= 2 && cakeAnswerArr[1].length < 3 && cakeAnswerArr[2].length < 3 && cakeAnswerArr[3].length < 3;
             const answeredMostlyB = cakeAnswerArr[1].length >= 2 && cakeAnswerArr[0].length < 3 && cakeAnswerArr[2].length < 3 && cakeAnswerArr[3].length < 3;
             const answeredMostlyC = cakeAnswerArr[2].length >= 2 && cakeAnswerArr[0].length < 3 && cakeAnswerArr[1].length < 3 && cakeAnswerArr[3].length < 3;
@@ -1146,7 +1145,6 @@ if (cakeQuiz) {
 
             for (inx2 = 0; inx2 < modeAnswers.length; inx2++) {
                 if (modeAnswers[inx2]) {
-                    console.log(`mostly: ${answerValueArr[inx2]}`);
                     cakeTypeArr[inx2].classList.remove("hidden");
                     break;
                 }
@@ -1227,7 +1225,6 @@ if (expandBtn) {
 
     const expandAboutMe = () => {
         aboutBox.classList.add("expanded");
-        //aboutBox.style.maxHeight = "900px";
         expandBtn.classList.add("hidden");
     }
     

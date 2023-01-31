@@ -1,6 +1,7 @@
 $header-height: 193px;
 $close-btn-size: 38px;
 $upsidedown-triangle: $dark-blue transparent transparent transparent;
+$widget-basic-padding: 24px;
 
 body {
     position: relative;
@@ -49,7 +50,6 @@ body {
         justify-content: center;
         align-items: center;
         font-size: 1.75rem;
-        //position: relative;
         height: calc(($mobile-width-container - $spacer-2) / 5);
 
         .overview-heading {
@@ -63,18 +63,20 @@ body {
     }
 
     .page-overview {
-        padding: 0 $spacer-1;
+        padding: $spacer-1 $widget-basic-padding;
         font-size: 1rem;
         line-height: 1.5;
+        text-align: left;
+
+        @media (min-width: 1200px) {
+            padding: $spacer-1 calc($widget-basic-padding + $spacer-1);
+        }
+
     }
 
     ul {
-        text-align: left;
-        padding-inline-start: 28px;
-
-        @media (min-width: 1200px) {
-            padding-inline-start: 40px;
-        }
+        padding-inline-start: $widget-basic-padding; 
+        margin: $spacer-half 0 $spacer-1;
 
         li {
             padding-bottom: $spacer-half;
@@ -99,7 +101,7 @@ body {
     transition: $transition-basic;
     position: absolute;
     top: calc($header-height - $close-btn-size);
-    left: calc(100% - 46px);
+    left: calc(100% - 43px);
     height: $close-btn-size;
     width: $close-btn-size;
     padding: 3px;
@@ -113,7 +115,7 @@ body {
 
     @media (min-width: 1200px) {
         top: calc($header-height - 10px);
-        left: calc(100% - 145px);
+        left: calc(100% - 143px);
         height: 50px;
         width: 50px;
     }
