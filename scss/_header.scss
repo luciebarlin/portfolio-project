@@ -16,7 +16,8 @@
 
     &__inner-mobile {
         display: flex;
-        justify-content: center;
+        overflow: scroll;
+        
     
         @media (min-width: 1200px) {
             display: none;
@@ -25,23 +26,23 @@
     
 
     &__items {
-        //border: 1px solid red;
         display: flex;
         justify-content: center;
         list-style: none;
         font-size: 1rem;
         gap: $spacer-half;
         padding: 0;
+        margin: 16px auto;
 
         @media (min-width: 1200px) {
             justify-content: flex-end;
             gap: $spacer-3;
             padding-right: $spacer-2;
             font-size: 1rem;
+            margin: 16px 0;
         }
 
         .nav-bar__item {
-            //border: 1px solid black;
             width: fit-content;
             
             @media (min-width: 1200px) {
@@ -52,7 +53,6 @@
         }
 
         .nav-links {
-            //border: 1px solid green;
             background-color: $pale-blue;
             padding: $padding-1;
             width: 150px;
