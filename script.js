@@ -152,7 +152,7 @@ const tempCallback = tempDataObj => {
         return;
     };
 
-    console.log(tempDataObj);
+    //console.log(tempDataObj);
     glovesCheck.innerHTML = "Gloves check: " + JSON.stringify(tempDataObj);
 
     //tempData.innerHTML += JSON.stringify(tempDataObj);
@@ -163,7 +163,7 @@ const tempCallback = tempDataObj => {
     //     console.log(hourlyTemp);
     // })
 
-    console.log(tempArr);
+    //console.log(tempArr);
     //tempData.innerHTML = tempArr;
    
     let tempArrSum = 0;
@@ -202,7 +202,7 @@ const tempCallback = tempDataObj => {
         const tempArrString = tempArrMap.toString();
         
         const spacedString = tempArrString.replaceAll(",", " | ");
-        console.log(spacedString);
+        //console.log(spacedString);
         createdDiv.innerHTML = spacedString;
         createdDiv.classList.add("bargraph-temps");
 
@@ -318,24 +318,51 @@ if (openModals) {
     const modalBtns = document.querySelectorAll(".modal-btn");
     const closeSpans = document.querySelectorAll(".close");
 
+    const openModalFunc = event => {
+        const targetModalSelector = event.target.dataset.targetModal;
+        //console.log(targetModalSelector);
+        const targetModal = document.getElementById(targetModalSelector);
+        //console.log(targetModal);
+        targetModal.style.display = "block";
+    }
+
+    // const closeModalFunc = event => {
+    //     span.onclick = function() {
+    //         openModals.forEach(openModal => {
+    //             openModal.style.display = "none";
+    //         })
+                
+    //     }
+    // }
+
     modalBtns.forEach(btn => {
-        btn.onclick = function(event) {
+      
+        btn.addEventListener("click", openModalFunc);
 
-            const targetModalSelector = event.target.dataset.targetModal;
-            console.log(targetModalSelector);
-            const targetModal = document.getElementById(targetModalSelector);
-            console.log(targetModal);
-            targetModal.style.display = "block";
-        }
+        btn.addEventListener('keydown', (event) => {
+            if (event.code === 'Space' || event.code === 'Enter') {
+              btn.click();
+            }
+        });
 
-    closeSpans.forEach(span => {
-        span.onclick = function() {
-            openModals.forEach(openModal => {
-                openModal.style.display = "none";
-            })
-                   
-        }
-    })
+        closeSpans.forEach(span => {
+
+            const closeModalFunc = event => {
+                span.onclick = function() {
+                    openModals.forEach(openModal => {
+                        openModal.style.display = "none";
+                    })
+                }
+            }
+
+            span.addEventListener("click", closeModalFunc);
+
+            span.addEventListener('keydown', (event) => {
+                if (event.code === 'Space' || event.code === 'Enter') {
+                  span.click();
+                }
+            });
+        })
         
 
         window.onclick = function(event) {
@@ -399,7 +426,7 @@ if (mainTodoList) {
         let inputValue = inputHole.value;
         const newTaskElement = document.createTextNode(inputValue);
         li.appendChild(newTaskElement);
-        console.log(newTaskElement);
+        //console.log(newTaskElement);
         
         let tasksArr = [];
         //tasksArr.push(newTask);
@@ -413,10 +440,10 @@ if (mainTodoList) {
         } else {
             document.getElementById("ul-todo").appendChild(li);
             //console.log("hi");
-            console.log(typeof inputValue, tasksArr);
+            //console.log(typeof inputValue, tasksArr);
             addCloseBtnToListItems();
             tasksArr.push(inputValue);
-            console.log(tasksArr);
+            //console.log(tasksArr);
             localStorage.setItem('tasksArr', JSON.stringify(tasksArr));
 
         }
@@ -717,7 +744,7 @@ if (hangmanGame) {
     const randomWord = Math.floor(Math.random() * possibleAnswersArrCaps.length);
     const hangmanAnswer = possibleAnswersArrCaps[randomWord];
 
-    console.log(hangmanAnswer);
+    //console.log(hangmanAnswer);
 
     //put in the underscores for the mystery answer
     Array.from(hangmanAnswer).forEach(letter => {
@@ -1135,8 +1162,8 @@ if (cakeQuiz) {
             quest.classList.contains("hidden"));
 
         if (check) {
-            console.log("check complete");
-            console.log(cakeAnswerArr);
+            //console.log("check complete");
+            //console.log(cakeAnswerArr);
             const answeredMostlyA = cakeAnswerArr[0].length >= 2 && cakeAnswerArr[1].length < 3 && cakeAnswerArr[2].length < 3 && cakeAnswerArr[3].length < 3;
             const answeredMostlyB = cakeAnswerArr[1].length >= 2 && cakeAnswerArr[0].length < 3 && cakeAnswerArr[2].length < 3 && cakeAnswerArr[3].length < 3;
             const answeredMostlyC = cakeAnswerArr[2].length >= 2 && cakeAnswerArr[0].length < 3 && cakeAnswerArr[1].length < 3 && cakeAnswerArr[3].length < 3;
@@ -1146,7 +1173,7 @@ if (cakeQuiz) {
 
             for (inx2 = 0; inx2 < modeAnswers.length; inx2++) {
                 if (modeAnswers[inx2]) {
-                    console.log(`mostly: ${answerValueArr[inx2]}`);
+                    //console.log(`mostly: ${answerValueArr[inx2]}`);
                     cakeTypeArr[inx2].classList.remove("hidden");
                     break;
                 }
