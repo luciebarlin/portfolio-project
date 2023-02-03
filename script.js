@@ -391,6 +391,7 @@ if (mainTodoList) {
             const span = document.createElement("SPAN");
             const txt = document.createTextNode("\u00D7");
             span.classList.add("close");
+            span.tabIndex = "0";
             span.appendChild(txt);
             item.appendChild(span);
         });
@@ -408,6 +409,12 @@ if (mainTodoList) {
             let div = this.parentElement;
             div.style.display = "none";
         };
+
+        closeBtn.addEventListener('keydown', (event) => {
+            if (event.code === 'Space' || event.code === 'Enter') {
+                closeBtn.click();
+            }
+        });
         
     });
 
@@ -419,13 +426,24 @@ if (mainTodoList) {
         }
     }, false);
 
+    list.addEventListener('keydown', (event) => {
+        if (event.code === 'Space' || event.code === 'Enter') {
+            if (event.target.tagName === 'LI') {
+                event.target.classList.toggle('checked');
+            }
+        }
+    });
+
+    const inputHole = document.getElementById("todo-input");
+
     // Create a new list item when clicking on the "Add" button
     const createNewElement = () => {
         const li = document.createElement("li");
-        const inputHole = document.getElementById("todo-input");
+        //const inputHole = document.getElementById("todo-input");
         let inputValue = inputHole.value;
         const newTaskElement = document.createTextNode(inputValue);
         li.appendChild(newTaskElement);
+        li.tabIndex = "0";
         //console.log(newTaskElement);
         
         let tasksArr = [];
@@ -466,6 +484,14 @@ if (mainTodoList) {
 
     const addBtn = document.querySelector("#add-btn");
     addBtn.addEventListener("click", createNewElement);
+
+    //const inputHole = document.getElementById("todo-input");
+
+    inputHole.addEventListener('keydown', (event) => {
+        if (event.code === 'Enter') {
+            addBtn.click();
+        }
+    });
 }
 
 
