@@ -1,7 +1,12 @@
 $header-height: 193px;
 $close-btn-size: 38px;
+$close-btn-padding: 6px;
 $upsidedown-triangle: $dark-blue transparent transparent transparent;
 $widget-basic-padding: 24px;
+$mobile-closed-widget-visible: calc($mobile-width-container * 0.09);  //91% of 300px: 27px;
+$desktop-closed-widget-visible: calc($desktop-width-container / 2 * 0.09); //94 of 600px: 36px;
+$container-offset-mobile: 10px;
+$container-offset-desktop: 100px;
 
 body {
     position: relative;
@@ -11,7 +16,7 @@ body {
     overflow: hidden;
     position: absolute;
     top: calc($header-height - $spacer-2);
-    right: 10px;
+    right: $container-offset-mobile;
     z-index: 7;
     transition: $transition-basic;
     transform-origin: top right;
@@ -20,7 +25,7 @@ body {
 
     @media (min-width: 1200px) {
         top: $header-height;
-        right: 100px;
+        right: $container-offset-desktop;
     }
 }
 
@@ -101,7 +106,7 @@ body {
     transition: $transition-basic;
     position: absolute;
     top: calc($header-height - $close-btn-size);
-    left: calc(100% - 43px);
+    left: calc(100% - $close-btn-size + $close-btn-padding - 2px); //2px to account for diameter of rotated square
     height: $close-btn-size;
     width: $close-btn-size;
     padding: 3px;
@@ -115,7 +120,7 @@ body {
 
     @media (min-width: 1200px) {
         top: calc($header-height - 10px);
-        left: calc(100% - 143px);
+        left: calc(100% - ($container-offset-desktop + $close-btn-size + $close-btn-padding - 2px)); //2px to account for diameter of rotated square
         height: 50px;
         width: 50px;
     }
