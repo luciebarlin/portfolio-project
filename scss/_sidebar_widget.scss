@@ -56,6 +56,8 @@ body {
         align-items: center;
         font-size: 1.75rem;
         height: calc(($mobile-width-container - $spacer-2) / 5);
+        position: sticky;
+        top: 0;
 
         .overview-heading {
             font-weight: 600;
