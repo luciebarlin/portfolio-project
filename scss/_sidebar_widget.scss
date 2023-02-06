@@ -106,7 +106,7 @@ body {
     transition: $transition-basic;
     position: absolute;
     top: calc($header-height - $close-btn-size);
-    left: calc(100% - $close-btn-size + $close-btn-padding - 2px); //2px to account for diameter of rotated square
+    left: calc(100% - ($close-btn-size + $close-btn-padding - 2px)); //2px to account for diameter of rotated square
     height: $close-btn-size;
     width: $close-btn-size;
     padding: 3px;
