@@ -364,6 +364,13 @@ if (openModals) {
             });
         })
         
+        window.onkeydown = function(event) {
+            openModals.forEach(openModal => {
+                if (event.code === 'Escape') {
+                    openModal.style.display = "none";
+                }
+            })
+        }
 
         window.onclick = function(event) {
             openModals.forEach(openModal => {
@@ -374,7 +381,7 @@ if (openModals) {
             
         }
     })
-} 
+}
 
 
 
