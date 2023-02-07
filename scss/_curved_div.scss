@@ -27,6 +27,7 @@ $curved-div-height: calc(832px + $curved-div-offset);
     .my-name {
         font-size: 1.875rem;
         font-weight: 600;
+        line-height: 1.75;
 
         @media (min-width: 1200px) {
             font-size: 2rem;

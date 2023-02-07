@@ -1283,3 +1283,23 @@ if (expandBtn) {
     
     expandBtn.addEventListener("click", expandAboutMe);
 }
+
+///////////////////
+
+//cv button
+
+const cvBtn = document.querySelector(".cv-btn");
+
+if (cvBtn) {
+
+    const addFlashing = () => {
+        cvBtn.classList.add("flashing");
+    }
+    setTimeout(addFlashing, 2000);
+
+    const removeFlashing = () => {
+        cvBtn.classList.remove("flashing");
+    }
+
+    cvBtn.addEventListener("click", removeFlashing);
+}
