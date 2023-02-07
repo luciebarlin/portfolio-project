@@ -959,10 +959,12 @@ if (sidebarWidget) {
     widgetCloseBtn.addEventListener("click", showTooltip);
     widgetCloseBtn.addEventListener("mouseout", hideTooltip);
 
-    if (cardsProject) {
-        window.addEventListener("load", closeOverview);
+    window.addEventListener("load", closeOverview);
+
+    // if (cardsProject) {
+    //     window.addEventListener("load", closeOverview);
         
-    }
+    // }
 
 }
 
