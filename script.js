@@ -968,6 +968,18 @@ if (sidebarWidget) {
 
     window.addEventListener("load", closeOverview);
 
+    if (!widgetCloseBtn.classList.contains("rotated")) {
+        window.onkeydown = function(event) {
+            
+                if (event.code === 'Escape') {
+                    sidebarWidget.classList.add("translated");
+                }
+            
+        }
+    }
+
+    
+
     // if (cardsProject) {
     //     window.addEventListener("load", closeOverview);
         
