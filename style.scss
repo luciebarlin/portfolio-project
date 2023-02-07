@@ -117,13 +117,13 @@ a {
 
     @media (min-width: 1200px) {
         transition: $transition-basic;
-        border-bottom: 1px solid transparent;
+        //border-bottom: 1px solid transparent;
     }
     
     &:hover {
         @media (min-width: 1200px) {
-            border-color: $dark-blue;
-            
+            //border-color: $dark-blue;
+            text-decoration: underline;
         }
       
     }

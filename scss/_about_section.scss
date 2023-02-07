@@ -70,6 +70,35 @@ $expand-btn-width: 50px;
             }
         }
 
+        a {
+            text-decoration: underline;
+        }
+
     }
+}
+
+
+.cv-btn {
+    font-size: 1.125rem;
+    position: absolute;
+    top: $nav-bar-height;
+    right: $spacer-3;
+    background-color: $dark-blue;
+    
+    @media (min-width: 1200px) {
+        font-size: 1.25rem;
+
+    }
+
+    a {
+        color: $pale-blue;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+
 }
 
