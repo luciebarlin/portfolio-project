@@ -42,3 +42,15 @@
         }
     }
 }
+
+.pause-btn {
+    border-radius: 50%;
+    height: calc($btn-size * 1.5);
+    width: calc($btn-size * 1.5);
+    position: absolute;
+    top: $spacer-1;
+    right: $spacer-3;
+    background-color: $dark-blue;
+    color: $pale-blue;
+    cursor: pointer;
+}
