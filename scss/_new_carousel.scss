@@ -65,16 +65,27 @@
     z-index: 1;
     font-size: 1rem;
 
+    img {
+        height: $btn-size;
+        width: $btn-size;
+    }
+
     @media (min-width: 1200px) {
         height: calc($btn-size * 1.5);
         width: calc($btn-size * 1.5);
         top: -$spacer-3;
         font-size: 1.5rem;
+
+        img {
+            height: calc($btn-size * 1.5);
+            width: calc($btn-size * 1.5);
+        }
     }
     
 }
 
 .stop-btn {
+    
     right: $spacer-1;
 
     @media (min-width: 1200px) {
@@ -83,6 +94,7 @@
 }
 
 .play-btn {
+    
     right: $spacer-3;
 
     @media (min-width: 1200px) {
