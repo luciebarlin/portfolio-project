@@ -1,3 +1,10 @@
+.slideshow-page {
+    margin-top: 32px;
+    @media (min-width: 1200px) {
+        margin-top: 0;
+    }
+}
+
 .carouselWrapper {
     width: $mobile-width-container;
     position: relative;
@@ -46,30 +53,46 @@
 .stop-btn,
 .play-btn {
     border-radius: 50%;
-    height: calc($btn-size * 1.5);
-    width: calc($btn-size * 1.5);
+    height: $btn-size;
+    width: $btn-size;
     position: absolute;
-    top: -$spacer-3;
+    top: -(calc($spacer-2 + 10px)); //plus diameter of box shadow
     cursor: pointer;
     color: darken($light-pink, 10%);
     background-color: $dark-blue;
-    box-shadow: none;
     opacity: 0.7;
+    box-shadow: none;
     z-index: 1;
+    font-size: 1rem;
+
+    @media (min-width: 1200px) {
+        height: calc($btn-size * 1.5);
+        width: calc($btn-size * 1.5);
+        top: -$spacer-3;
+        font-size: 1.5rem;
+    }
     
 }
 
 .stop-btn {
-    right: $spacer-3;
+    right: $spacer-1;
+
+    @media (min-width: 1200px) {
+        right: $spacer-3;
+    }
 }
 
 .play-btn {
-    right: calc($spacer-3 * 2);
+    right: $spacer-3;
+
+    @media (min-width: 1200px) {
+        right: calc($spacer-3 * 2);
+    }
 }
 
-.active-btn {
+.pressable-btn {
     opacity: 1;
     box-shadow: 5px 5px 10px $dark-blue;
-    scale: 1.125;
+    scale: 1.25;
 }
 

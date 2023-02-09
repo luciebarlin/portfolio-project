@@ -1,5 +1,5 @@
 
-$desserts: "🍧", "🍦", "🍮", "🍩", "🍪", "🍫", "🍬", "🍰";
+$desserts: "🍧", "🍦", "🍮", "🍩", "🍪", "🍫", "🍰", "🍬";
 
 @for $dessert from 1 through length($desserts) {
     .skills {
@@ -11,20 +11,26 @@ $desserts: "🍧", "🍦", "🍮", "🍩", "🍪", "🍫", "🍬", "🍰";
 
 
 .skills {
-    width: 50vw;
+    width: 90vw;
     margin: 0 auto $spacer-2;
 
+    @media (min-width: 1200px) {
+        width: 50vw;
+    }
     
 
 
     ul {
         font-size: 1rem;
         text-align: left; 
-        // list-style: "🍦";
 
         li {
             padding-inline-start: $spacer-half;
             font-weight: 600;
+
+            h3 {
+                font-weight: 600;
+            }
 
             p {
                 font-weight: 400;

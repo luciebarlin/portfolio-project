@@ -1172,23 +1172,23 @@ if (newCarousel) {
     let carouselInterval = setInterval(startCarousel, speed);
 
     const stopCarousel = () => {
-        if (stopBtn.classList.contains("active-btn")) {
-            console.log("already stopped");
+        if (playBtn.classList.contains("pressable-btn")) {
+            console.log("click the other button");
             return;
         };
         clearInterval(carouselInterval);
-        stopBtn.classList.add("active-btn");
-        playBtn.classList.remove("active-btn");
+        playBtn.classList.add("pressable-btn");
+        stopBtn.classList.remove("pressable-btn");
     }
 
     const restartCarousel = () => {
-        if (playBtn.classList.contains("active-btn")) {
-            console.log("already playing");
+        if (stopBtn.classList.contains("pressable-btn")) {
+            console.log("click the other button");
             return;
         };
         carouselInterval = setInterval(startCarousel, speed);
-        playBtn.classList.add("active-btn");
-        stopBtn.classList.remove("active-btn");
+        stopBtn.classList.add("pressable-btn");
+        playBtn.classList.remove("pressable-btn");
     }
 
     stopBtn.addEventListener("click", stopCarousel);
