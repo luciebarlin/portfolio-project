@@ -43,14 +43,33 @@
     }
 }
 
-.pause-btn {
+.stop-btn,
+.play-btn {
     border-radius: 50%;
     height: calc($btn-size * 1.5);
     width: calc($btn-size * 1.5);
     position: absolute;
-    top: $spacer-1;
-    right: $spacer-3;
-    background-color: $dark-blue;
-    color: $pale-blue;
+    top: -$spacer-3;
     cursor: pointer;
+    color: darken($light-pink, 10%);
+    background-color: $dark-blue;
+    box-shadow: none;
+    opacity: 0.7;
+    z-index: 1;
+    
 }
+
+.stop-btn {
+    right: $spacer-3;
+}
+
+.play-btn {
+    right: calc($spacer-3 * 2);
+}
+
+.active-btn {
+    opacity: 1;
+    box-shadow: 5px 5px 10px $dark-blue;
+    scale: 1.125;
+}
+

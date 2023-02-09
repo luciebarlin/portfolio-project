@@ -1143,12 +1143,15 @@ const newCarousel = document.querySelector(".new-carousel");
 
 if (newCarousel) {
     let index = 0;
-    const speed = 5;
+    const speed = 5000; //5sec
     const numberOfSlides = 3;
     const carouselContainer = document.querySelector(".carouselContainer");
     const carouselItemWidth = carouselContainer.scrollWidth / numberOfSlides;
 
-    setInterval(() => {
+    const stopBtn = document.querySelector(".stop-btn");
+    const playBtn = document.querySelector(".play-btn");
+
+    const startCarousel = () => {
         carouselContainer.scrollBy(carouselItemWidth, 0);
         timeoutId = setTimeout(() => {
             index = index % numberOfSlides;
@@ -1164,7 +1167,45 @@ if (newCarousel) {
             index++;
             clearTimeout(timeoutId);
         }, 1000);
-    }, speed * 1000);
+    }
+
+    let carouselInterval = setInterval(startCarousel, speed);
+
+    const stopCarousel = () => {
+        if (stopBtn.classList.contains("active-btn")) {
+            console.log("already stopped");
+            return;
+        };
+        clearInterval(carouselInterval);
+        stopBtn.classList.add("active-btn");
+        playBtn.classList.remove("active-btn");
+    }
+
+    const restartCarousel = () => {
+        if (playBtn.classList.contains("active-btn")) {
+            console.log("already playing");
+            return;
+        };
+        carouselInterval = setInterval(startCarousel, speed);
+        playBtn.classList.add("active-btn");
+        stopBtn.classList.remove("active-btn");
+    }
+
+    stopBtn.addEventListener("click", stopCarousel);
+    playBtn.addEventListener("click", restartCarousel);
+
+    stopBtn.addEventListener('keydown', (event) => {
+        if (event.code === 'Space' || event.code === 'Enter') {
+            stopBtn.click();
+        }
+    });
+
+    playBtn.addEventListener('keydown', (event) => {
+        if (event.code === 'Space' || event.code === 'Enter') {
+            playBtn.click();
+        }
+    });
+
 }
 
 /////////////////////
