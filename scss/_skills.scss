@@ -1,10 +1,10 @@
 
 $desserts: "🍧", "🍦", "🍮", "🍩", "🍪", "🍫", "🍬", "🍰";
 
-@for $j from 1 through length($desserts) {
+@for $dessert from 1 through length($desserts) {
     .skills {
-        :nth-child(#{$j}) {
-            list-style: nth($desserts, $j);
+        :nth-child(#{$dessert}) {
+            list-style: nth($desserts, $dessert);
         }
     }
 }

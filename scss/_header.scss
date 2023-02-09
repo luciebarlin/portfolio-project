@@ -16,9 +16,12 @@
 
     &__inner-mobile {
         display: flex;
-        overflow: scroll;
+
+        @media (max-width: 380px) {
+            overflow: scroll;
+
+        }
         
-    
         @media (min-width: 1200px) {
             display: none;
         }
