@@ -1,12 +1,38 @@
-.skills {
-    ul {
-        font-size: 1rem;
-        text-align: left; 
-        list-style: "🍦";
 
-        li {
-            padding-inline-start: $spacer-half;
+$desserts: "🍧", "🍦", "🍮", "🍩", "🍪", "🍫", "🍬", "🍰";
 
+@for $j from 1 through length($desserts) {
+    .skills {
+        :nth-child(#{$j}) {
+            list-style: nth($desserts, $j);
         }
     }
 }
+
+
+.skills {
+    width: 50vw;
+    margin: 0 auto $spacer-2;
+
+    
+
+
+    ul {
+        font-size: 1rem;
+        text-align: left; 
+        // list-style: "🍦";
+
+        li {
+            padding-inline-start: $spacer-half;
+            font-weight: 600;
+
+            p {
+                font-weight: 400;
+                margin-block-start: 0;
+            }
+        }
+
+    }
+
+}
+
