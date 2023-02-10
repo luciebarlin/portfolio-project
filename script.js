@@ -163,8 +163,10 @@ const tempCallback = tempDataObj => {
     //     console.log(hourlyTemp);
     // })
 
-    //console.log(tempArr);
     //tempData.innerHTML = tempArr;
+
+    
+
    
     let tempArrSum = 0;
     for (const index of tempArr) {
@@ -184,9 +186,15 @@ const tempCallback = tempDataObj => {
     //bar graph of temperature data
     const barGraph = document.getElementById("bar-graph");
 
+    //get the highest temp of the day
+    console.log(tempArr);
+    
+    const highestTemp = Math.max(...tempArr);
+    console.log(highestTemp);
+
     //change the height of the bar graph according to average temp
-    barGraph.style.height = (averageTemp * 20) + "px";
-    if (averageTemp * 20 < 34) {
+    barGraph.style.height = (highestTemp * 12) + "px";
+    if (highestTemp * 12 < 34) {
         barGraph.style.height = 34 + "px";
     }
 
