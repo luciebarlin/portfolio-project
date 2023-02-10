@@ -981,6 +981,7 @@ if (sidebarWidget) {
             
                 if (event.code === 'Escape') {
                     sidebarWidget.classList.add("translated");
+                    widgetCloseBtn.classList.add("rotated");
                 }
             
         }
