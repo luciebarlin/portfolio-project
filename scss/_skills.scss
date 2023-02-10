@@ -23,6 +23,7 @@ $desserts: "🍧", "🍦", "🍮", "🍩", "🍪", "🍫", "🍰", "🍬";
     ul {
         font-size: 1rem;
         text-align: left; 
+        padding-inline-start: 16px;
 
         li {
             padding-inline-start: $spacer-half;
