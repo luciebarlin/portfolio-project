@@ -104,10 +104,7 @@
                   <h3 class="bolder brief">Brief</h3> 
                   <ul>
                     <li>
-                      Make a personality quiz that takes an array of answers and returns a different cake based on the user's most common answer
-                    </li>
-                    <li>
-                      Account for two answers being chosen the same number of times
+                      Make a Buzzfeed style personality quiz that tells the user what kind of cake they are based on their results
                     </li>
                   </ul>
                 
@@ -118,7 +115,7 @@
                       Practicing using and storing data in arrays, using loops to access and show the data in a meaningful way
                     </li>
                     <li>
-                      Choosing the most common occuring answer from a set of data
+                      Choosing the most commonly occuring answer from a set of data
                     </li>
                   </ul>
                 
@@ -126,11 +123,16 @@
                   <h3 class="bolder problems">Problems encountered</h3> 
                   <ul>
                     <li>
-                        I actually created this quiz fairly easily, I didn't encounter too many problems
+                      I had to account for two answers being chosen the same number of times. 
+                      I made separate arrays for each different value of chosen answer, and showed the corresponding cake of the first 
+                      longest array if there was no clear winner
                     </li>
                     <li>
-                        Encountered a bug which caused the last question of the quiz to not be counted. Fixed it by calling the function later
+                        In my original script, I encountered a bug which cause the last question's value to not be pushed to any answer array.
+                        I fixed it by only calling the function to show the winning cake after some checks had been made, to make sure each 
+                        question's answer value had been pushed.
                     </li>
+                    
                   </ul>
                
               

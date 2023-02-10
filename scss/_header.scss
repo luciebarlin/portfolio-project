@@ -53,6 +53,10 @@
                 z-index: 9;
                 overflow-y: visible;
             }
+
+            > a {
+                text-decoration: underline;
+            }
         }
 
         .nav-links {
