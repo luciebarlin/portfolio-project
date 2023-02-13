@@ -39,7 +39,7 @@
         line-height: 2;
         &:hover {
             background-color: $dark-blue-translucent;
-            
+            text-decoration: none;
         }
     }
 
@@ -86,9 +86,28 @@
     font-weight: 600;
     position: absolute;
     bottom: 20px;
-    left: calc(50% - 26px); //half width of text box;
     width: fit-content;
     text-align: center;
+}
+
+.netherlands {
+    left: calc(50% - 58px); //half width of text box;
+
+}
+
+.australia {
+    left: calc(50% - 45px); //half width of text box;
+
+}
+
+.keukenhof {
+    left: calc(50% - 51px); //half width of text box;
+
+}
+
+.france {
+    left: calc(50% - 36px); //half width of text box;
+
 }
 
 .numbertext {
