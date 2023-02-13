@@ -89,6 +89,7 @@
 
 
         <main id="hangman">
+          
 
             <div id="input-area" class="input-area">
                 <input id="input-box-hangman" type="text" placeholder="press submit to guess a letter">
@@ -138,16 +139,19 @@
             
         </main>
 
-
         <div class="tooltiptext"> 
 
         </div>
-        <button id="widget-close" class="widget-close">
+        <button id="widget-close" class="widget-close rotated">
           × 
         </button>
+
+        <div class="onload-tooltiptext tooltiptext"> 
+          Project brief
+        </div>
     
-        <div id="sidebar-widget-container" class="sidebar-widget-container">
-          <div id="sidebar-widget" class="sidebar-widget">
+        <div id="sidebar-widget-container" class="sidebar-widget-container no-pointer-events">
+          <div id="sidebar-widget" class="sidebar-widget translated">
             <div class="overview-heading-box">
               <h2 class="overview-heading">
                 Page overview 
@@ -159,49 +163,43 @@
               <h3 class="bolder brief">Brief</h3> 
                   <ul>
                     <li>
-                      Make a game of Hangman                    
+                      Make a hangman game that uses a random word with a varying amount of letters as the answer                    
                     </li>
                     <li>
-                      The guessable word should be randomly chosen from a list of pre-determined words (of different lengths)
+                      Show a picture on win or loss of the game
                     </li>
-                    <li>
-                      Make a display areas for both the correct and incorrect guesses
-                    </li>
-                    <li>
-                      Make a countdown of how many guesses the player has before they lose the game.
-                    </li>
-                    <li>
-                      Make a win/lose state for the end of the game
-                    </li>
+
                   </ul>
                 
                 <h3 class="bolder concepts">Concepts used</h3> 
                   <ul>
                     <li>
-                      Data handling; Using data from an HTML form, and using objects and arrays to hold/change the game's score/status
+                      Saving data to an array and using data inputted to a form; counting the number of guesses
                     </li>
                     <li>
                       Practice using forEach and indexOf methods
                     </li>
+                    <li>
+                      Reloading the page to play the game again with a new word
+                    </li>
                   </ul>
                 
                 <h3 class="bolder problems">Problems encountered</h3> 
-                <ul>
+                  <ul>
                     <li>
-                      At the time I made it, this was the most complex project I'd ever attempted. It had multiple "phases", dynamic/random input and multiple possible end states. I had leared a lot of systems at but hadn't really needed to combine them in such a complex way before then.
+                      This was my second attempt at a hangman game, I felt more confident to make it and was much faster than the first time. However I did struggle at first with encountering a double letter in the answer word- I eventually solved it by using a forEach and a while loop
                     </li>
                     <li>
-                      I actually had to throw away my first attempt and start again but I feel like I learned a lot from it. 
-                    </li>
-                    <li>
-                      The problem that probably frustrated me most was dealing with duplicated letters in the answer word. 
-                      Luckily I was eventually able to solve it with some clever loops.
+                      Letter graveyard didn’t show the right number at the loss of the game- I solved it by using a setTimeout function for the picture to show up, so when it was clicked away the number (0) shown was correct
                     </li>
                   </ul>
+                
               </ul>
             </div>
           </div>
         </div>
+
+        
 
 
 

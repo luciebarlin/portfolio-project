@@ -84,6 +84,70 @@
    
 
     <main>
+
+      <div class="tooltiptext"> 
+
+      </div>
+      <button id="widget-close" class="widget-close rotated">
+        × 
+      </button>
+
+      <div class="onload-tooltiptext tooltiptext"> 
+        Project brief
+      </div>
+  
+      <div id="sidebar-widget-container" class="sidebar-widget-container no-pointer-events">
+        <div id="sidebar-widget" class="sidebar-widget translated">
+          <div class="overview-heading-box">
+            <h2 class="overview-heading">
+              Page overview 
+            </h2>
+          </div>
+          
+          <div class="page-overview">
+            <h3 class="bolder brief">Brief</h3>
+                <ul>
+                  <li>
+                    Access a weather API
+                  </li>
+                  <li>
+                    Show whether or not the user will need to bring an umbrella that day, depending on precipitation expected 
+                  </li>
+                  <li>
+                    Bonus: show the temperature fluctuation over the day in a graph built in JS
+                  </li>
+                  <li>
+                    Extra bonus: calculate the average temperature over the day, show if it’s cold enough for the user to wear gloves
+                  </li>
+                </ul>
+              <h3 class="bolder concepts">Concepts used</h3> 
+                <ul>
+                  <li>
+                    I was inspired by the website <a class="bolder" target="_blank" href="https://www.kanikeenkortebroekaan.nl/">'Kan ik een korte broek aan?'</a>
+                  </li>
+                  <li>
+                    Learn about and access a weather API
+                  </li>
+                  <li>
+                    Fetch, store (in a JSON object), and parse the data 
+                  </li>
+                  <li>
+                    Use JS to create new elements and change the picture, dependent on the fetched data
+                  </li>
+                </ul>
+              <h3 class="bolder problems">Problems encountered</h3> 
+                <ul>
+                  <li>
+                    API and JSON were fun challenges to take on; it was a valuable learning experience to expand upon an existing concept 
+                  </li>
+                  <li>
+                    Negative temperatures proved to be difficult to display on the graph, as the height of the bars are dependent on multiplying the temperature by a number
+                  </li>
+                </ul>
+              
+          </div>
+        </div>
+      </div>
         
         <div id="fetched-data">
 
@@ -119,65 +183,7 @@
         
     </main>
 
-    <div class="tooltiptext"> 
-
-    </div>
-    <button id="widget-close" class="widget-close">
-      × 
-    </button>
-
-    <div id="sidebar-widget-container" class="sidebar-widget-container">
-      <div id="sidebar-widget" class="sidebar-widget">
-        <div class="overview-heading-box">
-          <h2 class="overview-heading">
-            Page overview 
-          </h2>
-        </div>
-        
-        <div class="page-overview">
-          <h3 class="bolder brief">Brief</h3>
-              <ul>
-                <li>
-                  Access a weather API
-                </li>
-                <li>
-                  Show whether or not the user will need to bring an umbrella that day, depending on precipitation expected 
-                </li>
-                <li>
-                  Bonus: show the temperature fluctuation over the day in a graph built in JS
-                </li>
-                <li>
-                  Extra bonus: calculate the average temperature over the day, show if it’s cold enough for the user to wear gloves
-                </li>
-              </ul>
-            <h3 class="bolder concepts">Concepts used</h3> 
-              <ul>
-                <li>
-                  I was inspired by the website <a class="bolder" target="_blank" href="https://www.kanikeenkortebroekaan.nl/">'Kan ik een korte broek aan?'</a>
-                </li>
-                <li>
-                  Learn about and access a weather API
-                </li>
-                <li>
-                  Fetch, store (in a JSON object), and parse the data 
-                </li>
-                <li>
-                  Use JS to create new elements and change the picture, dependent on the fetched data
-                </li>
-              </ul>
-            <h3 class="bolder problems">Problems encountered</h3> 
-              <ul>
-                <li>
-                  API and JSON were fun challenges to take on; it was a valuable learning experience to expand upon an existing concept 
-                </li>
-                <li>
-                  Negative temperatures proved to be difficult to display on the graph, as the height of the bars are dependent on multiplying the temperature by a number
-                </li>
-              </ul>
-            
-        </div>
-      </div>
-    </div>
+    
       
     <footer>
         <div id="weather-source"> 
