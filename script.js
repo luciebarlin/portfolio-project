@@ -504,8 +504,8 @@ if (mainTodoList) {
             //console.log(tasksArr);
             localStorage.setItem('tasksArr', JSON.stringify(tasksArr));
 
+            inputHole.value = "";
         }
-        inputValue = "";
     
         ///addCloseBtnToListItems();
         closeBtns = document.querySelectorAll(".close");
@@ -880,6 +880,7 @@ if (hangmanGame) {
             return;
         } else if (!onlyLetters(guessedLetterCaps)) {
             guessConfirmation.innerHTML = `Guess a letter please`;
+            guessHole.value = "";
             return;
         } else {
             guessConfirmation.innerHTML = `You guessed: ${guessedLetterCaps}`;
