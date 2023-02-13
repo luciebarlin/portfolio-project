@@ -26,7 +26,7 @@
               </a>
               <div class="nav-links">
                 <a href="certs.html">Certificates</a>
-                <a target="_blank" href="certs/CV Lucie Barlin 2023-02.pdf"> Download CV</a>
+                <a target="_blank" href="certs/cv_lucie_barlin_2023_02.pdf"> Download CV</a>
               </div>
             </li>
       
@@ -82,6 +82,58 @@
 
     <main class="slideshow-page">
 
+      <div class="tooltiptext"> 
+
+      </div>
+      <button id="widget-close" class="widget-close rotated">
+        × 
+      </button>
+  
+      <div class="onload-tooltiptext tooltiptext"> 
+        Project brief
+      </div>
+  
+      <div id="sidebar-widget-container" class="sidebar-widget-container no-pointer-events">
+        <div id="sidebar-widget" class="sidebar-widget translated ">
+          <div class="overview-heading-box">
+            <h2 class="overview-heading">
+              Page overview 
+            </h2>
+          </div>
+          
+          <div class="page-overview">
+            <h3 class="bolder brief">Brief</h3>
+                <ul>
+                  <li>
+                    Make a couple of different styles of slideshows/carousels to practice using different techniques and event listeners
+                  </li>
+                  <li>
+                    Bonus: use Keyframes animations to create a CTA on the lower slideshow next-button
+                  </li>
+                  <li>
+                    Extra bonus: implement play and pause buttons to meet web accessibility standards for animations
+                  </li>
+                </ul>
+              <h3 class="bolder concepts">Concepts used</h3>
+                <ul>
+                  <li>
+                    Translate x-index, setTimeout, order, loops
+                  </li>
+                  <li>
+                    Keyframes animations
+                  </li>
+                </ul>
+              <h3 class="bolder problems">Problems encountered</h3> 
+                <ul>
+                  <li>
+                    I had difficulty in creating an infinite loop style carousel. My first attempt scrolled back to the starting card instead of infinitely scrolling in the same direction.
+                  </li>
+                </ul>
+              
+          </div>
+        </div>
+      </div>
+
         <div id="new-carousel" class="new-carousel carouselWrapper"> 
           
           <btn aria-label="restart slideshow" tabindex="0" class="play-btn">
@@ -94,17 +146,21 @@
 
             <div class="carouselContainer">
                 <div class="carouselItem">
-                    <img src="images/matt_bobby1.jpg"
-                        alt="a white man with brown hair looking at the camera, standing on a strip of grass with a small brown dog">
+                    <img src="images/lucie-kitchen13.jpg"
+                        alt="a white woman with brown hair in chef uniform, focusing on putting edible flowers on a tray of tartelettes">
                 </div>
                 <div class="carouselItem">
-                    <img src="images/matt_bobby2.jpg"
-                        alt="a white man with brown hair standing on a strip of grass with a small brown dog, looking at the dog">
+                    <img src="images/lucie-kitchen101.jpg"
+                        alt="a white man and woman, both with brown hair and in chef uniform, smiling in front of a large stainless steel fridge">
                 </div>
                 <div class="carouselItem">
-                    <img src="images/matt_bobby3.jpg"
-                        alt="a white man with brown hair standing on a strip of grass with a small brown dog, looking at the dog and smiling">
+                    <img src="images/lucie-kitchen91.jpg"
+                        alt="a white woman with brown hair in chef uniform, sitting in a chair and smiling">
                 </div>  
+                <div class="carouselItem">
+                  <img src="images/lucie-kitchen31.jpg"
+                      alt="a white woman with brown hair in chef uniform, giving thumbs up, in front of a white man in chef uniform and sticking his tongue out">
+              </div>
             </div>
           </div>
             <!-- bobby slideshow -->
@@ -112,7 +168,7 @@
     
               <div class="bobby-slides fade">
                 <div class="numbertext">1 / 4</div>
-                <img src="images/flowers.jpg" alt="a field of purple tulips, with a bright clear sky and a canal">
+                <img src="images/flowers.png" alt="a field of purple tulips, with a bright clear sky and a canal">
                 <div class="text netherlands">Netherlands</div>
               </div>
             
@@ -135,72 +191,22 @@
               </div>
     
                <!-- Next and previous buttons -->
-              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              <a tabindex="0" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a tabindex="0" class="next" onclick="plusSlides(1)">&#10095;</a>
     
             </div>
     
             <!-- The dots/circles -->
             <div class="dots">
-              <span class="dot" onclick="currentSlide(1)"></span>
-              <span class="dot" onclick="currentSlide(2)"></span>
-              <span class="dot" onclick="currentSlide(3)"></span>
-              <span class="dot" onclick="currentSlide(4)"></span>
+              <span tabindex="0" class="dot" onclick="currentSlide(1)"></span>
+              <span tabindex="0" class="dot" onclick="currentSlide(2)"></span>
+              <span tabindex="0" class="dot" onclick="currentSlide(3)"></span>
+              <span tabindex="0" class="dot" onclick="currentSlide(4)"></span>
             </div>
             
     </main>
 
-    <div class="tooltiptext"> 
-
-    </div>
-    <button id="widget-close" class="widget-close rotated">
-      × 
-    </button>
-
-    <div class="onload-tooltiptext tooltiptext"> 
-      Project brief
-    </div>
-
-    <div id="sidebar-widget-container" class="sidebar-widget-container no-pointer-events">
-      <div id="sidebar-widget" class="sidebar-widget translated translucent">
-        <div class="overview-heading-box">
-          <h2 class="overview-heading">
-            Page overview 
-          </h2>
-        </div>
-        
-        <div class="page-overview">
-          <h3 class="bolder brief">Brief</h3>
-              <ul>
-                <li>
-                  Make a couple of different styles of slideshows/carousels to practice using different techniques and event listeners
-                </li>
-                <li>
-                  Bonus: use Keyframes animations to create a CTA on the lower slideshow next-button
-                </li>
-                <li>
-                  Extra bonus: implement play and pause buttons to meet web accessibility standards for animations
-                </li>
-              </ul>
-            <h3 class="bolder concepts">Concepts used</h3>
-              <ul>
-                <li>
-                  Translate x-index, setTimeout, order, loops
-                </li>
-                <li>
-                  Keyframes animations
-                </li>
-              </ul>
-            <h3 class="bolder problems">Problems encountered</h3> 
-              <ul>
-                <li>
-                  I had difficulty in creating an infinite loop style carousel. My first attempt scrolled back to the starting card instead of infinitely scrolling in the same direction.
-                </li>
-              </ul>
-            
-        </div>
-      </div>
-    </div>
+    
 
 
 

@@ -1,8 +1,6 @@
 .slideshow-page {
     margin-top: 32px;
-    @media (min-width: 1200px) {
-        margin-top: 0;
-    }
+    
 }
 
 .carouselWrapper {
@@ -10,8 +8,8 @@
     position: relative;
 
     @media (min-width: 1200px) {
-        width: calc($desktop-width-container - 1px); //picture is a bit smaller than width
-        
+        // width: calc($desktop-width-container - 1px); //picture is a bit smaller than width
+        width: calc($desktop-width-container / 2 - 1px); 
     }
 }
 
@@ -43,8 +41,8 @@
             width: 100%;
 
             @media (min-width: 1200px) {
-                height: 1600px;
-
+                // height: 1600px;
+                height: 800px;
             }
         }
     }
@@ -89,7 +87,7 @@
     right: $spacer-1;
 
     @media (min-width: 1200px) {
-        right: $spacer-3;
+        right: $spacer-2;
     }
 }
 
@@ -98,7 +96,7 @@
     right: $spacer-3;
 
     @media (min-width: 1200px) {
-        right: calc($spacer-3 * 2);
+        right: calc($spacer-2 * 3);
     }
 }
 

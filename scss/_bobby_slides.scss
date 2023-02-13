@@ -6,7 +6,9 @@
     margin: auto;
 
     @media (min-width: 1200px) {
-        max-width: $desktop-width-container;
+        // max-width: $desktop-width-container;
+        max-width: calc($desktop-width-container / 2);
+
     }
 }
 

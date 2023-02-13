@@ -263,7 +263,8 @@ if (weatherSrcBtn) {
 // bobby slideshow
 
 const slideshowContainer = document.querySelector(".slideshow-container");
-
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
 
 let slideIndex = 1;
 
@@ -290,9 +291,33 @@ const showSlides = n => {
     }
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
+
+        dots.forEach(dot => {
+            dot.addEventListener('keydown', (event) => {
+                if (event.code === 'Space' || event.code === 'Enter') {
+                  dot.click();
+                }
+            });
+        } )
     }
+
     slides[slideIndex-1].style.display = "block";
     dots[slideIndex-1].className += " active";
+    }
+
+    if (prev) {
+        prev.addEventListener('keydown', (event) => {
+            if (event.code === 'Space' || event.code === 'Enter') {
+              prev.click();
+            }
+        });
+    
+        next.addEventListener('keydown', (event) => {
+            if (event.code === 'Space' || event.code === 'Enter') {
+                next.click();
+            }
+        });
+
     }
 
 if (slideshowContainer) {
@@ -846,6 +871,7 @@ if (hangmanGame) {
         if (guessedLetterCaps.length > 1) {
             guessConfirmation.innerHTML = `Guess just one letter please`;
             guessHole.value = "";
+            return;
         } else if (guessedLetterCaps.length === 0) {
             return;
         } else {
@@ -930,18 +956,18 @@ if (sidebarWidget) {
             sidebarWidget.classList.add("translated");
             sidebarWidgetContainer.classList.add("no-pointer-events");
 
-            if (newCarousel) {
-                sidebarWidget.classList.add("translucent");
-            }
+            // if (newCarousel) {
+            //     sidebarWidget.classList.add("translucent");
+            // }
             
 
         } else {
             sidebarWidget.classList.remove("translated");
             sidebarWidgetContainer.classList.remove("no-pointer-events");
 
-            if (newCarousel) {
-                sidebarWidget.classList.remove("translucent");
-            }
+            // if (newCarousel) {
+            //     sidebarWidget.classList.remove("translucent");
+            // }
         }
     }
 
@@ -1333,7 +1359,7 @@ if (greeting) {
     const currentTime = new Date();
     const hours = currentTime.getHours(); 
     const minutes = currentTime.getMinutes(); 
-    console.log("Current time: " + hours + ":" +  minutes);
+    //console.log("Current time: " + hours + ":" +  minutes);
 
     const morning = hours > 2 && hours < 12;
     const afternoon = hours > 11 && hours < 18;
