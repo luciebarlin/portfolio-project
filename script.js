@@ -194,9 +194,6 @@ const tempCallback = tempDataObj => {
     const lowestTemp = Math.min(...tempArr);
     console.log(lowestTemp);
 
-    const lowestTemp = Math.min(...tempArr);
-    console.log(lowestTemp);
-
     //change the height of the bar graph according to average temp
     barGraph.style.height = (highestTemp * 12) + "px";
     barGraph.title = `graph showing temperature fluctuations over the day, with a minimum of ${lowestTemp} and a maximum of ${highestTemp}`;
