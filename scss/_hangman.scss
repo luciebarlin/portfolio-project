@@ -77,10 +77,11 @@
     align-content: center;
     flex-wrap: wrap;
     position: absolute;
-    top: 13%;
+    top: 23.5%;
 
     @media (min-width: 1200px) {
         padding: 2px 10px;
+        top: 17%;
     }
 
     &:hover {
@@ -143,7 +144,7 @@
     &__loser {
         display: none;
         position: absolute;
-        top: -75%;
+        top: $nav-bar-height;
         margin: 20px auto;
         z-index: 9;
 
