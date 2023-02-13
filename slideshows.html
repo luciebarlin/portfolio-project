@@ -85,10 +85,10 @@
         <div id="new-carousel" class="new-carousel carouselWrapper"> 
           
           <btn aria-label="restart slideshow" tabindex="0" class="play-btn">
-            <img src="images/playbtn.png">
+            <img alt="play slideshow" src="images/playbtn.png">
           </btn>
           <btn aria-label="stop slideshow" tabindex="0" class="stop-btn pressable-btn">
-            <img src="images/stopbtn.png">
+            <img alt="stop slideshow" src="images/stopbtn.png">
           </btn>
           
 
@@ -153,12 +153,16 @@
     <div class="tooltiptext"> 
 
     </div>
-    <button id="widget-close" class="widget-close">
+    <button id="widget-close" class="widget-close rotated">
       × 
     </button>
 
-    <div id="sidebar-widget-container" class="sidebar-widget-container">
-      <div id="sidebar-widget" class="sidebar-widget">
+    <div class="onload-tooltiptext tooltiptext"> 
+      Project brief
+    </div>
+
+    <div id="sidebar-widget-container" class="sidebar-widget-container no-pointer-events">
+      <div id="sidebar-widget" class="sidebar-widget translated translucent">
         <div class="overview-heading-box">
           <h2 class="overview-heading">
             Page overview 

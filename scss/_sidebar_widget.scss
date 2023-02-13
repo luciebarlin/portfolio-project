@@ -7,6 +7,8 @@ $mobile-closed-widget-visible: calc($mobile-width-container * 0.09);  //91% of 3
 $desktop-closed-widget-visible: calc($desktop-width-container / 2 * 0.09); //94 of 600px: 36px;
 $container-offset-mobile: 10px;
 $container-offset-desktop: 100px;
+$tooltip-arrow-size: 5px;
+$onload-tooltip-width: 120px;
 
 body {
     position: relative;
@@ -164,8 +166,8 @@ body {
             content: "";
             position: absolute;
             top: 100%;
-            margin-left: -5px;
-            border-width: 5px;
+            margin-left: -($tooltip-arrow-size);
+            border-width: $tooltip-arrow-size;
             border-style: solid;
             border-color: $upsidedown-triangle;
             //left: 83%; //mobile
@@ -175,6 +177,45 @@ body {
     }
 
 }
+
+.onload-tooltiptext {
+    display: none; 
+
+    @media (min-width: 1200px) {
+        display: block;
+        opacity: 1;
+        top: $header-height;
+        right: 146px;
+        z-index: 7;
+    }
+
+    &::after {
+        @media (min-width: 1200px) {
+            top: calc(50% - $tooltip-arrow-size);
+            margin-left: calc($onload-tooltip-width / 2);
+            border-color: transparent transparent transparent #163057;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .opaque {
     opacity: 1;

@@ -968,13 +968,35 @@ if (sidebarWidget) {
     }
     
     
+//project overview tooltip
 
+    const onloadTooltip = document.querySelector(".onload-tooltiptext");
+
+    const addFlashing = () => {
+        onloadTooltip.classList.add("flashing");
+    }
+    setTimeout(addFlashing, 2000);
+
+    const removeFlashing = () => {
+        onloadTooltip.classList.remove("flashing");
+        onloadTooltip.classList.add("translucent");
+        window.addEventListener("click", hideOnloadTooltip);
+    }
+
+    const hideOnloadTooltip = () => {
+        onloadTooltip.classList.add("hidden");
+    }
+    
+    widgetCloseBtn.addEventListener("click", hideOnloadTooltip);
+    window.addEventListener("click", removeFlashing);
+
+/////
     widgetCloseBtn.addEventListener("click", closeOverview);
     widgetCloseBtn.addEventListener("mouseover", showTooltip);
     widgetCloseBtn.addEventListener("click", showTooltip);
     widgetCloseBtn.addEventListener("mouseout", hideTooltip);
 
-    window.addEventListener("load", closeOverview);
+    //window.addEventListener("load", closeOverview);
 
     if (!widgetCloseBtn.classList.contains("rotated")) {
         window.onkeydown = function(event) {
@@ -989,10 +1011,7 @@ if (sidebarWidget) {
 
     
 
-    // if (cardsProject) {
-    //     window.addEventListener("load", closeOverview);
-        
-    // }
+    
 
 }
 
@@ -1374,3 +1393,6 @@ if (cvBtn) {
 
     cvBtn.addEventListener("click", removeFlashing);
 }
+
+/////////////////
+
