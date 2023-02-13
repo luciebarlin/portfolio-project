@@ -134,7 +134,7 @@
           <h3 class="bolder brief">Brief</h3>
               <ul>
                 <li>
-                  Make an interactive todo list that saves tasks, marks tasks as complete, and removes tasks with an exit button
+                  Make an interactive todo list that can save tasks, mark tasks as complete, and delete tasks
                 </li>
                 <li>
                   Bonus: use localStorage to save the tasks on refresh of the page
@@ -143,10 +143,13 @@
             <h3 class="bolder concepts">Concepts used</h3>
               <ul>
                 <li>
-                  Event listeners: add button for tasks, close button to delete tasks, mark task as complete on click                
+                  Event listeners: clickable buttons (add, delete todo) and clickable areas (todo-is-complete) and keypress (save todo on "return" key)             
                 </li>
                 <li>
-                  Changing my original idea for styling to make the list more accessible- utilising WebAIM often 
+                  Utilising WebAIM standards to make the entire tool accessible to screen-readers, keyboard-only, colourblind-friendly contrast etc 
+                </li>
+                <li>
+                  localStorage to save the tasks on refresh of the page
                 </li>
               </ul>
             <h3 class="bolder problems">Problems encountered</h3>
@@ -155,7 +158,7 @@
                   Local storage was a new concept for me, it was quite difficult to understand how to use it
                 </li>
                 <li>
-                  At first some of the styles were not applied to new tasks, however that was easily fixed
+                  Due to my original setup, the HTML of newly added tasks was hard to keep consistent with the existing tasks (which caused inconsistent styling)
                 </li>
               </ul>
             

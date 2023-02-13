@@ -187,6 +187,10 @@ body {
         top: $header-height;
         right: 146px;
         z-index: 7;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     &::after {

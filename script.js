@@ -191,6 +191,8 @@ const tempCallback = tempDataObj => {
     
     const highestTemp = Math.max(...tempArr);
     console.log(highestTemp);
+    const lowestTemp = Math.min(...tempArr);
+    console.log(lowestTemp);
 
     const lowestTemp = Math.min(...tempArr);
     console.log(lowestTemp);
@@ -508,8 +510,8 @@ if (mainTodoList) {
             //console.log(tasksArr);
             localStorage.setItem('tasksArr', JSON.stringify(tasksArr));
 
+            inputHole.value = "";
         }
-        inputValue = "";
     
         ///addCloseBtnToListItems();
         closeBtns = document.querySelectorAll(".close");
@@ -884,6 +886,7 @@ if (hangmanGame) {
             return;
         } else if (!onlyLetters(guessedLetterCaps)) {
             guessConfirmation.innerHTML = `Guess a letter please`;
+            guessHole.value = "";
             return;
         } else {
             guessConfirmation.innerHTML = `You guessed: ${guessedLetterCaps}`;
@@ -1025,6 +1028,7 @@ if (sidebarWidget) {
     }
     
     widgetCloseBtn.addEventListener("click", hideOnloadTooltip);
+    onloadTooltip.addEventListener("click", closeOverview);
     window.addEventListener("click", removeFlashing);
 
 /////
