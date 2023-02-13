@@ -86,6 +86,62 @@
     
 
     <main id="main-todolist">
+
+      <div class="tooltiptext"> 
+
+      </div>
+      <button id="widget-close" class="widget-close rotated">
+        × 
+      </button>
+  
+      <div class="onload-tooltiptext tooltiptext"> 
+        Project brief
+      </div>
+  
+      <div id="sidebar-widget-container" class="sidebar-widget-container no-pointer-events">
+        <div id="sidebar-widget" class="sidebar-widget translated">
+          <div class="overview-heading-box">
+            <h2 class="overview-heading">
+              Page overview 
+            </h2>
+          </div>
+          
+          <div class="page-overview">
+            <h3 class="bolder brief">Brief</h3>
+                <ul>
+                  <li>
+                    Make an interactive todo list that can save tasks, mark tasks as complete, and delete tasks
+                  </li>
+                  <li>
+                    Bonus: use localStorage to save the tasks on refresh of the page
+                  </li>
+                </ul>
+              <h3 class="bolder concepts">Concepts used</h3>
+                <ul>
+                  <li>
+                    Event listeners: clickable buttons (add, delete todo) and clickable areas (todo-is-complete) and keypress (save todo on "return" key)             
+                  </li>
+                  <li>
+                    Utilising WebAIM standards to make the entire tool accessible to screen-readers, keyboard-only, colourblind-friendly contrast etc 
+                  </li>
+                  <li>
+                    localStorage to save the tasks on refresh of the page
+                  </li>
+                </ul>
+              <h3 class="bolder problems">Problems encountered</h3>
+                <ul>
+                  <li>
+                    Local storage was a new concept for me, it was quite difficult to understand how to use it
+                  </li>
+                  <li>
+                    Due to my original setup, the HTML of newly added tasks was hard to keep consistent with the existing tasks (which caused inconsistent styling)
+                  </li>
+                </ul>
+              
+          </div>
+        </div>
+      </div>
+      
         <div id="header-todolist" class="header-todolist">
             <h2>Lucie's Todo List</h2>
             <div class="input-area">
@@ -111,60 +167,7 @@
     </main>
       
 
-    <div class="tooltiptext"> 
-
-    </div>
-    <button id="widget-close" class="widget-close rotated">
-      × 
-    </button>
-
-    <div class="onload-tooltiptext tooltiptext"> 
-      Project brief
-    </div>
-
-    <div id="sidebar-widget-container" class="sidebar-widget-container no-pointer-events">
-      <div id="sidebar-widget" class="sidebar-widget translated">
-        <div class="overview-heading-box">
-          <h2 class="overview-heading">
-            Page overview 
-          </h2>
-        </div>
-        
-        <div class="page-overview">
-          <h3 class="bolder brief">Brief</h3>
-              <ul>
-                <li>
-                  Make an interactive todo list that can save tasks, mark tasks as complete, and delete tasks
-                </li>
-                <li>
-                  Bonus: use localStorage to save the tasks on refresh of the page
-                </li>
-              </ul>
-            <h3 class="bolder concepts">Concepts used</h3>
-              <ul>
-                <li>
-                  Event listeners: clickable buttons (add, delete todo) and clickable areas (todo-is-complete) and keypress (save todo on "return" key)             
-                </li>
-                <li>
-                  Utilising WebAIM standards to make the entire tool accessible to screen-readers, keyboard-only, colourblind-friendly contrast etc 
-                </li>
-                <li>
-                  localStorage to save the tasks on refresh of the page
-                </li>
-              </ul>
-            <h3 class="bolder problems">Problems encountered</h3>
-              <ul>
-                <li>
-                  Local storage was a new concept for me, it was quite difficult to understand how to use it
-                </li>
-                <li>
-                  Due to my original setup, the HTML of newly added tasks was hard to keep consistent with the existing tasks (which caused inconsistent styling)
-                </li>
-              </ul>
-            
-        </div>
-      </div>
-    </div>
+    
     
 	<script src="script.js"></script>
   </body>

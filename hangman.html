@@ -85,10 +85,87 @@
         </h2> -->
     </header>
 
-    <body>
+    
+
+    
 
 
         <main id="hangman">
+
+          <div class="tooltiptext"> 
+
+          </div>
+          <button id="widget-close" class="widget-close rotated">
+            × 
+          </button>
+      
+          <div class="onload-tooltiptext tooltiptext"> 
+            Project brief
+          </div>
+      
+          <div id="sidebar-widget-container" class="sidebar-widget-container no-pointer-events">
+            <div id="sidebar-widget" class="sidebar-widget translated">
+              <div class="overview-heading-box">
+                <h2 class="overview-heading">
+                  Page overview 
+                </h2>
+              </div>
+              
+              <div class="page-overview">
+                
+                <h3 class="bolder brief">Brief</h3> 
+                    <ul>
+                      <li>
+                        Make a game of hangman
+                      </li>
+                      <li>
+                        The guessable answer should be a word chosen at random from a pre-determined list
+                      </li>
+                      <li>
+                        The list of guessable answers should be made of words of mixed lengths
+                      </li>
+                      <li>
+                        The user should be shown a list of their incorrect guesses
+                      </li>
+                      <li>
+                        The user should be able to see the traditional hangman "guessing" area, with blank spots for unguessed letters, and any letters they have guessed (shown in order)
+                      </li>
+                      <li>
+                        The user should be shown a countdown of how many incorrect guesses they have until they lose
+                      </li>
+                      <li>
+                        Make a win/lose state for the game
+                      </li>
+      
+                    </ul>
+                  
+                  <h3 class="bolder concepts">Concepts used</h3> 
+                    <ul>
+                      <li>
+                        Saving data to an array and using data inputted to a form; counting the number of guesses
+                      </li>
+                      <li>
+                        Practice using forEach and indexOf methods
+                      </li>
+                      <li>
+                        Reloading the page to play the game again with a new word
+                      </li>
+                    </ul>
+                  
+                  <h3 class="bolder problems">Problems encountered</h3> 
+                    <ul>
+                      <li>
+                        This was my second attempt at a hangman game, I felt more confident to make it and was much faster than the first time. However I did struggle at first with encountering a double letter in the answer word- I eventually solved it by using a forEach and a while loop
+                      </li>
+                      <li>
+                        Letter graveyard didn’t show the right number at the loss of the game- I solved it by using a setTimeout function for the picture to show up, so when it was clicked away the number (0) shown was correct
+                      </li>
+                    </ul>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
           
 
             <div id="input-area" class="input-area">
@@ -139,80 +216,7 @@
             
         </main>
 
-        <div class="tooltiptext"> 
-
-        </div>
-        <button id="widget-close" class="widget-close rotated">
-          × 
-        </button>
-
-        <div class="onload-tooltiptext tooltiptext"> 
-          Project brief
-        </div>
-    
-        <div id="sidebar-widget-container" class="sidebar-widget-container no-pointer-events">
-          <div id="sidebar-widget" class="sidebar-widget translated">
-            <div class="overview-heading-box">
-              <h2 class="overview-heading">
-                Page overview 
-              </h2>
-            </div>
-            
-            <div class="page-overview">
-              
-              <h3 class="bolder brief">Brief</h3> 
-                  <ul>
-                    <li>
-                      Make a game of hangman
-                    </li>
-                    <li>
-                      The guessable answer should be a word chosen at random from a pre-determined list
-                    </li>
-                    <li>
-                      The list of guessable answers should be made of words of mixed lengths
-                    </li>
-                    <li>
-                      The user should be shown a list of their incorrect guesses
-                    </li>
-                    <li>
-                      The user should be able to see the traditional hangman "guessing" area, with blank spots for unguessed letters, and any letters they have guessed (shown in order)
-                    </li>
-                    <li>
-                      The user should be shown a countdown of how many incorrect guesses they have until they lose
-                    </li>
-                    <li>
-                      Make a win/lose state for the game
-                    </li>
-
-                  </ul>
-                
-                <h3 class="bolder concepts">Concepts used</h3> 
-                  <ul>
-                    <li>
-                      Saving data to an array and using data inputted to a form; counting the number of guesses
-                    </li>
-                    <li>
-                      Practice using forEach and indexOf methods
-                    </li>
-                    <li>
-                      Reloading the page to play the game again with a new word
-                    </li>
-                  </ul>
-                
-                <h3 class="bolder problems">Problems encountered</h3> 
-                  <ul>
-                    <li>
-                      This was my second attempt at a hangman game, I felt more confident to make it and was much faster than the first time. However I did struggle at first with encountering a double letter in the answer word- I eventually solved it by using a forEach and a while loop
-                    </li>
-                    <li>
-                      Letter graveyard didn’t show the right number at the loss of the game- I solved it by using a setTimeout function for the picture to show up, so when it was clicked away the number (0) shown was correct
-                    </li>
-                  </ul>
-                
-              </ul>
-            </div>
-          </div>
-        </div>
+        
 
         
 
