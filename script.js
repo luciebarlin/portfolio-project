@@ -864,6 +864,10 @@ if (hangmanGame) {
         return;
     }
 
+    const onlyLetters = str => {
+        return /^[A-Za-z]*$/.test(str);
+      }
+
     const checkLetter = () => {
         const guessedLetter = guessHole.value;
         const guessedLetterCaps = guessedLetter.toUpperCase();
@@ -873,6 +877,9 @@ if (hangmanGame) {
             guessHole.value = "";
             return;
         } else if (guessedLetterCaps.length === 0) {
+            return;
+        } else if (!onlyLetters(guessedLetterCaps)) {
+            guessConfirmation.innerHTML = `Guess a letter please`;
             return;
         } else {
             guessConfirmation.innerHTML = `You guessed: ${guessedLetterCaps}`;
