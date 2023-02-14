@@ -426,7 +426,6 @@ if (openModals) {
 const mainTodoList = document.getElementById("main-todolist");
 
 if (mainTodoList) {
-    
 
     const addCloseBtnToListItems = () => {
         const myListItems = document.querySelectorAll("#ul-todo li");
@@ -437,29 +436,35 @@ if (mainTodoList) {
             span.tabIndex = "0";
             span.appendChild(txt);
             item.appendChild(span);
-        });
+            }
+        );
+
+   
     };
 
-    addCloseBtnToListItems();
+     addCloseBtnToListItems();
     
     // Click on a close button to hide the current list item
-    let closeBtns = document.querySelectorAll(".close");
-
-
-    closeBtns.forEach(closeBtn => {
+    // const closeBtns = document.querySelectorAll(".close");
+    // console.log(closeBtns);
+    // closeBtns.forEach(closeBtn => {
         
-        closeBtn.onclick = function() {
-            let div = this.parentElement;
-            div.style.display = "none";
-        };
+    //     closeBtn.onclick = function() {
+    //         console.log("12");
+    //         let div = this.parentElement;
+    //         div.style.display = "none";
+    //     };
+        // const removeTask = (event) => {
+        //     console.log(event.target);
+        //     let div = event.target.parentElement;
+        //     div.style.display = "none";
+        // }
 
-        closeBtn.addEventListener('keydown', (event) => {
-            if (event.code === 'Space' || event.code === 'Enter') {
-                closeBtn.click();
-            }
-        });
+    //     // closeBtn.addEventListener("click", removeTask);
+
+
         
-    });
+    // });
 
     // Add a "checked" symbol when clicking on a list item
     let list = document.querySelector('#ul-todo');
@@ -482,30 +487,26 @@ if (mainTodoList) {
     // Create a new list item when clicking on the "Add" button
     const createNewElement = () => {
         const li = document.createElement("li");
-        //const inputHole = document.getElementById("todo-input");
         let inputValue = inputHole.value;
         const newTaskElement = document.createTextNode(inputValue);
         li.appendChild(newTaskElement);
         li.tabIndex = "0";
-        //console.log(newTaskElement);
         
-        let tasksArr = [];
-        //tasksArr.push(newTask);
-        
-        // conver the array to string then store it.
-        //localStorage.setItem('test', JSON.stringify(['test123', 'value']));
-        //localStorage.setItem('tasksArr', JSON.stringify(tasksArr));
+        const storedTasksJSON = localStorage.getItem("tasksArr");
+        const storedTasksArr = JSON.parse(storedTasksJSON);
+        let tasksArr = storedTasksArr;
+       
 
         if (inputValue === '') {
             alert("You cannot add an empty task");
         } else {
             document.getElementById("ul-todo").appendChild(li);
-            //console.log("hi");
-            //console.log(typeof inputValue, tasksArr);
             addCloseBtnToListItems();
             tasksArr.push(inputValue);
-            //console.log(tasksArr);
-            localStorage.setItem('tasksArr', JSON.stringify(tasksArr));
+            const stringifiedArr = JSON.stringify(tasksArr);
+            console.log(stringifiedArr);
+            localStorage.setItem('tasksArr', stringifiedArr);
+            
 
             inputHole.value = "";
         }
@@ -515,28 +516,77 @@ if (mainTodoList) {
 
         closeBtns.forEach(closeBtn => {
             closeBtn.onclick = function() {
-                
                 let div = this.parentElement;
-                //console.log(div);
-                //console.log(closeBtn);
                 div.style.display = "none";
             };
             
         });
     };
 
+    const addLocalStorageTaskToList = () => {
+        const storedTasksJSON = localStorage.getItem("tasksArr");
+        const storedTasksArr = JSON.parse(storedTasksJSON);
+
+        storedTasksArr.forEach(storedTask => {
+            const li = document.createElement("li");
+            const newStoredTaskElement = document.createTextNode(storedTask);
+            document.getElementById("ul-todo").appendChild(li);
+            
+            console.log(newStoredTaskElement);
+            console.log(storedTask);
+            li.appendChild(newStoredTaskElement);
+            li.tabIndex = "0";
+
+            const span = document.createElement("SPAN");
+            const txt = document.createTextNode("\u00D7");
+            span.classList.add("close");
+            span.tabIndex = "0";
+            span.appendChild(txt);
+            li.appendChild(span);
+
+        })
+        
+        
+    }
+
+    const removeTask = event => {
+        console.log(event.target);
+        let listElement = event.target.closest('li');
+        listElement.style.display = "none";
+    }
+
+    const initTodoList = () => {
+        addLocalStorageTaskToList();
+        const closeBtns = document.querySelectorAll(".close");
+
+        closeBtns.forEach(closeBtn => {
+            console.log("button");
+            closeBtn.addEventListener("click", removeTask);
+
+            closeBtn.addEventListener('keydown', (event) => {
+                if (event.code === 'Space' || event.code === 'Enter') {
+                    closeBtn.click();
+                }
+            });
+        })
+
+        
+    }
+
     const addBtn = document.querySelector("#add-btn");
     addBtn.addEventListener("click", createNewElement);
-
-    //const inputHole = document.getElementById("todo-input");
+    window.addEventListener("load", initTodoList);
+    
+    
 
     inputHole.addEventListener('keydown', (event) => {
         if (event.code === 'Enter') {
             addBtn.click();
         }
     });
-}
 
+    
+}
 
 
 
