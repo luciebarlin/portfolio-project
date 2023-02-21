@@ -15,14 +15,6 @@ const addCloseBtnToListItems = () => {
     const myListItems = document.querySelectorAll("#ul-todo li");
     myListItems.forEach(item => {
             addCloseBtn(item);
-            // const span = document.createElement("SPAN");
-            // const txt = document.createTextNode("\u00D7");
-            // span.classList.add("close");
-            // span.tabIndex = "0";
-            // span.appendChild(txt);
-            // item.appendChild(span);
-            // item.classList.add("todo-task");
-
         }
         
     );
