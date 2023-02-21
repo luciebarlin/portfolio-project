@@ -422,171 +422,184 @@ if (openModals) {
 
 
 
-///// todo list
-const mainTodoList = document.getElementById("main-todolist");
+// ///// todo list
+// const mainTodoList = document.getElementById("main-todolist");
 
-if (mainTodoList) {
+// if (mainTodoList) {
 
-    const addCloseBtnToListItems = () => {
-        const myListItems = document.querySelectorAll("#ul-todo li");
-        myListItems.forEach(item => {
-            const span = document.createElement("SPAN");
-            const txt = document.createTextNode("\u00D7");
-            span.classList.add("close");
-            span.tabIndex = "0";
-            span.appendChild(txt);
-            item.appendChild(span);
-            }
-        );
+//     const addCloseBtnToListItems = () => {
+//         const myListItems = document.querySelectorAll("#ul-todo li");
+//         myListItems.forEach(item => {
+//             const span = document.createElement("SPAN");
+//             const txt = document.createTextNode("\u00D7");
+//             span.classList.add("close");
+//             span.tabIndex = "0";
+//             span.appendChild(txt);
+//             item.appendChild(span);
+//             }
+//         );
 
    
-    };
+//     };
 
-     addCloseBtnToListItems();
+//      addCloseBtnToListItems();
     
-    // Click on a close button to hide the current list item
-    // const closeBtns = document.querySelectorAll(".close");
-    // console.log(closeBtns);
-    // closeBtns.forEach(closeBtn => {
+//     // Click on a close button to hide the current list item
+//     // const closeBtns = document.querySelectorAll(".close");
+//     // console.log(closeBtns);
+//     // closeBtns.forEach(closeBtn => {
         
-    //     closeBtn.onclick = function() {
-    //         console.log("12");
-    //         let div = this.parentElement;
-    //         div.style.display = "none";
-    //     };
-        // const removeTask = (event) => {
-        //     console.log(event.target);
-        //     let div = event.target.parentElement;
-        //     div.style.display = "none";
-        // }
+//     //     closeBtn.onclick = function() {
+//     //         console.log("12");
+//     //         let div = this.parentElement;
+//     //         div.style.display = "none";
+//     //     };
+//         // const removeTask = (event) => {
+//         //     console.log(event.target);
+//         //     let div = event.target.parentElement;
+//         //     div.style.display = "none";
+//         // }
 
-    //     // closeBtn.addEventListener("click", removeTask);
+//     //     // closeBtn.addEventListener("click", removeTask);
 
 
         
-    // });
+//     // });
 
-    // Add a "checked" symbol when clicking on a list item
-    let list = document.querySelector('#ul-todo');
-    list.addEventListener('click', function(event) {
-        if (event.target.tagName === 'LI') {
-            event.target.classList.toggle('checked');
-        }
-    }, false);
+//     // Add a "checked" symbol when clicking on a list item
+//     let list = document.querySelector('#ul-todo');
+//     list.addEventListener('click', function(event) {
+//         if (event.target.tagName === 'LI') {
+//             event.target.classList.toggle('checked');
+//         }
+//     }, false);
 
-    list.addEventListener('keydown', (event) => {
-        if (event.code === 'Space' || event.code === 'Enter') {
-            if (event.target.tagName === 'LI') {
-                event.target.classList.toggle('checked');
-            }
-        }
-    });
+//     list.addEventListener('keydown', (event) => {
+//         if (event.code === 'Space' || event.code === 'Enter') {
+//             if (event.target.tagName === 'LI') {
+//                 event.target.classList.toggle('checked');
+//             }
+//         }
+//     });
 
-    const inputHole = document.getElementById("todo-input");
+//     const inputHole = document.getElementById("todo-input");
 
-    // Create a new list item when clicking on the "Add" button
-    const createNewElement = () => {
-        const li = document.createElement("li");
-        let inputValue = inputHole.value;
-        const newTaskElement = document.createTextNode(inputValue);
-        li.appendChild(newTaskElement);
-        li.tabIndex = "0";
+//     // Create a new list item when clicking on the "Add" button
+//     const createNewElement = () => {
+//         const li = document.createElement("li");
+//         let inputValue = inputHole.value;
+//         const newTaskElement = document.createTextNode(inputValue);
+//         li.appendChild(newTaskElement);
+//         li.tabIndex = "0";
         
-        const storedTasksJSON = localStorage.getItem("tasksArr");
-        const storedTasksArr = JSON.parse(storedTasksJSON);
-        let tasksArr = storedTasksArr;
+//         const storedTasksJSON = localStorage.getItem("tasksArr");
+//         const storedTasksArr = JSON.parse(storedTasksJSON);
+//         let tasksArr = storedTasksArr;
        
 
-        if (inputValue === '') {
-            alert("You cannot add an empty task");
-        } else {
-            document.getElementById("ul-todo").appendChild(li);
-            addCloseBtnToListItems();
-            tasksArr.push(inputValue);
-            const stringifiedArr = JSON.stringify(tasksArr);
-            console.log(stringifiedArr);
-            localStorage.setItem('tasksArr', stringifiedArr);
+//         if (inputValue === '') {
+//             alert("You cannot add an empty task");
+//         } else {
+//             document.getElementById("ul-todo").appendChild(li);
+//             addCloseBtnToListItems();
+//             tasksArr.push(inputValue);
+//             const stringifiedArr = JSON.stringify(tasksArr);
+//             console.log(stringifiedArr);
+//             localStorage.setItem('tasksArr', stringifiedArr);
             
 
-            inputHole.value = "";
-        }
+//             inputHole.value = "";
+//         }
     
-        ///addCloseBtnToListItems();
-        closeBtns = document.querySelectorAll(".close");
+//         ///addCloseBtnToListItems();
+//         closeBtns = document.querySelectorAll(".close");
 
-        closeBtns.forEach(closeBtn => {
-            closeBtn.onclick = function() {
-                let div = this.parentElement;
-                div.style.display = "none";
-            };
+//         closeBtns.forEach(closeBtn => {
+//             closeBtn.onclick = function() {
+//                 let div = this.parentElement;
+//                 div.style.display = "none";
+//             };
             
-        });
-    };
+//         });
+//     };
 
-    const addLocalStorageTaskToList = () => {
-        const storedTasksJSON = localStorage.getItem("tasksArr");
-        const storedTasksArr = JSON.parse(storedTasksJSON);
+//     const addLocalStorageTaskToList = () => {
+//         let storedTasksJSON = localStorage.getItem("tasksArr");
+//         let storedTasksArr = JSON.parse(storedTasksJSON);
+//         let tasksArr = storedTasksArr;
 
-        storedTasksArr.forEach(storedTask => {
-            const li = document.createElement("li");
-            const newStoredTaskElement = document.createTextNode(storedTask);
-            document.getElementById("ul-todo").appendChild(li);
+//         console.log(tasksArr); 
+//         if (!tasksArr) {
+//             storedTasksJSON = localStorage.getItem("tasksArr");
+//             storedTasksArr = JSON.parse(storedTasksJSON);
+//             tasksArr = storedTasksArr;
+//             console.log("task");
+//             localStorage.setItem("tasksArr", JSON.stringify(["go to gym"]));
+//         }
+
+//         console.log(tasksArr);
+//         console.log(storedTasksJSON);
+//         storedTasksArr.forEach(storedTask => {
+//             const li = document.createElement("li");
+//             const newStoredTaskElement = document.createTextNode(storedTask);
+//             document.getElementById("ul-todo").appendChild(li);
             
-            console.log(newStoredTaskElement);
-            console.log(storedTask);
-            li.appendChild(newStoredTaskElement);
-            li.tabIndex = "0";
+//             console.log(newStoredTaskElement);
+//             console.log(storedTask);
+//             li.appendChild(newStoredTaskElement);
+//             li.tabIndex = "0";
 
-            const span = document.createElement("SPAN");
-            const txt = document.createTextNode("\u00D7");
-            span.classList.add("close");
-            span.tabIndex = "0";
-            span.appendChild(txt);
-            li.appendChild(span);
+//             const span = document.createElement("SPAN");
+//             const txt = document.createTextNode("\u00D7");
+//             span.classList.add("close");
+//             span.tabIndex = "0";
+//             span.appendChild(txt);
+//             li.appendChild(span);
 
-        })
+//         })
         
         
-    }
+//     }
 
-    const removeTask = event => {
-        console.log(event.target);
-        let listElement = event.target.closest('li');
-        listElement.style.display = "none";
-    }
+//     const removeTask = event => {
+//         let listElement = event.target.closest('li');
+//         console.log(listElement);
+//         listElement.style.display = "none";
+//         //localStorage.removeItem("tasksArr");
+//     }
 
-    const initTodoList = () => {
-        addLocalStorageTaskToList();
-        const closeBtns = document.querySelectorAll(".close");
+//     const initTodoList = () => {
+//         addLocalStorageTaskToList();
+//         const closeBtns = document.querySelectorAll(".close");
 
-        closeBtns.forEach(closeBtn => {
-            console.log("button");
-            closeBtn.addEventListener("click", removeTask);
+//         closeBtns.forEach(closeBtn => {
+//             console.log("button");
+//             closeBtn.addEventListener("click", removeTask);
 
-            closeBtn.addEventListener('keydown', (event) => {
-                if (event.code === 'Space' || event.code === 'Enter') {
-                    closeBtn.click();
-                }
-            });
-        })
+//             closeBtn.addEventListener('keydown', (event) => {
+//                 if (event.code === 'Space' || event.code === 'Enter') {
+//                     closeBtn.click();
+//                 }
+//             });
+//         })
 
         
-    }
+//     }
 
-    const addBtn = document.querySelector("#add-btn");
-    addBtn.addEventListener("click", createNewElement);
-    window.addEventListener("load", initTodoList);
+//     const addBtn = document.querySelector("#add-btn");
+//     addBtn.addEventListener("click", createNewElement);
+//     window.addEventListener("load", initTodoList);
     
     
 
-    inputHole.addEventListener('keydown', (event) => {
-        if (event.code === 'Enter') {
-            addBtn.click();
-        }
-    });
+//     inputHole.addEventListener('keydown', (event) => {
+//         if (event.code === 'Enter') {
+//             addBtn.click();
+//         }
+//     });
 
     
-}
+// }
 
 
 
