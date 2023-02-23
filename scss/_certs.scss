@@ -58,6 +58,10 @@
     width: 80%; /* Could be more or less, depending on screen size */
     position: relative;
 
+    @media (min-width: 1200px) {
+        margin: 5% auto;
+    }
+
     img {
         width: 90%;
     }
