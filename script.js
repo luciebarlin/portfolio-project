@@ -381,24 +381,24 @@ if (openModals) {
             }
         });
 
-        closeSpans.forEach(span => {
+        // closeSpans.forEach(span => {
 
-            const closeModalFunc = event => {
-                span.onclick = function() {
-                    openModals.forEach(openModal => {
-                        openModal.style.display = "none";
-                    })
-                }
-            }
+        //     const closeModalFunc = event => {
+        //         span.onclick = function() {
+        //             openModals.forEach(openModal => {
+        //                 openModal.style.display = "none";
+        //             })
+        //         }
+        //     }
 
-            span.addEventListener("click", closeModalFunc);
+        //     span.addEventListener("click", closeModalFunc);
 
-            span.addEventListener('keydown', (event) => {
-                if (event.code === 'Space' || event.code === 'Enter') {
-                  span.click();
-                }
-            });
-        })
+        //     span.addEventListener('keydown', (event) => {
+        //         if (event.code === 'Space' || event.code === 'Enter') {
+        //           span.click();
+        //         }
+        //     });
+        // })
         
         window.onkeydown = function(event) {
             openModals.forEach(openModal => {
@@ -416,6 +416,23 @@ if (openModals) {
             })
             
         }
+    })
+
+    closeSpans.forEach(span => {
+        const closeModalFunc = event => {
+            openModals.forEach(openModal => {
+                openModal.style.display = "none";
+            })
+            
+        }
+
+        span.addEventListener("click", closeModalFunc);
+
+        span.addEventListener('keydown', (event) => {
+            if (event.code === 'Space' || event.code === 'Enter') {
+              span.click();
+            }
+        });
     })
 }
 
