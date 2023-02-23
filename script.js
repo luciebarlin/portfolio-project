@@ -1514,3 +1514,41 @@ if (cvBtn) {
 
 /////////////////
 
+/// click to copy email address
+
+const copyBtn = document.querySelector(".copy-btn");
+
+if (copyBtn) {
+    const myEmail = document.querySelector(".my-email");
+    const emailText = myEmail.innerHTML;
+    const oncopyTooltip = document.querySelector(".oncopy-tooltiptext");
+
+    const copyText = () => {
+        navigator.clipboard.writeText(emailText);
+        console.log('Content copied to clipboard');
+        console.log(emailText);
+        
+      }
+
+    const showCopiedTooltip = () => {
+        oncopyTooltip.classList.add("unhidden");
+        
+    }
+
+
+    copyBtn.addEventListener("click", copyText);
+    copyBtn.addEventListener("click", showCopiedTooltip);
+    
+    
+
+    // copyBtn.addEventListener('keydown', (event) => {
+    //     if (event.code === 'Space' || event.code === 'Enter') {
+    //         copyBtn.click();
+    //     }
+    // });
+
+    
+
+    
+
+}

@@ -15,10 +15,12 @@ $spacer-3: 64px;
 $border-1: 1px solid $dark-blue;
 $border-2: 2px solid $dark-blue;
 $border-thick: 5px solid $dark-blue;
+$hr-margin: 8px;
 
 $main-img-width: 300px;
 $mobile-width-container: 300px;
 $desktop-width-container: 1200px;
+$footer-content-width: 390px;
 
 $margin-1: 40px;
 $padding-1: 10px;
@@ -53,7 +55,7 @@ $box-shadow-blue: 0 8px 16px 0 rgba(22,48,87,0.6);
 @import "scss/cake_quiz";
 @import "scss/about_section";
 @import "scss/skills";
-
+@import "scss/footer";
 
 
 html, 
@@ -70,7 +72,7 @@ body {
     text-align: center;
     color: $dark-blue;
     background-color: $pale-blue; //lighten($oatmeal, 5%);
-   
+    min-height: 100vh;
    
 }
 
@@ -134,15 +136,6 @@ a {
 }
 
 
-#birthday {
-    justify-content: flex-start;
-    border: $border-2;
-    width: 325px;
-    padding: $spacer-1 $spacer-2;
-    background-color: $light-pink;
-    margin: 0 auto;
-}
-
 .active-page {
     font-weight: 900;
 }
@@ -156,4 +149,17 @@ button {
     border: none;
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
+}
+
+.unhidden {
+    display: block;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.opaque {
+    opacity: 1;
 }
