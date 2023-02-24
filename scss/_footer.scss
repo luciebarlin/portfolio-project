@@ -10,6 +10,12 @@ footer {
         border-top: 1px solid lighten($light-grey, 10%);
         padding-top: $padding-1;
         justify-content: space-between;
+        flex-direction: column;
+
+
+        @media (min-width: 1200px) {
+            flex-direction: row;
+        }
     }
 
     .footer-info {
@@ -40,22 +46,65 @@ footer {
     }
 
     .footer-nav {
+        margin-top: $spacer-1;
+        @media (min-width: 1200px) {
+            margin-top: 0;
+        }
+
+        .sitenav-mobile-header {
+            @media (min-width: 1200px) {
+                display: none;
+            }
+        }
+
         ul {
             list-style: none;
             display: flex;
             margin: 0;
-            align-items: center;
+            padding-left: 0;
+            flex-direction: column;
+
+            @media (min-width: 1200px) {
+                flex-direction: row;
+                align-items: center;
+
+            }
 
             li {
-                padding: 0 $padding-2;
+                padding: 0 $spacer-half;
+                margin-top: $spacer-half;
+                @media (min-width: 1200px) {
+                    margin-top: 0;
+                    padding: 0 $padding-2;
+
+                }
             }
         }
 
-        .github-logo-mobile,
-        .linkedin-logo-mobile {
+        .social-logos-desktop {
+            display: none;
+
+            @media (min-width: 1200px) {
+                display: block;
+
+                img {
+                    height: 26px;
+                    width: 26px;
+                }
+            }
+        }
+
+        .social-logos-mobile {
+            display: block;
+
             img {
+                padding-right: $spacer-half;
                 height: 26px;
                 width: 26px;
+            }
+
+            @media (min-width: 1200px) {
+                display: none;
             }
         }
     }
