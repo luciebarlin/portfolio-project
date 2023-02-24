@@ -2,10 +2,14 @@ footer {
     text-align: left;
     padding: 0 $spacer-2 $spacer-1;
     margin-top: auto;
+    display: flex;
+    flex-direction: column;
 
-    hr {
-        border: 1px solid lighten($light-grey, 10%);
-        
+    .footer-info-wrapper {
+        display: flex;
+        border-top: 1px solid lighten($light-grey, 10%);
+        padding-top: $padding-1;
+        justify-content: space-between;
     }
 
     .footer-info {
@@ -23,11 +27,36 @@ footer {
                 opacity: 1;
             }
 
+            &:focus ~ .tooltiptext {
+                opacity: 1;
+            }
+
         }
 
         .tooltiptext {
             top: -40px;
             left: 340px;
+        }
+    }
+
+    .footer-nav {
+        ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            align-items: center;
+
+            li {
+                padding: 0 $padding-2;
+            }
+        }
+
+        .github-logo-mobile,
+        .linkedin-logo-mobile {
+            img {
+                height: 26px;
+                width: 26px;
+            }
         }
     }
 
@@ -57,4 +86,9 @@ footer {
             cursor: pointer;
         }
     }
+}
+
+.invisible {
+    opacity: 0;
+    pointer-events: none;
 }
