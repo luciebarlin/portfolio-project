@@ -1,9 +1,13 @@
 footer {
     text-align: left;
     padding: 0 $spacer-2 $spacer-1;
-    margin-top: auto;
+    margin-top: $spacer-3;
     display: flex;
     flex-direction: column;
+
+    @media (min-width: 1200px) {
+        margin-top: auto;
+    }
 
     .footer-info-wrapper {
         display: flex;
@@ -20,22 +24,45 @@ footer {
 
     .footer-info {
         position: relative;
+        line-height: 2;
+
+        .copyto {
+            display: none; 
+
+            @media (min-width: 1200px) {
+                display: inline-block;
+            }
+        }
+
+        .mailto {
+            display: flex;
+
+            @media (min-width: 1200px) {
+                display: none;
+            }
+        }
 
         .copy-btn {
-            cursor: pointer;
-            background-color: $light-pink;
-            align-items: center;
-            border-radius: 50%;
-            font-size: 1.1rem;
-            padding: 3px 8px;
+            display: none;
 
-            &:hover ~ .tooltiptext {
-                opacity: 1;
+            @media (min-width: 1200px) {
+                display: inline-block;
+                cursor: pointer;
+                background-color: $light-pink;
+                align-items: center;
+                border-radius: 50%;
+                font-size: 1.1rem;
+                padding: 3px 8px;
+    
+                &:hover ~ .tooltiptext {
+                    opacity: 1;
+                }
+    
+                &:focus ~ .tooltiptext {
+                    opacity: 1;
+                }
             }
 
-            &:focus ~ .tooltiptext {
-                opacity: 1;
-            }
 
         }
 
