@@ -1477,7 +1477,7 @@ if (greeting) {
 
 /////////////
 
-// expand buttonn on about me page
+// expand buttonn on Home page
 const expandBtn = document.querySelector(".expand-btn");
 const aboutBox = document.querySelector(".about-box");
 
