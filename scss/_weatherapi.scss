@@ -15,7 +15,7 @@ main {
     overflow-wrap: break-word;
     font-size: 0.75rem;
     padding: 10px 15px;
-    width: 75%;
+    max-width: 75vw;
     margin: 0 auto;
 
     .hidden {

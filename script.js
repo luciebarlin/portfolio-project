@@ -1547,3 +1547,9 @@ const showXBtn = () => {
 }
 
 menuIconWrapper.addEventListener("click", showXBtn);
+
+menuIconWrapper.addEventListener('keydown', (event) => {
+    if (event.code === 'Space' || event.code === 'Enter') {
+        menuIconWrapper.click();
+    }
+});
