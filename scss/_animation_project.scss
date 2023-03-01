@@ -9,7 +9,114 @@ $rectangle-border: 4px;
 // $tri-border-left-right: 50px solid transparent;
 // $tri-border-top-bottom: 86.60254px solid transparent;
 // $tri-colors:  #E0BBE4, #957DAD, #D291BC, #FEC8D8, #FFDFD3;
-  
+
+.nav-mobile-new {
+    transform: translateX(100vw);
+    transition: $transition-basic;
+}
+
+.active-menu {
+    transform: translateX(0);
+}
+
+.nav-position-new {
+    position: relative;
+    justify-content: flex-end;
+    height: 36px;
+
+    .nav-mobile-new {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 28px;
+        right: 0;
+        background: $pale-blue;
+        z-index: 20;
+        padding: $spacer-1 22px $spacer-1 $spacer-2;
+        box-shadow: $box-shadow;
+        opacity: 0.95;
+        
+    
+        li {
+            margin: 0;
+            text-align: right;
+            width: 100%;
+            font-size: 1.75rem;
+            padding: $spacer-half 0;
+        }
+    }
+}
+
+
+
+
+.menu-icon-wrapper {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: $spacer-1 $spacer-1 0 0;
+
+    .menu-icon {
+        height: 0;
+        width: 20px;
+        border-bottom: 2px solid $dark-blue;
+        -webkit-transition: border-color .3s ease;
+        transition: border-color .3s ease;
+        // border-radius: 2px;
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            border-top: 2px solid $dark-blue;
+            width: 20px;
+            transition: top .1s ease .1s,transform .1s ease,-webkit-transform .1s ease;
+            // border-radius: 2px;
+
+        }
+
+        &::before {
+            top: 2px;
+            transform-origin: top left;
+
+        }
+
+        &::after {
+            bottom: 2px;
+            transform-origin: bottom left;
+
+        }
+
+    }
+
+    .showing-menu {
+        border-bottom: transparent;
+        &::before {
+            // top: 2px;
+            transform: rotate(45deg);
+
+        }
+        
+        
+        &::after {
+            // bottom: 2px;
+            transform: rotate(-45deg);
+
+        }
+    }
+
+}
+
+
+
+
+
+
+
   .rectangles-area {
     display: flex;
     margin-top: 10%;

@@ -101,12 +101,17 @@ h1 {
     .nav-links {
         background-color: lighten($light-pink, 3%);
     }
+
+    .nav-mobile-new {
+        background: lighten($light-pink, 3%);
+
+    }
 }
 
 main {
     font-size: 1.5rem;
     line-height: 2;
-    margin-bottom: $spacer-2;
+    margin-bottom: $spacer-3;
 }
 
 h2 {

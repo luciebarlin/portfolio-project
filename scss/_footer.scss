@@ -1,12 +1,13 @@
 footer {
     text-align: left;
     padding: 0 $spacer-2 $spacer-1;
-    margin-top: $spacer-3;
+    margin-top: auto;
     display: flex;
     flex-direction: column;
 
     @media (min-width: 1200px) {
-        margin-top: auto;
+        overflow-x: scroll;
+        white-space: nowrap;
     }
 
     .footer-info-wrapper {
