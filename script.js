@@ -1531,6 +1531,13 @@ if (copyBtn) {
 
     copyBtn.addEventListener("click", copyText);
 
+    // if (element.hasFocus) {
+    //     setTimeout(function(
+    //       make opacity 0 
+    //     ) )
+    // }
+    
+    
 }
 
 /////////////
