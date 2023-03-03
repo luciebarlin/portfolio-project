@@ -1290,7 +1290,7 @@ const newCarousel = document.querySelector(".new-carousel");
 if (newCarousel) {
     let index = 0;
     const speed = 5000; //5sec
-    const numberOfSlides = 3;
+    const numberOfSlides = 4;
     const carouselContainer = document.querySelector(".carouselContainer");
     const carouselItemWidth = carouselContainer.scrollWidth / numberOfSlides;
 

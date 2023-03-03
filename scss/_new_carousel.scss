@@ -4,7 +4,7 @@
 }
 
 .carouselWrapper {
-    width: $mobile-width-container;
+    width: calc($mobile-width-container - 1px);
     position: relative;
 
     @media (min-width: 1200px) {
