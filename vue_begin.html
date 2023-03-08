@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue App | Lucie's Portfolio Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,900;1,400;1,600;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <script src="vue_begin.js" defer></script>
+</head>
+  <body data-page-name="experience">
+
+    <header>
+
+        <nav class="nav-bar__inner-desktop">
+
+          <ul class="nav-bar__items">
+            <li class="nav-bar__item index">
+              <a href="index.html">Home</a>
+            </li>
+            <li class="nav-bar__item dropdown-menu experience">
+              <a href="experience.html">
+                Experience ▾
+              </a>
+              <div class="nav-links">
+                <a href="certs.html">Certificates</a>
+                <a target="_blank" href="certs/cv_lucie_barlin_2023_02.pdf"> Download CV</a>
+              </div>
+            </li>
+      
+            <li class="nav-bar__item dropdown-menu projects">
+              <a href="projects.html">Projects ▾</a>
+              <div class="nav-links">
+                <a  href="weatherapi.html">Umbrella checker</a>
+              <a  href="cake_quiz.html">Cake quiz</a>
+              <a  href="hangman.html">Hangman</a>
+              <a  href="moving_cards.html">Moving cards</a>
+              <a  href="todolist.html">Todo list</a>
+              <a  href="slideshows.html">Slideshows</a>
+              <a  href="eight_ball.html">Magic 8 Ball</a>
+              </div>
+            </li>
+      
+            <li class="nav-bar__item skills">
+              <a href="skills.html">Skills</a>
+            </li>
+            <li class="nav-bar__item contact">
+              <a href="contact.html">Contact</a>
+            </li>
+          </ul>
+      
+        </nav>
+
+        <nav class="nav-bar__inner-mobile nav-position-new">
+
+          <ul class="nav-bar__items nav-mobile-new">
+            <li class="nav-bar__item index">
+              <a href="index.html">Home</a>
+            </li>
+            <li class="nav-bar__item experience">
+              <a href="experience.html">Experience</a>
+            </li>
+            <li class="nav-bar__item projects">
+              <a href="projects.html">Projects</a>
+            </li>
+            <li class="nav-bar__item skills">
+              <a href="skills.html">Skills</a>
+            </li>
+            <li class="nav-bar__item contact">
+              <a href="contact.html">Contact</a>
+            </li>
+          </ul>
+          <div aria-label="open nav menu" tabindex="0" class="menu-icon-wrapper">
+            <div class="menu-icon">
+  
+            </div>
+          </div>
+  
+        </nav>
+
+        <h1>
+            Vue App
+        </h1>
+    </header>
+
+    <main>
+
+        <div id="app"> 
+            <p> {{ greeting }} {{ yourName }} </p>
+            <p>Love from {{ myName }} </p>
+
+            <nav>
+                <ul>
+                    <li v-for="item in navList">
+                       <a href="#"> {{ item }} </a>
+                    </li>
+                    
+                </ul>
+                
+                <div v-if="emoji">
+                    {{ emoji[0] }}
+                    {{ emoji[1] }}
+                </div>
+                
+                <div>
+                    {{ doggy }}
+                </div>
+                
+                
+            </nav>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+
+    <footer>
+      
+      <div class="footer-info-wrapper">
+        <div class="footer-info">
+          © 2023 Lucie Barlin ~ 
+          <span class="bolder my-email copyto"> lucie.barlin@hotmail.com</span> 
+          <span class="bolder my-email mailto"> 
+            <a href="mailto:lucie.barlin@hotmail.com?subject=Junior Web Developer role">
+              Email me: lucie.barlin@hotmail.com
+            </a>
+          </span>
+          <button aria-label="copy email" class="copy-btn"> ⧉</button>
+          <div id="email-tooltip" class="tooltiptext"> 
+            Copy email
+          </div>
+          
+        </div>
+
+        <nav class="footer-nav">
+          <h3 class="sitenav-mobile-header bolder">Site navigation</h3>
+          <ul>
+            <li>
+              <a target="_blank" href="certs/cv_lucie_barlin_2023_02.pdf">
+                Download CV
+              </a>
+            </li>
+            <li>
+              <a href="certs.html">
+                My certificates
+              </a>
+            </li>
+            <li>
+              <a href="weatherapi.html">
+                Umbrella checker
+              </a>
+            </li>
+            <li>
+              <a href="cake_quiz.html">
+                Cake quiz
+              </a>
+            </li>
+            <li>
+              <a href="hangman.html">
+                Hangman
+              </a>
+            </li>
+            <li>
+              <a href="todolist.html">
+                Todo list
+              </a>
+            </li>
+            <li class="social-logos-desktop">
+              <a target="_blank" href="https://github.com/luciebarlin">
+                  <img src="images/github.png" alt="go to my GitHub page">
+              </a>
+            </li> 
+            <li class="social-logos-desktop">
+              <a target="_blank" href="https://www.linkedin.com/in/lucie-barlin-a292a14b/">
+                  <img src="images/LinkedIn_icon.svg.png" alt="go to my LinkedIn page">
+              </a>
+            </li> 
+            <li class="social-logos-mobile">
+              <a target="_blank" href="https://github.com/luciebarlin">
+                  <img src="images/github.png" alt="go to my GitHub page">
+              </a>
+              <a target="_blank" href="https://www.linkedin.com/in/lucie-barlin-a292a14b/">
+                <img src="images/LinkedIn_icon.svg.png" alt="go to my LinkedIn page">
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+        
+      
+    </footer> 
+
+
+
+
+
+
+	<script src="script.js"></script>
+  </body>
+</html>
