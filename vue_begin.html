@@ -126,6 +126,49 @@
 
     </main>
 
+    <footer id="vue-footer">
+      
+      <div class="footer-info-wrapper">
+        <div class="footer-info">
+          {{ copyrightInfo }}
+          <span class="bolder my-email copyto"> {{ myEmail }} </span> 
+          <span class="bolder my-email mailto"> 
+            <a href="mailto:lucie.barlin@hotmail.com?subject=Junior Web Developer role">
+              Email me:  {{ myEmail }} 
+            </a>
+          </span>
+          <button aria-label="copy email" class="copy-btn"> ⧉</button>
+          <div id="email-tooltip" class="tooltiptext"> 
+            Copy email
+          </div>
+          
+        </div>
+
+        <nav class="footer-nav">
+          <ul>
+            <li v-for="footerItem in footerNavList">
+              <a 
+                v-bind:href="hrefs[footerItem.slug]"
+                v-bind:target="footerItem.slug === 'download_cv' ? '_blank' : '_self'" 
+              >
+                {{ footerItem.string }}
+              </a>
+            </li>
+            <li 
+              v-for="logoLink in socialLogoLinks" 
+              class="social-logos-desktop"
+            >
+              <a target="_blank" v-bind:href="hrefsSocial[logoLink.slug]">
+                <img v-bind:src="[logoLink.image]" v-bind:alt="[logoLink.alt]">
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+
+    </footer>
+
     <footer>
       
       <div class="footer-info-wrapper">
