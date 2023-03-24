@@ -1,24 +1,24 @@
-const app = new Vue({
-    el: '#app',
-    data: {
-        greeting: 'Hello, ',
-        yourName: 'Matty',
-        myName: 'Lucie',
-        navList: [
-            'Home',
-            'Experience ▾',
-            'Projects ▾',
-            'Skills',
-            'Contact'
-        ],
-        emoji: [
-            '😊', 
-            '😔'
-        ],
-        doggy: '🐶'
+// const app = new Vue({
+//     el: '#app',
+//     data: {
+//         greeting: 'Hello, ',
+//         yourName: 'Matty',
+//         myName: 'Lucie',
+//         navList: [
+//             'Home',
+//             'Experience ▾',
+//             'Projects ▾',
+//             'Skills',
+//             'Contact'
+//         ],
+//         emoji: [
+//             '😊', 
+//             '😔'
+//         ],
+//         doggy: '🐶'
 
-    },
-});
+//     },
+// });
 
 const vueFooter = new Vue({
     el: '#vue-footer',
@@ -77,5 +77,46 @@ const vueFooter = new Vue({
             }
         ]
 
+    }
+})
+
+
+
+
+const vueCerts = new Vue({
+    el: '#cert-showcase',
+    data: {
+        dataTargets: [
+            {
+                webAccess: 'open-modal-web-access',
+                css: 'open-modal-css',
+                cssInt: 'open-modal-css-int'
+            }
+        ],
+        certInfoArr: [
+            {
+                string: 'Web Accessibility',
+                certID: 'modal-btn--web-access',
+                slug: 'css',
+                image: 'images/web_accessibility_cert.png',
+                alt: 'a certificate of completion for an edX course on web accessibility'
+            },
+            {
+                string: 'CSS',
+                certID: 'modal-btn--css',
+                slug: 'webAccess',
+                image: 'images/css.png',
+                alt: 'a certificate of completion for an codecademy course on css'
+            
+            },
+            {
+                string: 'Web Accessibility',
+                certID: 'modal-btn--css-int',
+                slug: 'cssInt',
+                image: 'images/css_int.png',
+                alt: 'a certificate of completion for a codecademy course on intermediate css'
+            
+            }
+        ]
     }
 })
