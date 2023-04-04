@@ -86,13 +86,23 @@ const vueFooter = new Vue({
 const vueCerts = new Vue({
     el: '#cert-showcase',
     data: {
-        dataTargets: [
+        myName: 'Lucie Barlin',
+        displayModal: false,
+        dataTargets: 
             {
                 webAccess: 'open-modal-web-access',
+                html: 'open-modal-html',
                 css: 'open-modal-css',
-                cssInt: 'open-modal-css-int'
-            }
-        ],
+                cssInt: 'open-modal-css-int',
+                cssResp: 'open-modal-css-resp',
+                sass: 'open-modal-sass',
+                git: 'open-modal-git',
+                js: 'open-modal-js',
+                jsWebsites: 'open-modal-js-websites',
+                bootstrap: 'open-modal-bootstrap',
+                colorDesign: 'open-modal-color-design'
+            },
+        
         certInfoArr: [
             {
                 string: 'Web Accessibility',
@@ -102,21 +112,103 @@ const vueCerts = new Vue({
                 alt: 'a certificate of completion for an edX course on web accessibility'
             },
             {
+                string: 'HTML',
+                certID: 'modal-btn--html',
+                slug: 'html',
+                image: 'images/html.png',
+                alt: 'a certificate of completion for a codecademy course on html'
+            
+            },
+            {
                 string: 'CSS',
                 certID: 'modal-btn--css',
                 slug: 'webAccess',
                 image: 'images/css.png',
-                alt: 'a certificate of completion for an codecademy course on css'
+                alt: 'a certificate of completion for a codecademy course on css'
             
             },
             {
-                string: 'Web Accessibility',
+                string: 'CSS Intermediate',
                 certID: 'modal-btn--css-int',
                 slug: 'cssInt',
                 image: 'images/css_int.png',
                 alt: 'a certificate of completion for a codecademy course on intermediate css'
             
-            }
+            },
+            {
+                string: 'CSS Responsive Design',
+                certID: 'modal-btn--css-resp',
+                slug: 'cssResp',
+                image: 'images/css_resp.png',
+                alt: 'a certificate of completion for a codecademy course on responsive css design'
+            
+            },
+            {
+                string: 'Sass',
+                certID: 'modal-btn--sass',
+                slug: 'sass',
+                image: 'images/sass.png',
+                alt: 'a certificate of completion for a codecademy course on sass'
+            
+            },
+            {
+                string: 'Git & Github',
+                certID: 'modal-btn--git',
+                slug: 'git',
+                image: 'images/git.png',
+                alt: 'a certificate of completion for a codecademy course on git and github'
+            
+            },
+            {
+                string: 'JavaScript',
+                certID: 'modal-btn--js',
+                slug: 'js',
+                image: 'images/js.png',
+                alt: 'a certificate of completion for a codecademy course on javascript'
+            
+            },
+            {
+                string: 'JavaScript Websites',
+                certID: 'modal-btn--js-websites',
+                slug: 'jsWebsites',
+                image: 'images/js_websites.png',
+                alt: 'a certificate of completion for a codecademy course on building javascript websites'
+            
+            },
+            {
+                string: 'Bootstrap',
+                certID: 'modal-btn--bootstrap',
+                slug: 'bootstrap',
+                image: 'images/bootstrap.png',
+                alt: 'a certificate of completion for a codecademy course on bootstrap'
+            
+            },
+            {
+                string: 'Color Design',
+                certID: 'modal-btn--color-design',
+                slug: 'colorDesign',
+                image: 'images/color_design.png',
+                alt: 'a certificate of completion for a codecademy course on color theory and design'
+            
+            },
         ]
-    }
+    },
+    methods: {
+        sayHi: function () {
+            alert(`Hello ${this.myName}`);
+        },
+
+        toggleTheModals: function () {
+            // const targetModalSelector = event.target.dataset.targetModal;
+            // const targetModal = document.getElementById(targetModalSelector);
+            // // targetModal.style.display = "block";
+            // targetModal.classList.toggle("blockDisplay");
+            console.log("hi");
+            this.displayModal = !this.displayModal;
+        },
+
+        
+
+    
+    } 
 })

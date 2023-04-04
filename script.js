@@ -351,10 +351,13 @@ if (nextBtn) {
 const openModals = document.querySelectorAll(".open-modal");
 
 if (openModals) {
+   
+    
     const modalBtns = document.querySelectorAll(".modal-btn");
     const closeSpans = document.querySelectorAll(".close");
 
     const openModalFunc = event => {
+        console.log("hi");
         const targetModalSelector = event.target.dataset.targetModal;
         //console.log(targetModalSelector);
         const targetModal = document.getElementById(targetModalSelector);
@@ -362,14 +365,7 @@ if (openModals) {
         targetModal.style.display = "block";
     }
 
-    // const closeModalFunc = event => {
-    //     span.onclick = function() {
-    //         openModals.forEach(openModal => {
-    //             openModal.style.display = "none";
-    //         })
-                
-    //     }
-    // }
+
 
     modalBtns.forEach(btn => {
       
@@ -381,24 +377,7 @@ if (openModals) {
             }
         });
 
-        // closeSpans.forEach(span => {
-
-        //     const closeModalFunc = event => {
-        //         span.onclick = function() {
-        //             openModals.forEach(openModal => {
-        //                 openModal.style.display = "none";
-        //             })
-        //         }
-        //     }
-
-        //     span.addEventListener("click", closeModalFunc);
-
-        //     span.addEventListener('keydown', (event) => {
-        //         if (event.code === 'Space' || event.code === 'Enter') {
-        //           span.click();
-        //         }
-        //     });
-        // })
+       
         
         window.onkeydown = function(event) {
             openModals.forEach(openModal => {
@@ -434,6 +413,8 @@ if (openModals) {
             }
         });
     })
+} else {
+    
 }
 
 
