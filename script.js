@@ -115,9 +115,11 @@ const weatherCallback = weatherDataObj => {
     if (willRain) {
         fetchedData.innerHTML = "You will need an umbrella!";
         umbrellaPic.style.display = "flex";
+        sunPic.ariaHidden = "true";
     } else {
         fetchedData.innerHTML = "You won't need an umbrella!";
         sunPic.style.display = "flex";
+        umbrellaPic.ariaHidden = "true";
     }
 }
 
