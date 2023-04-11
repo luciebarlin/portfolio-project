@@ -1029,19 +1029,15 @@ if (sidebarWidget) {
 
             sidebarWidget.classList.add("translated");
             sidebarWidgetContainer.classList.add("no-pointer-events");
-
-            // if (newCarousel) {
-            //     sidebarWidget.classList.add("translucent");
-            // }
+            widgetCloseBtn.ariaPressed = "false";
+           
             
 
         } else {
             sidebarWidget.classList.remove("translated");
             sidebarWidgetContainer.classList.remove("no-pointer-events");
-
-            // if (newCarousel) {
-            //     sidebarWidget.classList.remove("translucent");
-            // }
+            widgetCloseBtn.ariaPressed = "true";
+            
         }
     }
 
