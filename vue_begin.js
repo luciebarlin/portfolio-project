@@ -26,7 +26,7 @@ const vueFooter = new Vue({
         copyrightInfo: '© 2023 Lucie Barlin ~ ',
         myEmail: 'lucie.barlin@hotmail.com',
         hrefs: {
-            download_cv: 'certs/cv_lucie_barlin_2023_02.pdf',
+            download_cv: 'certs/cv_lucie_barlin_202304.pdf',
             my_certs: 'certs.html',
             umbrella:'weatherapi.html',
             cake: 'cake_quiz.html',
