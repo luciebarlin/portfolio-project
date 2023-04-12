@@ -52,6 +52,7 @@
                 width: 125px;
                 z-index: 9;
                 overflow-y: visible;
+                cursor: pointer;
             }
 
             // > a {
@@ -78,17 +79,28 @@
     flex-direction: column;
     align-items: center;
 
-    &:hover {
+    // &:hover {
 
-        .nav-links {
-            display: flex;
-            flex-direction: column;
+    //     .nav-links {
+    //         display: flex;
+    //         flex-direction: column;
 
             
-        }
+    //     }
+    // }
+    .expanded {
+        display: flex;
+        flex-direction: column;
+    }
+
+    button {
+        background-color: transparent;
+        font-size: 1rem;
+        color: $dark-blue;
     }
 }
 
-
-
+.nav-links {
+    transition: $transition-basic;
+}
     

@@ -1125,7 +1125,7 @@ const navBarItemArr = document.querySelectorAll(".nav-bar__item");
 
 navBarItemArr.forEach(navBarItem => {
     if (navBarItem.classList.contains(pageBody.dataset.pageName)) {
-        // console.log(navBarItem.classList);
+        console.log(navBarItem.innerHTML);
         navBarItem.firstElementChild.classList.add("active-page");
     }
 });
@@ -1524,7 +1524,7 @@ if (copyBtn) {
 
 /////////////
 
-// new nav bar
+// new nav bar mobile
 
 const menuIcon = document.querySelector(".menu-icon");
 const menuIconWrapper = document.querySelector(".menu-icon-wrapper");
@@ -1542,3 +1542,47 @@ menuIconWrapper.addEventListener('keydown', (event) => {
         menuIconWrapper.click();
     }
 });
+
+
+
+//////////////////
+
+// new header nav click to expand
+
+// on click of the experience or projects nav items, drop down the menus
+
+const dropdownMenuBtns = document.querySelectorAll(".dropdown-menu-btn");
+const expandedMenus = document.querySelectorAll(".nav-links");
+
+const toggleExpandedMenu = event => {
+    expandedMenus.forEach(expandedMenu => {
+        if (event.target.classList.contains(expandedMenu.dataset.target)) {
+            console.log("bye1");
+            console.log(event.target);
+            expandedMenu.classList.toggle("expanded");
+
+
+        } else if (!event.target.classList.contains(expandedMenu.dataset.target)) {
+            console.log("bye2");
+            console.log(event.target);
+            expandedMenu.classList.remove("expanded");
+        }
+    })
+    
+}
+
+dropdownMenuBtns.forEach(dropdownBtn => {
+    dropdownBtn.addEventListener("click", toggleExpandedMenu);
+
+    dropdownBtn.addEventListener('keydown', (event) => {
+        if (event.code === 'Space' || event.code === 'Enter') {
+            dropdownBtn.click();
+        }
+    });
+
+});
+
+
+
+
+
