@@ -365,6 +365,7 @@ if (openModals) {
         const targetModal = document.getElementById(targetModalSelector);
         //console.log(targetModal);
         targetModal.style.display = "block";
+        targetModal.ariaHidden = "false";
     }
 
 
@@ -385,6 +386,7 @@ if (openModals) {
             openModals.forEach(openModal => {
                 if (event.code === 'Escape') {
                     openModal.style.display = "none";
+                    openModal.ariaHidden = "true";
                 }
             })
         }
@@ -393,6 +395,7 @@ if (openModals) {
             openModals.forEach(openModal => {
                 if (event.target == openModal) {
                     openModal.style.display = "none";
+                    openModal.ariaHidden = "true";
                 }
             })
             
