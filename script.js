@@ -1125,7 +1125,7 @@ const navBarItemArr = document.querySelectorAll(".nav-bar__item");
 
 navBarItemArr.forEach(navBarItem => {
     if (navBarItem.classList.contains(pageBody.dataset.pageName)) {
-        console.log(navBarItem.innerHTML);
+        //console.log(navBarItem.innerHTML);
         navBarItem.firstElementChild.classList.add("active-page");
     }
 });
@@ -1139,7 +1139,7 @@ if (animations) {
     const circlesArea = document.querySelector(".circles-area"); 
     const randomNumber = Math.floor(Math.random() * 6) + 1;
 
-    console.log(randomNumber);
+    //console.log(randomNumber);
 
     const createCircleRows = randomNumber => {
         for (let row = 0; row < randomNumber; row++) {
@@ -1168,11 +1168,11 @@ if (animations) {
     const rectanglesArea = document.querySelector(".rectangles-area");
     let bigRandomNumber = Math.floor(Math.random() * 4) * 10;
 
-    console.log(bigRandomNumber);
+    //console.log(bigRandomNumber);
     if (bigRandomNumber === 0) {
         bigRandomNumber += 10;
     };
-    console.log(bigRandomNumber);
+    //console.log(bigRandomNumber);
     
     const createOneRectDiv = () => {
            const newRect = document.createElement("div");
@@ -1209,7 +1209,7 @@ if (animations) {
                 return rect.classList.contains("opaque");
             })
             //console.log(rectArr);
-            console.log(visibility);
+            //console.log(visibility);
 
             if (visibility) {
                 clearInterval(myInterval);
@@ -1552,37 +1552,63 @@ menuIconWrapper.addEventListener('keydown', (event) => {
 // on click of the experience or projects nav items, drop down the menus
 
 const dropdownMenuBtns = document.querySelectorAll(".dropdown-menu-btn");
-const expandedMenus = document.querySelectorAll(".nav-links");
+const expandableMenus = document.querySelectorAll(".nav-links");
 
-const toggleExpandedMenu = event => {
-    expandedMenus.forEach(expandedMenu => {
-        if (event.target.classList.contains(expandedMenu.dataset.target)) {
-            console.log("bye1");
-            console.log(event.target);
-            expandedMenu.classList.toggle("expanded");
+const closeAllMenus = () => {
+    //closes all open menus
+    expandableMenus.forEach(expandableMenu => {
+        expandableMenu.classList.remove("expanded");
+    });
+}
+
+const retrieveTargetElement = function(event) {
+    const targetElementString = event.target.dataset.target;
+    const targetElement = document.querySelector("#" + targetElementString);
+    console.log(event);
+    return targetElement;
+}
 
 
-        } else if (!event.target.classList.contains(expandedMenu.dataset.target)) {
-            console.log("bye2");
-            console.log(event.target);
-            expandedMenu.classList.remove("expanded");
-        }
-    })
+const openTargetMenu = targetElement => {
+    //expands target menu
+    console.log("opening");
+    targetElement.classList.add("expanded");
+}
+
+const closeTargetMenu = targetElement => {
+    //closes target menu
+    console.log("closing");
+    targetElement.classList.remove("expanded");
+}
+
+const handleClickOnMenuBtn = event => {
+    const targetElement = retrieveTargetElement(event);
+    console.log(targetElement);
+    console.log(targetElement.classList);
+
+    if (targetElement.classList.contains("expanded")) {
+        closeAllMenus();
+        closeTargetMenu(targetElement);
+        
+    } else {
+        closeAllMenus();
+        openTargetMenu(targetElement);
+    };
     
 }
 
-dropdownMenuBtns.forEach(dropdownBtn => {
-    dropdownBtn.addEventListener("click", toggleExpandedMenu);
 
+dropdownMenuBtns.forEach(dropdownBtn => {
+    dropdownBtn.addEventListener("click", handleClickOnMenuBtn);
+});
+
+dropdownMenuBtns.forEach(dropdownBtn => {
     dropdownBtn.addEventListener('keydown', (event) => {
         if (event.code === 'Space' || event.code === 'Enter') {
+            event.preventDefault();        
             dropdownBtn.click();
         }
     });
-
 });
-
-
-
 
 
