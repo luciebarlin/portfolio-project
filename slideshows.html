@@ -20,19 +20,17 @@
             <li class="nav-bar__item index">
               <a href="index.html">Home</a>
             </li>
-            <li class="nav-bar__item dropdown-menu experience">
-              <a href="experience.html">
-                Experience ▾
-              </a>
-              <div class="nav-links">
+          <li class="nav-bar__item dropdown-menu experience">
+            <button data-target="experience-menu" class="dropdown-menu-btn">Experience ▾</button>
+            <div id="experience-menu" class="nav-links">
                 <a href="certs.html">Certificates</a>
                 <a target="_blank" href="certs/cv_lucie_barlin_202304.pdf"> Download CV</a>
               </div>
             </li>
       
-            <li class="nav-bar__item dropdown-menu projects">
-              <a href="projects.html">Projects ▾</a>
-              <div class="nav-links">
+          <li class="nav-bar__item dropdown-menu projects">
+            <button data-target="projects-menu" class="dropdown-menu-btn">Projects ▾</button>
+            <div class="nav-links" id="projects-menu">
                 <a  href="weatherapi.html">Umbrella checker</a>
               <a  href="cake_quiz.html">Cake quiz</a>
               <a  href="hangman.html">Hangman</a>
