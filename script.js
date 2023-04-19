@@ -1281,6 +1281,7 @@ if (newCarousel) {
 
     const startCarousel = () => {
         carouselContainer.scrollBy(carouselItemWidth, 0);
+        console.log(carouselItemWidth);
         timeoutId = setTimeout(() => {
             index = index % numberOfSlides;
             let childToMove = carouselContainer.querySelectorAll(`.carouselItem`)[
@@ -1564,7 +1565,7 @@ const closeAllMenus = () => {
 const retrieveTargetElement = function(event) {
     const targetElementString = event.target.dataset.target;
     const targetElement = document.querySelector("#" + targetElementString);
-    console.log(event);
+    //console.log(event);
     return targetElement;
 }
 
@@ -1583,8 +1584,8 @@ const closeTargetMenu = targetElement => {
 
 const handleClickOnMenuBtn = event => {
     const targetElement = retrieveTargetElement(event);
-    console.log(targetElement);
-    console.log(targetElement.classList);
+    //console.log(targetElement);
+    //console.log(targetElement.classList);
 
     if (targetElement.classList.contains("expanded")) {
         closeAllMenus();
@@ -1610,5 +1611,4 @@ dropdownMenuBtns.forEach(dropdownBtn => {
         }
     });
 });
-
 
